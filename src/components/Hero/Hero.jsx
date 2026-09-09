@@ -64,7 +64,7 @@ export default function Hero() {
               <FiArrowRight aria-hidden="true" />
             </a>
             <a href="#services" className="btn-secondary">
-              <span>Explore Services</span>
+              <span>Learn About ZION</span>
             </a>
           </div>
         </div>
@@ -79,13 +79,6 @@ export default function Hero() {
               className="hero-image"
               loading="eager"
             />
-            <div className="hero-floating-card">
-              <div className="floating-badge font-display">ZION</div>
-              <div className="floating-text">
-                <strong>ZION Early Learning & Preschool</strong>
-                <span>Commenced April 2026 Initiative</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
