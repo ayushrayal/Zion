@@ -1,15 +1,49 @@
 /* ==========================================================================
-   SERVICES SECTION STYLES - MOBILE RESPONSIVE
+   SERVICES SECTION STYLES - EDITORIAL & MOBILE RESPONSIVE
    ========================================================================== */
 
-.services-header {
-  margin-bottom: 2.25rem;
+.services-section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
 }
+
+.services-container {
+  width: calc(100% - 40px);
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+.services-header {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.services-header .section-label {
+  font-size: 0.72rem;
+  padding: 0.22rem 0.7rem;
+  margin-bottom: 0.65rem;
+}
+
+.services-header .section-heading {
+  font-size: clamp(1.3rem, 5.2vw, 1.65rem);
+  line-height: 1.2;
+  margin-bottom: 0.55rem;
+}
+
+.services-header .section-subheading {
+  font-size: clamp(0.78rem, 2.6vw, 0.88rem);
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+
+/* ==========================================================================
+   MOBILE: 2 x 2 EDITORIAL GRID (< 768px)
+   ========================================================================== */
 
 .services-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   width: 100%;
 }
 
@@ -18,98 +52,209 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  min-width: 0;
+  padding: 12px 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  box-shadow: none;
 }
 
-.service-card-top {
+.mobile-only-flex {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 1.15rem;
+  gap: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
-.category-num {
-  font-size: clamp(1.85rem, 5vw, 2.25rem);
+.mobile-category-num {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
   font-weight: 700;
-  color: var(--color-text-light);
+  color: var(--color-sage-dark);
   line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.85;
 }
 
-.category-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
+.desktop-only-flex,
+.desktop-only-block {
+  display: none;
+}
+
+/* Card Content Body */
+.service-card-content {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  flex-shrink: 0;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
 }
 
 .category-title {
-  font-size: clamp(1.1rem, 3.2vw, 1.25rem);
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: clamp(0.6rem, 2.9vw, 0.72rem);
+  font-weight: 700;
   color: var(--color-text-main);
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.02em;
-  line-height: 1.25;
+  line-height: 1.18;
+  letter-spacing: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .category-summary {
-  font-size: var(--fz-body);
+  margin: 0 0 0.45rem 0;
+  font-family: var(--font-body);
+  font-size: clamp(0.48rem, 2.2vw, 0.65rem);
   color: var(--color-text-muted);
-  line-height: 1.6;
-  margin-bottom: 1.35rem;
+  line-height: 1.35;
 }
 
 .category-items-wrapper {
   margin-top: auto;
-  padding-top: 1.15rem;
+  padding-top: 0.45rem;
   border-top: 1px dashed var(--color-border);
-  width: 100%;
 }
 
 .items-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  display: block;
-  margin-bottom: 0.65rem;
+  display: none;
 }
 
 .category-items-list {
-  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.2rem;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .category-item-chip {
   display: flex;
   align-items: flex-start;
-  gap: 0.45rem;
-  font-size: 0.9rem;
-  font-weight: 700;
+  gap: 0.22rem;
+  min-width: 0;
+  font-size: clamp(0.42rem, 2.1vw, 0.58rem);
+  font-weight: 600;
   color: var(--color-text-main);
-  line-height: 1.4;
-  word-break: break-word;
+  line-height: 1.25;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 .chip-bullet {
-  color: var(--color-sage-dark);
-  font-size: 1.1rem;
+  flex: 0 0 auto;
+  margin-top: 1px;
+  font-size: 0.65rem;
   line-height: 1;
-  flex-shrink: 0;
-  margin-top: 2px;
+  color: var(--color-sage-dark);
 }
 
-/* Tablet & Desktop Grid Queries */
+/* ==========================================================================
+   DESKTOP & TABLET LAYOUT (>= 768px)
+   ========================================================================== */
+
 @media (min-width: 768px) {
+  .services-container {
+    width: 100%;
+    max-width: var(--container-max, 1200px);
+    padding-inline: var(--spacing-container-padding, 2rem);
+  }
+
+  .services-header {
+    margin-bottom: 2.25rem;
+    text-align: center;
+  }
+
+  .services-header .section-label {
+    font-size: inherit;
+    padding: var(--pd, 0.4rem 1rem);
+    margin-bottom: 1rem;
+  }
+
+  .services-header .section-heading {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin-bottom: 1rem;
+  }
+
+  .services-header .section-subheading {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    text-align: left;
+  }
+
   .services-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
-}
 
+  .service-card {
+    padding: 1.75rem;
+    border-radius: var(--radius-lg, 16px);
+    box-shadow: 0 4px 14px rgba(36, 48, 43, 0.04);
+  }
+
+  .mobile-only-flex {
+    display: none;
+  }
+
+  .desktop-only-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.15rem;
+  }
+
+  .desktop-only-block {
+    display: block;
+  }
+
+  .category-num {
+    font-size: clamp(1.85rem, 5vw, 2.25rem);
+    font-weight: 700;
+    color: var(--color-text-light);
+    line-height: 1;
+  }
+
+  .category-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .category-title {
+    font-size: clamp(1.1rem, 3.2vw, 1.25rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  .category-summary {
+    font-size: var(--fz-body, 0.95rem);
+    line-height: 1.6;
+    margin-bottom: 1.35rem;
+  }
+
+  .category-items-wrapper {
+    padding-top: 1.15rem;
+    border-top: 1px dashed var(--color-border);
+  }
+
+  .items-label {
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .category-items-list {
+    gap: 0.45rem;
+  }
+
+  .category-item-chip {
+    font-size: 0.9rem;
+  }
+}

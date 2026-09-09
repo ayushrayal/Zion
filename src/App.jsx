@@ -21,8 +21,8 @@ export default function App() {
         {/* 02. HERO */}
         <Hero />
 
-        {/* 03. TRUST / INTRODUCTION */}
-        <TrustIntro />
+        {/* 03. TRUST / INTRODUCTION
+        <TrustIntro /> */}
 
         {/* 04. ABOUT ZION */}
         <About />
