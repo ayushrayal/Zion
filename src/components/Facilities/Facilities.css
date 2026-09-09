@@ -38,7 +38,7 @@
 .mobile-only-block {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   width: 100%;
 }
 
@@ -219,6 +219,7 @@
     gap: 1.75rem;
     margin-bottom: 2rem;
     width: 100%;
+    align-items: stretch;
   }
 
   .facility-main-image-card {
@@ -229,13 +230,17 @@
     border: 3px solid var(--color-surface);
     min-height: clamp(230px, 48vw, 380px);
     width: 100%;
+    height: 100%;
   }
 
   .facility-main-image {
     width: 100%;
-    height: clamp(230px, 48vw, 380px);
+    height: 100%;
+    min-height: clamp(230px, 48vw, 380px);
     object-fit: cover;
+    object-position: center;
     border-radius: calc(var(--radius-lg) - 3px);
+    display: block;
   }
 
   .facility-image-overlay {
@@ -267,6 +272,7 @@
     flex-direction: column;
     gap: 1.25rem;
     width: 100%;
+    height: 100%;
   }
 
   .facility-info-card {
@@ -274,6 +280,7 @@
     flex-direction: column;
     gap: 0.65rem;
     width: 100%;
+    flex: 1;
   }
 
   .info-card-header {
