@@ -208,6 +208,9 @@
 
   .facilities-header .section-subheading {
     font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    text-align: center;
+    max-width: 720px;
+    margin-inline: auto;
   }
 
   .facilities-top-row {
