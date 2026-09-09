@@ -1,30 +1,13 @@
 import React, { useRef, useEffect } from 'react';
-import { FiHeart, FiUserCheck, FiUsers, FiSun } from 'react-icons/fi';
 import { initScrollAnimation, animateSectionReveal } from '../../animations/gsap';
 import aboutImg from '../../assets/images/about-zion.jpg';
 import './About.css';
 
-const points = [
-  {
-    icon: <FiHeart />,
-    title: 'Child-Centered Support',
-    desc: 'Focusing on the emotional, developmental, and learning needs of every unique child.'
-  },
-  {
-    icon: <FiUserCheck />,
-    title: 'Individualized Support',
-    desc: 'Tailoring intervention programs to match individual learning styles and milestones.'
-  },
-  {
-    icon: <FiUsers />,
-    title: 'Family Engagement',
-    desc: 'Empowering parents and caregivers with guidance, training, and continuous active partnership.'
-  },
-  {
-    icon: <FiSun />,
-    title: 'Inclusive Learning',
-    desc: 'Creating an atmosphere where neurodiverse children feel understood, valued, and capable.'
-  }
+const values = [
+  { title: 'Child-Centered' },
+  { title: 'Family Engagement' },
+  { title: 'Individual Support' },
+  { title: 'Inclusive Learning' }
 ];
 
 export default function About() {
@@ -39,21 +22,18 @@ export default function About() {
 
   return (
     <section id="about" className="section section--alt" ref={aboutRef}>
-      <div className="container">
+      <div className="container about-wrapper">
         {/* Section Header */}
         <div className="about-header about-reveal">
-          <span className="section-label">ABOUT ZION</span>
-          <h2 className="section-heading font-display">
+          <span className="about-kalam-label font-display">About ZION</span>
+          <h2 className="about-desktop-heading font-display">
             Every Child Is Unique. <span className="text-highlight-sage">Every Journey Is Different.</span>
           </h2>
-          <p className="section-subheading">
-            At ZION Educational & Rehabilitation Society, we believe that early intervention and holistic guidance create lifelong opportunities for growth.
-          </p>
         </div>
 
-        {/* 2-Column Grid */}
-        <div className="about-grid">
-          {/* Left Column: Image Card */}
+        {/* Main Card Container */}
+        <div className="about-card-container">
+          {/* Visual Image */}
           <div className="about-visual about-reveal">
             <div className="about-image-wrapper">
               <img 
@@ -69,23 +49,19 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column: Content & Points */}
+          {/* Editorial Content */}
           <div className="about-content about-reveal">
-            <h3 className="about-subtitle font-display">Supporting Children & Families</h3>
+            <h3 className="about-tagline font-display">Supporting Children & Families</h3>
             <p className="about-paragraph">
               ZION Educational & Rehabilitation Society is dedicated to supporting children and families through education, early intervention, child development, rehabilitation, and inclusive learning opportunities.
             </p>
 
-            <div className="points-grid">
-              {points.map((point) => (
-                <div key={point.title} className="point-card">
-                  <div className="point-icon-wrapper" aria-hidden="true">
-                    {point.icon}
-                  </div>
-                  <div className="point-text">
-                    <h4 className="point-title">{point.title}</h4>
-                    <p className="point-desc">{point.desc}</p>
-                  </div>
+            {/* Handwritten Editorial 2-Column Values */}
+            <div className="about-values-grid">
+              {values.map((item) => (
+                <div key={item.title} className="value-note-item">
+                  <span className="value-note-bullet">•</span>
+                  <span className="value-note-text font-display">{item.title}</span>
                 </div>
               ))}
             </div>
@@ -95,3 +71,4 @@ export default function About() {
     </section>
   );
 }
+
