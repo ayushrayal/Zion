@@ -63,6 +63,7 @@ export default function Navbar() {
           <div className="brand-text">
             <span className="brand-title font-display">ZION</span>
             <span className="brand-subtitle">Educational & Rehabilitation Society</span>
+            <span className="brand-full-name">ZION Educational and Rehabilitation Society</span>
           </div>
         </a>
 
