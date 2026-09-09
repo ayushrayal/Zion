@@ -1,0 +1,321 @@
+/* ==========================================================================
+   NAVBAR STYLES - EDITORIAL STICKY & DARK FOREST MOBILE MENU
+   ========================================================================== */
+
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-header.is-scrolled {
+  background-color: rgba(249, 246, 240, 0.96);
+  border-bottom-color: rgba(229, 223, 211, 0.9);
+  box-shadow: 0 4px 20px rgba(28, 43, 36, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  transition: height 0.3s ease;
+}
+
+.navbar-header.is-scrolled .navbar-container {
+  height: 68px;
+}
+
+/* Brand Identity */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: var(--color-forest);
+  color: var(--color-text-on-dark);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(28, 43, 36, 0.15);
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brand-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.brand-subtitle {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Desktop Links */
+.desktop-nav {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.85rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  position: relative;
+  padding-block: 0.35rem;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-terracotta);
+  transition: width var(--transition-fast);
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: var(--color-terracotta);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.nav-cta {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  min-height: 40px;
+  white-space: nowrap;
+}
+
+.hamburger-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.hamburger-btn:hover, .hamburger-btn:focus-visible {
+  background-color: var(--color-forest-light);
+  border-color: var(--color-forest);
+}
+
+/* Dark Forest Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-drawer.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.drawer-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(18, 28, 24, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.drawer-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(320px, 85vw);
+  height: 100vh;
+  background-color: var(--color-forest);
+  color: var(--color-text-on-dark);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 35px rgba(0, 0, 0, 0.4);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2001;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-drawer.is-open .drawer-content {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.drawer-header .brand-title {
+  color: var(--color-text-on-dark);
+  font-size: 1.5rem;
+}
+
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-text-on-dark);
+  transition: background-color var(--transition-fast);
+}
+
+.close-btn:hover, .close-btn:focus-visible {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.drawer-nav-list {
+  list-style: none;
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.drawer-link {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  transition: color var(--transition-fast), background-color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.drawer-link:hover, .drawer-link:focus-visible {
+  color: var(--color-yellow);
+  background-color: rgba(255, 255, 255, 0.06);
+  padding-left: 0.85rem;
+}
+
+.drawer-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.drawer-contact-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--color-yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.drawer-phone {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-on-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--transition-fast);
+}
+
+.drawer-phone:hover {
+  color: var(--color-yellow);
+}
+
+/* Mobile Breakpoint Tweaks */
+@media (max-width: 520px) {
+  .nav-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-title {
+    font-size: 1.2rem;
+  }
+  .brand-subtitle {
+    font-size: 0.65rem;
+  }
+  .brand-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .drawer-content {
+    width: 100vw;
+  }
+}
+
+@media (min-width: 992px) {
+  .desktop-nav {
+    display: block;
+  }
+  .hamburger-btn {
+    display: none;
+  }
+}
+

@@ -1,0 +1,128 @@
+/* ==========================================================================
+   FOUNDER SECTION STYLES - MOBILE RESPONSIVE
+   ========================================================================== */
+
+.founder-header {
+  margin-bottom: 2.25rem;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+/* Image Frame */
+.founder-visual {
+  width: 100%;
+}
+
+.founder-card-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(36, 48, 43, 0.08);
+  border: 3px solid var(--color-surface);
+  background-color: var(--color-surface);
+  width: 100%;
+}
+
+.founder-image {
+  width: 100%;
+  height: clamp(260px, 50vw, 460px);
+  object-fit: cover;
+  object-position: center top;
+  border-radius: calc(var(--radius-lg) - 3px);
+}
+
+.founder-tag {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  background-color: var(--color-text-main);
+  color: var(--color-surface);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.03em;
+  max-width: calc(100% - 1.7rem);
+}
+
+/* Info Column */
+.founder-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.founder-title-block {
+  margin-bottom: 1rem;
+}
+
+.founder-name {
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  color: var(--color-text-main);
+  line-height: 1.2;
+}
+
+.founder-role {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-sage-dark);
+}
+
+.founder-bio {
+  font-size: var(--fz-body);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Vision Box */
+.founder-vision-box {
+  background-color: var(--color-peach-light);
+  border: 1px solid rgba(242, 198, 168, 0.6);
+  border-left: 4px solid var(--color-peach);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  position: relative;
+  width: 100%;
+}
+
+.quote-icon {
+  font-size: 1.5rem;
+  color: var(--color-peach);
+  margin-bottom: 0.4rem;
+}
+
+.vision-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+  font-style: normal;
+}
+
+.quote-author {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive Grid Query */
+@media (min-width: 992px) {
+  .founder-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3.5rem;
+  }
+}
+
