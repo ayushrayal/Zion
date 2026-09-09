@@ -26,8 +26,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section" ref={contactRef}>
-      <div className="container">
+    <section id="contact" className="section contact-section" ref={contactRef}>
+      <div className="contact-container">
         {/* Section Header */}
         <div className="contact-header contact-reveal">
           <span className="section-label">CONTACT US</span>
@@ -39,9 +39,9 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* 2-Column Contact Grid */}
+        {/* 2-Column Desktop / Sequential Mobile Grid */}
         <div className="contact-grid">
-          {/* Left Column: Contact Information */}
+          {/* Left Column / Mobile Step 2: Contact Information */}
           <div className="contact-info-card card-base contact-reveal">
             <h3 className="info-title font-display">Reach Out To Us</h3>
             <p className="info-intro">
@@ -74,13 +74,14 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="contact-initiative-box">
+            {/* Desktop Initiative Box */}
+            <div className="contact-initiative-box desktop-only-block">
               <strong>ZION Early Learning & Preschool</strong>
               <p>Commenced educational & rehabilitation initiative in April 2026.</p>
             </div>
           </div>
 
-          {/* Right Column: Interactive Form */}
+          {/* Right Column / Mobile Step 3: Interactive Enquiry Form */}
           <div className="contact-form-card card-base contact-reveal">
             {submitted ? (
               <div className="form-success-message">
@@ -100,7 +101,7 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="enquiry-form">
-                <h3 className="form-title">Send An Enquiry</h3>
+                <h3 className="form-title font-display">Send An Enquiry</h3>
 
                 <div className="form-group">
                   <label htmlFor="name" className="form-label">Full Name <span className="req">*</span></label>
@@ -170,3 +171,5 @@ export default function Contact() {
     </section>
   );
 }
+
+
