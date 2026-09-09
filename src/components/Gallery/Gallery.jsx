@@ -78,8 +78,8 @@ export default function Gallery() {
   }, [selectedImage]);
 
   return (
-    <section id="gallery" className="section section--alt" ref={galleryRef}>
-      <div className="container">
+    <section id="gallery" className="section section--alt gallery-section" ref={galleryRef}>
+      <div className="gallery-container">
         {/* Section Header */}
         <div className="gallery-header">
           <span className="section-label">OUR GALLERY</span>
@@ -91,7 +91,7 @@ export default function Gallery() {
           </p>
         </div>
 
-        {/* Asymmetric Grid */}
+        {/* Gallery Grid / Vertical Mobile Stack */}
         <div className="gallery-grid">
           {galleryItems.map((item) => (
             <div 
@@ -150,3 +150,4 @@ export default function Gallery() {
     </section>
   );
 }
+

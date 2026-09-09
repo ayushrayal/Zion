@@ -39,8 +39,8 @@ export default function App() {
         {/* 08. GALLERY */}
         <Gallery />
 
-        {/* 09. MISSION & IMPACT */}
-        <Mission />
+        {/* 09. MISSION & IMPACT
+        <Mission /> */}
 
         {/* 10. CONTACT / FINAL CTA */}
         <Contact />
