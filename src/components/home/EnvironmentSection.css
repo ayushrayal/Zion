@@ -63,9 +63,9 @@
   color: var(--color-black);
 }
 
-.feature-card-desc {
+.feature-card-content .feature-card-desc {
   font-size: var(--font-size-body);
-  color: var(--color-text-secondary);
+  color: rgba(0, 0, 0, 0.78);
   line-height: 1.65;
   max-width: 90ch;
 }
@@ -100,9 +100,9 @@
   color: var(--color-black);
 }
 
-.secondary-card-desc {
+.secondary-card-content .secondary-card-desc {
   font-size: var(--font-size-small);
-  color: var(--color-text-secondary);
+  color: rgba(0, 0, 0, 0.78);
   line-height: 1.6;
 }
 

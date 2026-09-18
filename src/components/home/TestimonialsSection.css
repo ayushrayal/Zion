@@ -51,10 +51,10 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.testimonial-placeholder-desc {
-  font-size: var(--font-size-small);
+.testimonial-card .testimonial-placeholder-desc {
+  font-size: 15px;
   line-height: 1.65;
-  color: var(--color-text-secondary);
+  color: rgba(0, 0, 0, 0.78);
   margin-bottom: var(--space-32);
   flex: 1;
 }

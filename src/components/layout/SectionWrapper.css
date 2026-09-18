@@ -53,12 +53,10 @@
 /* Contrast Overrides for Dark / Saturated Backgrounds */
 .section-wrapper.bg-azure h1,
 .section-wrapper.bg-azure h2,
-.section-wrapper.bg-azure h3,
 .section-wrapper.bg-azure .heading-title {
   color: var(--color-white);
 }
 
-.section-wrapper.bg-azure p,
 .section-wrapper.bg-azure .heading-description {
   color: rgba(255, 255, 255, 0.9);
 }
