@@ -5,7 +5,7 @@ export default function SectionWrapper({
   id,
   children,
   className = '',
-  background = 'white', // 'white', 'subtle', 'azure-tint', 'lime-tint'
+  background = 'white', // 'white', 'azure', 'lime', 'green', 'warm', 'cool', 'subtle'
   padding = 'default', // 'default', 'compact', 'none'
   style = {}
 }) {

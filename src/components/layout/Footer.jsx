@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from './Container';
 import SocialLinks from '../ui/SocialLinks';
+import BrandShape from '../ui/BrandShape';
 import './Footer.css';
 
 export default function Footer() {
@@ -8,7 +9,11 @@ export default function Footer() {
 
   return (
     <footer className="zion-footer" role="contentinfo">
-      <Container>
+      {/* Decorative Organic Shapes */}
+      <BrandShape type="blob-lime" size="lg" style={{ top: -40, right: -40, opacity: 0.25 }} />
+      <BrandShape type="blob-azure" size="lg" style={{ bottom: -60, left: -40, opacity: 0.2 }} />
+
+      <Container className="footer-container">
         <div className="footer-top-grid">
           {/* Brand Column */}
           <div className="footer-brand-col">
@@ -32,7 +37,10 @@ export default function Footer() {
 
           {/* Quick Navigation Links */}
           <div className="footer-links-col">
-            <h4 className="footer-heading">Navigation</h4>
+            <div className="footer-col-header">
+              <span className="col-header-dot dot-azure" />
+              <h4 className="footer-heading">Navigation</h4>
+            </div>
             <ul className="footer-list">
               <li><a href="#hero">Home</a></li>
               <li><a href="#about">About ZION</a></li>
@@ -47,7 +55,10 @@ export default function Footer() {
 
           {/* Core Domains Column */}
           <div className="footer-links-col">
-            <h4 className="footer-heading">Programs</h4>
+            <div className="footer-col-header">
+              <span className="col-header-dot dot-green" />
+              <h4 className="footer-heading">Programs</h4>
+            </div>
             <ul className="footer-list">
               <li><a href="#services">Speech &amp; Hearing Clinic</a></li>
               <li><a href="#services">Early Intervention Centre</a></li>
@@ -60,7 +71,10 @@ export default function Footer() {
 
           {/* Contact Details Column */}
           <div className="footer-contact-col">
-            <h4 className="footer-heading">Society Office</h4>
+            <div className="footer-col-header">
+              <span className="col-header-dot dot-lime" />
+              <h4 className="footer-heading">Society Office</h4>
+            </div>
             <div className="footer-contact-item">
               <span className="contact-icon">📍</span>
               <address className="contact-address">
@@ -76,8 +90,11 @@ export default function Footer() {
                 <a href="tel:+918057403683" className="footer-phone-link">+91 80574 03683</a>
               </div>
             </div>
+
+            {/* Lemon-Lime Highlight Badge */}
             <div className="footer-hours-badge">
-              <span>Appointment &amp; Consultation Based</span>
+              <span className="hours-badge-dot" />
+              <span>Prior Appointment Required</span>
             </div>
           </div>
         </div>
@@ -88,7 +105,7 @@ export default function Footer() {
             &copy; {currentYear} ZION Educational &amp; Rehabilitation Society. All rights reserved.
           </p>
           <div className="footer-bottom-meta">
-            <span>Registered Non-Profit Society • Dehradun, Uttarakhand</span>
+            <span className="meta-society-pill font-accent">Registered Non-Profit Society • Dehradun</span>
           </div>
         </div>
       </Container>

@@ -1,72 +1,138 @@
 .zion-image-placeholder {
   position: relative;
   width: 100%;
-  background: linear-gradient(135deg, var(--color-azure-tint) 0%, rgba(213, 225, 81, 0.08) 100%);
-  border: 1.5px solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+  border: 2px solid transparent;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+/* Themes derived strictly from 5 colors */
+.theme-azure {
+  background: linear-gradient(135deg, rgba(13, 92, 238, 0.10) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border-color: rgba(13, 92, 238, 0.20);
+}
+
+.theme-green {
+  background: linear-gradient(135deg, rgba(137, 203, 50, 0.16) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border-color: rgba(137, 203, 50, 0.32);
+}
+
+.theme-lime {
+  background: linear-gradient(135deg, rgba(213, 225, 81, 0.25) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border-color: rgba(213, 225, 81, 0.45);
+}
+
+.theme-warm {
+  background: linear-gradient(135deg, rgba(213, 225, 81, 0.18) 0%, rgba(13, 92, 238, 0.08) 100%);
+  border-color: rgba(13, 92, 238, 0.25);
 }
 
 .placeholder-grid-pattern {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  background-size: 24px 24px;
+    linear-gradient(to right, rgba(13, 92, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 92, 238, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
   pointer-events: none;
+}
+
+/* Playful Corner Elements */
+.placeholder-corner {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+  border-radius: var(--radius-blob-1);
+}
+
+.corner-top-left {
+  top: -12px;
+  left: -12px;
+  background-color: rgba(137, 203, 50, 0.3);
+}
+
+.corner-bottom-right {
+  bottom: -12px;
+  right: -12px;
+  background-color: rgba(213, 225, 81, 0.4);
+}
+
+.placeholder-corner-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.dot-top-right {
+  top: 16px;
+  right: 16px;
+  background-color: var(--color-royal-azure);
+  opacity: 0.35;
+}
+
+.dot-bottom-left {
+  bottom: 16px;
+  left: 16px;
+  background-color: var(--color-yellow-green);
+  opacity: 0.5;
 }
 
 .placeholder-content {
   position: relative;
   z-index: 2;
-  padding: var(--space-24);
+  padding: var(--space-20, 20px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-8);
+  gap: 8px;
 }
 
 .placeholder-brand-mark {
   color: var(--color-royal-azure);
   background-color: var(--color-white);
-  padding: 10px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 4px 12px rgba(13, 92, 238, 0.12);
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(13, 92, 238, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1.5px solid rgba(13, 92, 238, 0.15);
 }
 
 .placeholder-badge {
   display: inline-block;
-  font-size: var(--font-size-meta);
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-royal-azure);
+  color: #274b09;
   background-color: var(--color-white);
-  border: 1px solid var(--color-border-subtle);
-  padding: 4px 10px;
+  border: 1.5px solid var(--color-border-green);
+  padding: 4px 12px;
   border-radius: var(--radius-pill);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .placeholder-label {
-  font-size: var(--font-size-body);
+  font-size: 16px;
   font-weight: 800;
   color: var(--color-black);
 }
 
 .placeholder-sublabel {
-  font-size: var(--font-size-small);
+  font-size: 13px;
   color: var(--color-text-secondary);
 }
 
 .zion-image-placeholder:hover {
-  border-color: rgba(13, 92, 238, 0.3);
+  transform: scale(1.015);
+  box-shadow: var(--shadow-card-hover);
 }

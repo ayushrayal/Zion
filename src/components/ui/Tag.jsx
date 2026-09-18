@@ -3,7 +3,7 @@ import './Tag.css';
 
 export default function Tag({
   children,
-  variant = 'azure', // 'azure', 'yellow-green', 'lemon-lime', 'outline'
+  variant = 'azure', // 'azure', 'yellow-green', 'lemon-lime', 'blue-green', 'lime-green', 'outline'
   size = 'md', // 'sm', 'md'
   icon = null,
   className = ''

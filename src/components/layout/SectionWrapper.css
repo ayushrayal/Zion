@@ -1,6 +1,7 @@
 .section-wrapper {
   position: relative;
   width: 100%;
+  overflow: hidden; /* Prevents decorative shapes from causing horizontal scroll */
 }
 
 .section-wrapper.padding-default {
@@ -18,18 +19,38 @@
   padding-bottom: 0;
 }
 
+/* Background Color Rhythm Variants */
 .section-wrapper.bg-white {
   background-color: var(--color-white);
+}
+
+.section-wrapper.bg-azure {
+  background-color: var(--bg-section-azure);
+}
+
+.section-wrapper.bg-lime {
+  background-color: var(--bg-section-lime);
+}
+
+.section-wrapper.bg-green {
+  background-color: var(--bg-section-green);
+}
+
+.section-wrapper.bg-warm {
+  background: var(--bg-section-warm);
+}
+
+.section-wrapper.bg-cool {
+  background: var(--bg-section-cool);
 }
 
 .section-wrapper.bg-subtle {
   background-color: var(--color-surface-subtle);
 }
 
-.section-wrapper.bg-azure-tint {
-  background-color: var(--color-azure-tint);
-}
-
-.section-wrapper.bg-lime-tint {
-  background-color: var(--color-lemon-lime-tint);
+@media (max-width: 768px) {
+  .section-wrapper.padding-default {
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-64);
+  }
 }

@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import Container from '../layout/Container';
 import Button from '../ui/Button';
 import Tag from '../ui/Tag';
+import BrandShape from '../ui/BrandShape';
 import './Hero.css';
 
 export default function Hero() {
@@ -14,7 +15,6 @@ export default function Hero() {
   const visualRef = useRef(null);
 
   useEffect(() => {
-    // GSAP entrance animation honoring prefers-reduced-motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
@@ -62,18 +62,32 @@ export default function Hero() {
 
   return (
     <section id="hero" className="zion-hero" ref={heroRef}>
+      {/* Decorative Organic Shapes in Brand Palette */}
+      <BrandShape type="blob-azure" size="lg" className="hero-blob-azure animate-float" />
+      <BrandShape type="blob-green" size="md" className="hero-blob-green animate-float-delayed" />
+      <BrandShape type="blob-lime" size="lg" className="hero-blob-lime animate-float" />
+      <BrandShape type="dots" className="hero-dots-pattern" />
+      <BrandShape type="circle-ring" className="hero-ring-1 animate-float" />
+      <BrandShape type="circle-ring" className="hero-ring-2 animate-float-delayed" />
+
       <Container>
         <div className="hero-grid">
-          {/* Left Column: Headline & Value Proposition */}
+          {/* Left Column: Headline, Tagline, Body & Colorful Service Pills */}
           <div className="hero-content">
             <div className="hero-eyebrow-chip">
               <span className="eyebrow-indicator" />
-              <span>ZION Educational &amp; Rehabilitation Society</span>
+              <span className="eyebrow-text">ZION Educational &amp; Rehabilitation Society</span>
+              <span className="eyebrow-city">Dehradun</span>
             </div>
 
             <h1 className="hero-headline" ref={headlineRef}>
               Learning, Growing &amp; Belonging,{' '}
-              <span className="hero-headline-highlight">One Milestone</span> at a Time
+              <span className="hero-headline-highlight">
+                One Milestone
+                <svg className="headline-underline-svg" viewBox="0 0 260 16" fill="none" aria-hidden="true">
+                  <path d="M2 12 Q 65 3, 130 9 T 258 8" stroke="var(--color-yellow-green)" strokeWidth="5" strokeLinecap="round" />
+                </svg>
+              </span> at a Time
             </h1>
 
             <p className="hero-tagline-accent font-accent">
@@ -82,17 +96,17 @@ export default function Hero() {
 
             <p className="hero-description lead" ref={contentRef}>
               Empowering Communication. Nurturing Potential. Supporting Every Journey.
-              We provide ethical, evidence-informed and compassionate multidisciplinary care
-              for children across early intervention, therapy, development, education, and family partnership.
+              We provide ethical, evidence-informed, and compassionate multidisciplinary care
+              bringing therapy, early intervention, inclusive early education, and family partnership together.
             </p>
 
-            {/* Service & Value Tags */}
+            {/* Service & Value Tags with Intentional Color Variations */}
             <div className="hero-tags-wrapper" ref={tagsRef}>
-              <Tag variant="azure">Speech &amp; Hearing</Tag>
-              <Tag variant="yellow-green">Early Intervention</Tag>
-              <Tag variant="lemon-lime">Inclusive Preschool</Tag>
-              <Tag variant="azure">Occupational Therapy</Tag>
-              <Tag variant="outline">Family Partnership</Tag>
+              <Tag variant="azure" icon="💬">Speech &amp; Hearing</Tag>
+              <Tag variant="yellow-green" icon="🌱">Early Intervention</Tag>
+              <Tag variant="lemon-lime" icon="🎨">Inclusive Preschool</Tag>
+              <Tag variant="blue-green" icon="🧩">Occupational Therapy</Tag>
+              <Tag variant="lime-green" icon="🤝">Family Partnership</Tag>
             </div>
 
             {/* CTA Buttons */}
@@ -106,47 +120,69 @@ export default function Hero() {
             </div>
 
             <div className="hero-trust-indicator">
-              <span className="trust-dot" />
+              <span className="trust-pill font-accent">Compassionate Care</span>
               <span className="trust-text">
-                Multidisciplinary Team • Individualised Care • Established Oct 2021
+                Speech Therapy • Audiology • Occupational Therapy • ZION Academy
               </span>
             </div>
           </div>
 
-          {/* Right Column: Visual Composition with Official Emblem & Structured Focus */}
+          {/* Right Column: Colorful, Warm Visual Composition */}
           <div className="hero-visual-column" ref={visualRef}>
             <div className="hero-card-composite">
-              <div className="composite-accent-glow" />
-              <div className="composite-badge">
-                <img
-                  src="/zionlogo.PNG"
-                  alt="ZION Emblem"
-                  className="composite-logo-img"
-                />
-                <div className="composite-badge-info">
-                  <span className="badge-tagline font-accent">Every Child Deserves to Be Heard</span>
-                  <span className="badge-sub">Non-Profit Society • Dehradun</span>
+              {/* Colorful Multi-Layered Backdrops */}
+              <div className="composite-backdrop-lime" />
+              <div className="composite-backdrop-azure" />
+
+              {/* Main Visual Emblem Header */}
+              <div className="composite-header-card">
+                <div className="composite-logo-wrap">
+                  <img
+                    src="/zionlogo.PNG"
+                    alt="ZION Official Emblem"
+                    className="composite-logo-img"
+                  />
+                  <div className="composite-logo-pulse" />
+                </div>
+                <div className="composite-header-text">
+                  <span className="composite-brand-title">ZION ECOSYSTEM</span>
+                  <p className="composite-brand-tagline font-accent">
+                    Every Child Deserves to Be Heard
+                  </p>
+                  <span className="composite-location-tag">Registered Society • Ajabpur, Dehradun</span>
                 </div>
               </div>
 
-              {/* Visual Showcase Card */}
-              <div className="hero-media-frame">
-                <div className="media-placeholder-geometric">
-                  <div className="geom-circle" />
-                  <div className="geom-badge-mountain">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+              {/* Colorful Visual Center Showcase */}
+              <div className="hero-visual-center-plate">
+                <div className="center-plate-mesh">
+                  <div className="mesh-circle-green" />
+                  <div className="mesh-circle-lime" />
+                  <div className="mesh-circle-blue" />
+                </div>
+
+                <div className="center-plate-content">
+                  <div className="plate-mountain-badge">
+                    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
                     </svg>
                   </div>
-                  <div className="geom-text-box">
-                    <span className="geom-title">A Connected Ecosystem</span>
-                    <span className="geom-desc">Therapy • Early Intervention • Inclusive Education</span>
+                  <h4 className="plate-title">Where Every Milestone Matters</h4>
+                  <p className="plate-sub">
+                    Multidisciplinary Therapy &amp; Inclusive Early Learning
+                  </p>
+
+                  <div className="plate-pillars-mini">
+                    <span className="pillar-chip chip-green">Intervention</span>
+                    <span className="pillar-chip chip-lime">Preschool</span>
+                    <span className="pillar-chip chip-blue">Rehabilitation</span>
                   </div>
                 </div>
 
-                <div className="floating-metric-card">
-                  <div className="metric-pill">Active Ecosystem</div>
-                  <div className="metric-text">
+                {/* Floating Highlight Card */}
+                <div className="floating-highlight-card">
+                  <div className="highlight-pill">Established April 2026</div>
+                  <div className="highlight-body">
                     <strong>ZION Academy</strong>
                     <span>Inclusive Early Learning &amp; Preschool</span>
                   </div>

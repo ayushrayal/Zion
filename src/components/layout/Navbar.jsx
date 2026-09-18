@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Container from './Container';
 import Button from '../ui/Button';
+import BrandShape from '../ui/BrandShape';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -11,7 +12,6 @@ export default function Navbar() {
   const backdropRef = useRef(null);
   const menuTimelineRef = useRef(null);
 
-  // Monitor scroll for subtle shadow/border change
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -20,7 +20,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // GSAP animation for mobile drawer
   useEffect(() => {
     if (!drawerRef.current || !backdropRef.current) return;
 
@@ -49,7 +48,6 @@ export default function Navbar() {
     return () => ctx.revert();
   }, []);
 
-  // Handle open/close state
   useEffect(() => {
     if (!menuTimelineRef.current) return;
 
@@ -62,7 +60,6 @@ export default function Navbar() {
     }
   }, [isMobileMenuOpen]);
 
-  // Handle escape key
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && isMobileMenuOpen) {
@@ -93,9 +90,12 @@ export default function Navbar() {
   return (
     <header className={`zion-navbar-header ${isScrolled ? 'is-scrolled' : ''}`}>
       <Container className="navbar-container">
-        {/* Brand Logo */}
+        {/* Brand Logo with Yellow-Green Dot */}
         <a href="#hero" className="navbar-brand" aria-label="ZION Educational & Rehabilitation Society">
-          <img src="/zionlogo.PNG" alt="ZION Logo" className="navbar-logo-img" />
+          <div className="navbar-logo-badge">
+            <img src="/zionlogo.PNG" alt="ZION Logo" className="navbar-logo-img" />
+            <span className="logo-active-dot" title="Active Society Ecosystem" />
+          </div>
           <div className="brand-text-lockup">
             <span className="brand-name">ZION</span>
             <span className="brand-society">Educational &amp; Rehabilitation Society</span>
@@ -109,6 +109,7 @@ export default function Navbar() {
               <li key={link.label} className="nav-item">
                 <a href={link.href} className="nav-link">
                   {link.label}
+                  <span className="nav-indicator-dot" />
                 </a>
               </li>
             ))}
@@ -144,12 +145,18 @@ export default function Navbar() {
         aria-hidden="true"
       />
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Navigation Drawer with Brand Colors & Organic Shape */}
       <div ref={drawerRef} className="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+        <BrandShape type="blob-lime" size="md" style={{ top: -50, right: -50, opacity: 0.5 }} />
+        <BrandShape type="blob-azure" size="sm" style={{ bottom: 20, left: -40, opacity: 0.3 }} />
+
         <div className="mobile-drawer-header">
           <div className="drawer-brand">
             <img src="/zionlogo.PNG" alt="ZION" className="drawer-logo-img" />
-            <span className="drawer-brand-text">ZION</span>
+            <div>
+              <span className="drawer-brand-text">ZION</span>
+              <span className="drawer-sub font-accent">Where Every Milestone Matters</span>
+            </div>
           </div>
           <button
             type="button"
@@ -171,7 +178,8 @@ export default function Navbar() {
                     className="mobile-nav-link"
                     onClick={handleLinkClick}
                   >
-                    {link.label}
+                    <span className="mobile-nav-bullet" />
+                    <span>{link.label}</span>
                   </a>
                 </li>
               ))}
@@ -193,7 +201,7 @@ export default function Navbar() {
                 📞 +91 92860 68945
               </a>
               <span className="mobile-location-meta">
-                📍 Ekta Colony, Ajabpur, Dehradun
+                📍 47, Ekta Colony, Ajabpur, Dehradun
               </span>
             </div>
           </div>

@@ -3,6 +3,8 @@
   grid-template-columns: 0.9fr 1.1fr;
   gap: var(--space-48);
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .about-visual-column {
@@ -17,24 +19,34 @@
 }
 
 .about-quote-card {
-  background-color: var(--color-surface-subtle);
-  border-left: 4px solid var(--color-royal-azure);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(213, 225, 81, 0.16) 100%);
+  border-left: 5px solid var(--color-yellow-green);
   padding: var(--space-20, 20px);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border-subtle);
-  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border-subtle);
+  border-left-width: 5px;
+  box-shadow: var(--shadow-card-green);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.quote-heart-icon {
+  font-size: 24px;
+  line-height: 1;
 }
 
 .about-quote-text {
   font-size: 20px;
   color: var(--color-black);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  line-height: 1.3;
 }
 
 .about-quote-author {
   font-size: var(--font-size-meta);
   font-weight: 800;
-  color: var(--color-royal-azure);
+  color: #274b09;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -42,41 +54,94 @@
 .about-content-column {
   display: flex;
   flex-direction: column;
-  gap: var(--space-24);
+  gap: var(--space-20, 20px);
+}
+
+.about-intro-box {
+  background-color: var(--color-white);
+  padding: var(--space-24);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-subtle);
 }
 
 .about-lead-text {
   color: var(--color-text-primary);
+  line-height: 1.65;
 }
 
 .principles-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-16);
-  margin-top: var(--space-8);
 }
 
 .principle-card {
-  background-color: var(--color-surface-subtle);
-  border: 1px solid var(--color-border-subtle);
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-border-subtle);
   padding: var(--space-20, 20px);
   border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.principle-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .principle-num {
-  font-size: var(--font-size-small);
+  font-size: 12px;
   font-weight: 900;
-  color: var(--color-royal-azure);
-  background-color: var(--color-azure-tint);
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: var(--radius-pill);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.principle-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Color Accents for Principles */
+.card-accent-azure {
+  border-color: rgba(13, 92, 238, 0.2);
+}
+.card-accent-azure .principle-num {
+  background-color: var(--color-azure-tint);
+  color: var(--color-royal-azure);
+}
+.card-accent-azure .principle-dot {
+  background-color: var(--color-royal-azure);
+}
+
+.card-accent-green {
+  border-color: rgba(137, 203, 50, 0.3);
+}
+.card-accent-green .principle-num {
+  background-color: var(--color-yellow-green-tint);
+  color: #274b09;
+}
+.card-accent-green .principle-dot {
+  background-color: var(--color-yellow-green);
+}
+
+.card-accent-lime {
+  border-color: rgba(213, 225, 81, 0.45);
+}
+.card-accent-lime .principle-num {
+  background-color: var(--color-lemon-lime-tint);
+  color: #4b5405;
+}
+.card-accent-lime .principle-dot {
+  background-color: var(--color-lemon-lime);
 }
 
 .principle-title {

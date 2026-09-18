@@ -2,13 +2,15 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-32);
+  position: relative;
+  z-index: 2;
 }
 
 .environment-feature-card {
-  background-color: var(--color-white);
+  background: linear-gradient(145deg, #FFFFFF 60%, rgba(13, 92, 238, 0.05) 100%);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1.5px solid var(--color-border-subtle);
+  border: 2px solid var(--color-border-azure);
   box-shadow: var(--shadow-subtle);
   display: flex;
   flex-direction: column;
@@ -21,6 +23,38 @@
   gap: var(--space-8);
 }
 
+.facility-pill-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-white);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-subtle);
+  width: fit-content;
+  font-size: var(--font-size-meta);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.facility-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-azure {
+  background-color: var(--color-royal-azure);
+}
+
+.dot-green {
+  background-color: var(--color-yellow-green);
+}
+
+.dot-lime {
+  background-color: #9cb115;
+}
+
 .feature-card-title {
   font-size: 24px;
   font-weight: 800;
@@ -30,7 +64,7 @@
 .feature-card-desc {
   font-size: var(--font-size-body);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
   max-width: 90ch;
 }
 
@@ -41,13 +75,22 @@
 }
 
 .secondary-facility-card {
-  background-color: var(--color-white);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1.5px solid var(--color-border-subtle);
   box-shadow: var(--shadow-subtle);
   display: flex;
   flex-direction: column;
+  border: 2px solid transparent;
+}
+
+.card-theme-green {
+  background: linear-gradient(145deg, #FFFFFF 60%, rgba(137, 203, 50, 0.1) 100%);
+  border-color: rgba(137, 203, 50, 0.35);
+}
+
+.card-theme-lime {
+  background: linear-gradient(145deg, #FFFFFF 60%, rgba(213, 225, 81, 0.16) 100%);
+  border-color: rgba(213, 225, 81, 0.5);
 }
 
 .secondary-card-content {
@@ -58,7 +101,7 @@
 }
 
 .secondary-card-title {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--color-black);
 }

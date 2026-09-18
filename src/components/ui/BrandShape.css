@@ -1,0 +1,80 @@
+.brand-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+/* Organic Blobs */
+.shape-blob-green {
+  background: radial-gradient(circle, rgba(137, 203, 50, 0.22) 0%, rgba(137, 203, 50, 0.04) 70%, transparent 100%);
+  border-radius: var(--radius-blob-1);
+  filter: blur(20px);
+}
+
+.shape-blob-lime {
+  background: radial-gradient(circle, rgba(213, 225, 81, 0.35) 0%, rgba(213, 225, 81, 0.06) 70%, transparent 100%);
+  border-radius: var(--radius-blob-2);
+  filter: blur(22px);
+}
+
+.shape-blob-azure {
+  background: radial-gradient(circle, rgba(13, 92, 238, 0.16) 0%, rgba(13, 92, 238, 0.03) 70%, transparent 100%);
+  border-radius: var(--radius-blob-3);
+  filter: blur(24px);
+}
+
+/* Sizes */
+.size-sm {
+  width: 140px;
+  height: 140px;
+}
+
+.size-md {
+  width: 260px;
+  height: 260px;
+}
+
+.size-lg {
+  width: 400px;
+  height: 400px;
+}
+
+.size-xl {
+  width: 550px;
+  height: 550px;
+}
+
+/* Circle Ring */
+.shape-circle-ring .ring-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px dashed var(--color-lemon-lime);
+  opacity: 0.6;
+}
+
+/* Floating animation for shapes */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+
+.animate-float {
+  animation: softFloat 7s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: softFloat 9s ease-in-out 2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed {
+    animation: none !important;
+  }
+}

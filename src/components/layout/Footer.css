@@ -1,8 +1,15 @@
 .zion-footer {
-  background-color: var(--color-surface-subtle);
-  border-top: 1px solid var(--color-border-subtle);
+  position: relative;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(13, 92, 238, 0.05) 50%, rgba(137, 203, 50, 0.08) 100%);
+  border-top: 2px solid var(--color-border-azure);
   padding-top: var(--space-80);
   padding-bottom: var(--space-32);
+  overflow: hidden;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 2;
 }
 
 .footer-top-grid {
@@ -25,14 +32,14 @@
 }
 
 .footer-logo-img {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
 }
 
 .footer-brand-title {
   display: block;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 900;
   letter-spacing: 0.05em;
   color: var(--color-royal-azure);
@@ -49,8 +56,8 @@
 
 .footer-tagline-text {
   font-size: 20px;
-  color: var(--color-black);
-  margin-top: 4px;
+  color: #1a4f21;
+  font-weight: 700;
 }
 
 .footer-bio {
@@ -63,13 +70,37 @@
   margin-top: 4px;
 }
 
+.footer-col-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-20, 20px);
+}
+
+.col-header-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-azure {
+  background-color: var(--color-royal-azure);
+}
+
+.dot-green {
+  background-color: var(--color-yellow-green);
+}
+
+.dot-lime {
+  background-color: #a4ba12;
+}
+
 .footer-heading {
   font-size: var(--font-size-body);
   font-weight: 800;
   color: var(--color-black);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: var(--space-20, 20px);
 }
 
 .footer-list {
@@ -83,11 +114,12 @@
   font-size: var(--font-size-small);
   color: var(--color-text-secondary);
   transition: color var(--transition-fast), padding-left var(--transition-fast);
+  font-weight: 600;
 }
 
 .footer-list a:hover {
   color: var(--color-royal-azure);
-  padding-left: 4px;
+  padding-left: 6px;
 }
 
 .footer-contact-col {
@@ -116,7 +148,7 @@
 
 .footer-phone-link {
   color: var(--color-black);
-  font-weight: 700;
+  font-weight: 800;
   font-size: var(--font-size-small);
 }
 
@@ -124,19 +156,31 @@
   color: var(--color-royal-azure);
 }
 
+/* Lemon-Lime Highlight Badge in Footer */
 .footer-hours-badge {
-  display: inline-block;
-  padding: 8px 14px;
-  background-color: var(--color-azure-tint);
-  border-radius: var(--radius-sm);
-  color: var(--color-royal-azure);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(213, 225, 81, 0.28) 0%, rgba(137, 203, 50, 0.2) 100%);
+  border: 1.5px solid rgba(213, 225, 81, 0.6);
+  border-radius: var(--radius-pill);
+  color: #274b09;
   font-size: var(--font-size-meta);
-  font-weight: 700;
+  font-weight: 800;
   margin-top: 8px;
+  width: fit-content;
+}
+
+.hours-badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-yellow-green);
+  border-radius: 50%;
 }
 
 .footer-bottom-bar {
-  border-top: 1px solid var(--color-border-subtle);
+  border-top: 1.5px solid var(--color-border-subtle);
   padding-top: var(--space-32);
   display: flex;
   align-items: center;
@@ -150,13 +194,15 @@
   color: var(--color-text-muted);
 }
 
-.footer-bottom-meta {
-  font-size: var(--font-size-meta);
-  color: var(--color-text-muted);
-  font-weight: 600;
+.meta-society-pill {
+  font-size: 14px;
+  color: #274b09;
+  background-color: var(--color-white);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-green);
 }
 
-/* Responsive adjustments */
 @media (max-width: 1024px) {
   .footer-top-grid {
     grid-template-columns: 1fr 1fr;

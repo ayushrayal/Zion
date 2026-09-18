@@ -2,6 +2,7 @@ import React from 'react';
 import SectionWrapper from '../layout/SectionWrapper';
 import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
+import BrandShape from '../ui/BrandShape';
 import './TestimonialsSection.css';
 
 export default function TestimonialsSection() {
@@ -9,25 +10,36 @@ export default function TestimonialsSection() {
     {
       id: 'story-1',
       domain: 'Speech & Language Journey',
+      theme: 'theme-card-blue',
+      badgeColor: 'azure',
       note: 'Reserved for Authentic Parent Story',
       description: 'Documenting real experiences of children discovering functional communication, speech clarity, and confidence through individualised therapy.'
     },
     {
       id: 'story-2',
       domain: 'Early Intervention & Inclusive Learning',
+      theme: 'theme-card-green',
+      badgeColor: 'green',
       note: 'Reserved for Authentic Parent Story',
       description: 'Documenting milestones in sensory regulation, social engagement, and smooth transition into inclusive preschool settings.'
     },
     {
       id: 'story-3',
       domain: 'Occupational Therapy & Family Support',
+      theme: 'theme-card-lime',
+      badgeColor: 'lime',
       note: 'Reserved for Authentic Parent Story',
       description: 'Documenting practical independence, motor skills development, and collaborative parent guidance in everyday routines.'
     }
   ];
 
   return (
-    <SectionWrapper id="testimonials" background="subtle" padding="default">
+    <SectionWrapper id="testimonials" background="white" padding="default">
+      {/* Decorative Organic Shapes */}
+      <BrandShape type="blob-lime" size="md" style={{ top: 20, left: -50, opacity: 0.35 }} className="animate-float" />
+      <BrandShape type="blob-azure" size="lg" style={{ bottom: -60, right: -50, opacity: 0.3 }} className="animate-float-delayed" />
+      <BrandShape type="circle-ring" style={{ top: 40, right: '8%' }} />
+
       <Container>
         <SectionHeading
           eyebrow="Parent &amp; Family Voices"
@@ -39,7 +51,7 @@ export default function TestimonialsSection() {
 
         <div className="testimonials-grid">
           {placeholderCards.map((card) => (
-            <div key={card.id} className="testimonial-card hover-lift">
+            <div key={card.id} className={`testimonial-card ${card.theme} hover-lift`}>
               <div className="testimonial-card-badge">
                 <span className="badge-dot" />
                 <span>{card.domain}</span>
@@ -52,15 +64,15 @@ export default function TestimonialsSection() {
               </p>
 
               <div className="testimonial-footer-meta">
-                <div className="avatar-placeholder">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <div className={`avatar-placeholder avatar-${card.badgeColor}`}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                     <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
                     <circle cx="12" cy="7" r="4"/>
                   </svg>
                 </div>
                 <div className="meta-identity">
                   <strong className="identity-title">{card.note}</strong>
-                  <span className="identity-sub">ZION Family Community</span>
+                  <span className="identity-sub font-accent">ZION Family Community</span>
                 </div>
               </div>
             </div>
