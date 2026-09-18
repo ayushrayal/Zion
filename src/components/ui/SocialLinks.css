@@ -1,0 +1,25 @@
+.zion-social-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.social-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-white);
+  color: var(--color-royal-azure);
+  border: 1.5px solid var(--color-border-subtle);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.social-item:hover {
+  background-color: var(--color-royal-azure);
+  color: var(--color-white);
+  border-color: var(--color-royal-azure);
+  transform: translateY(-2px);
+}

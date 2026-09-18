@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Production Build Output
+dist/
+dist-ssr/
+
+# Operating System & Temporary Files
+.DS_Store
+Thumbs.db
+*.tmp
+*.dos
+docs
+
+# Environment and Local Configuration
+.env
+.env.local
+.env.*.local
+
+# Editor Directories
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

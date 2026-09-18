@@ -1,0 +1,45 @@
+.zion-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tag-sm {
+  padding: 6px 12px;
+  font-size: var(--font-size-meta);
+}
+
+.tag-md {
+  padding: 8px 16px;
+  font-size: var(--font-size-small);
+}
+
+.tag-azure {
+  background-color: var(--color-azure-tint);
+  color: var(--color-royal-azure);
+  border: 1px solid rgba(13, 92, 238, 0.2);
+}
+
+.tag-yellow-green {
+  background-color: var(--color-yellow-green-tint);
+  color: #4a7516;
+  border: 1px solid rgba(137, 203, 50, 0.3);
+}
+
+.tag-lemon-lime {
+  background-color: var(--color-lemon-lime-tint);
+  color: #555e0c;
+  border: 1px solid rgba(213, 225, 81, 0.4);
+}
+
+.tag-outline {
+  background-color: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-border-medium);
+}

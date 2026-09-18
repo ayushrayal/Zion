@@ -1,0 +1,35 @@
+.section-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.section-wrapper.padding-default {
+  padding-top: var(--space-96);
+  padding-bottom: var(--space-96);
+}
+
+.section-wrapper.padding-compact {
+  padding-top: var(--space-64);
+  padding-bottom: var(--space-64);
+}
+
+.section-wrapper.padding-none {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section-wrapper.bg-white {
+  background-color: var(--color-white);
+}
+
+.section-wrapper.bg-subtle {
+  background-color: var(--color-surface-subtle);
+}
+
+.section-wrapper.bg-azure-tint {
+  background-color: var(--color-azure-tint);
+}
+
+.section-wrapper.bg-lime-tint {
+  background-color: var(--color-lemon-lime-tint);
+}

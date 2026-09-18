@@ -1,0 +1,124 @@
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-32);
+}
+
+.service-card {
+  background-color: var(--color-surface-card);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-subtle);
+  position: relative;
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-20, 20px);
+}
+
+.service-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-azure-tint);
+  color: var(--color-royal-azure);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-badge {
+  font-size: var(--font-size-meta);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-royal-azure);
+  background-color: var(--color-azure-tint);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.service-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-black);
+  margin-bottom: var(--space-8);
+}
+
+.service-desc {
+  font-size: var(--font-size-small);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-20, 20px);
+}
+
+.service-items-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: var(--space-24);
+  flex: 1;
+}
+
+.service-item-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--font-size-small);
+  color: var(--color-black);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.service-check {
+  color: #558718;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.service-card-footer {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: var(--space-16);
+  margin-top: auto;
+}
+
+.service-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  color: var(--color-royal-azure);
+  transition: gap var(--transition-fast);
+}
+
+.service-cta-link:hover {
+  gap: 12px;
+  color: var(--color-azure-hover);
+}
+
+.cta-arrow {
+  font-size: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.service-cta-link:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: var(--space-24);
+  }
+}
