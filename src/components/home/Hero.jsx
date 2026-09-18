@@ -62,45 +62,53 @@ export default function Hero() {
 
   return (
     <section id="hero" className="zion-hero" ref={heroRef}>
-      {/* Decorative Organic Shapes in Brand Palette */}
+      {/* Playful Floating Shapes, Stars & Dots */}
+      <BrandShape type="blob-lime" size="xl" className="hero-blob-lime animate-float" />
+      <BrandShape type="blob-green" size="lg" className="hero-blob-green animate-float-delayed" />
       <BrandShape type="blob-azure" size="lg" className="hero-blob-azure animate-float" />
-      <BrandShape type="blob-green" size="md" className="hero-blob-green animate-float-delayed" />
-      <BrandShape type="blob-lime" size="lg" className="hero-blob-lime animate-float" />
-      <BrandShape type="dots" className="hero-dots-pattern" />
+      <BrandShape type="star" className="hero-star-1 animate-spin-slow" style={{ top: 70, left: '42%' }} />
+      <BrandShape type="star" className="hero-star-2 animate-spin-slow" color="var(--color-yellow-green)" style={{ bottom: 90, left: '6%' }} />
+      <BrandShape type="sparkle" className="hero-sparkle-1 animate-float" style={{ top: 120, right: '8%' }} />
+      <BrandShape type="sparkle" className="hero-sparkle-2 animate-float-delayed" color="var(--color-royal-azure)" style={{ bottom: 140, right: '45%' }} />
+      <BrandShape type="dots" className="hero-dots-pattern" color="var(--color-yellow-green)" />
+      <BrandShape type="wave" className="hero-wave-doodle" style={{ top: 20, right: '28%' }} />
       <BrandShape type="circle-ring" className="hero-ring-1 animate-float" />
-      <BrandShape type="circle-ring" className="hero-ring-2 animate-float-delayed" />
 
       <Container>
         <div className="hero-grid">
-          {/* Left Column: Headline, Tagline, Body & Colorful Service Pills */}
+          {/* Left Column: Headline & Child-Friendly Messaging */}
           <div className="hero-content">
             <div className="hero-eyebrow-chip">
               <span className="eyebrow-indicator" />
               <span className="eyebrow-text">ZION Educational &amp; Rehabilitation Society</span>
-              <span className="eyebrow-city">Dehradun</span>
+              <span className="eyebrow-badge-pill">Dehradun</span>
             </div>
 
             <h1 className="hero-headline" ref={headlineRef}>
               Learning, Growing &amp; Belonging,{' '}
               <span className="hero-headline-highlight">
                 One Milestone
-                <svg className="headline-underline-svg" viewBox="0 0 260 16" fill="none" aria-hidden="true">
-                  <path d="M2 12 Q 65 3, 130 9 T 258 8" stroke="var(--color-yellow-green)" strokeWidth="5" strokeLinecap="round" />
+                <svg className="headline-underline-svg" viewBox="0 0 280 18" fill="none" aria-hidden="true">
+                  <path d="M4 14 Q 70 2, 140 10 T 276 9" stroke="var(--color-yellow-green)" strokeWidth="6" strokeLinecap="round" />
                 </svg>
               </span> at a Time
             </h1>
 
-            <p className="hero-tagline-accent font-accent">
-              “Where Every Milestone Matters”
-            </p>
+            <div className="hero-tagline-wrap">
+              <span className="hero-tagline-star">★</span>
+              <p className="hero-tagline-accent font-accent">
+                “Where Every Milestone Matters”
+              </p>
+              <span className="hero-tagline-star">★</span>
+            </div>
 
             <p className="hero-description lead" ref={contentRef}>
               Empowering Communication. Nurturing Potential. Supporting Every Journey.
-              We provide ethical, evidence-informed, and compassionate multidisciplinary care
-              bringing therapy, early intervention, inclusive early education, and family partnership together.
+              We provide ethical, evidence-informed and compassionate multidisciplinary care
+              bringing therapy, early intervention, inclusive early preschool education, and family partnership together under one roof.
             </p>
 
-            {/* Service & Value Tags with Intentional Color Variations */}
+            {/* Child-Friendly Multi-Tone Service Pills */}
             <div className="hero-tags-wrapper" ref={tagsRef}>
               <Tag variant="azure" icon="💬">Speech &amp; Hearing</Tag>
               <Tag variant="yellow-green" icon="🌱">Early Intervention</Tag>
@@ -120,21 +128,21 @@ export default function Hero() {
             </div>
 
             <div className="hero-trust-indicator">
-              <span className="trust-pill font-accent">Compassionate Care</span>
+              <span className="trust-pill font-accent">Safe &amp; Inclusive</span>
               <span className="trust-text">
-                Speech Therapy • Audiology • Occupational Therapy • ZION Academy
+                Multidisciplinary Clinical Care • Inclusive Early Learning
               </span>
             </div>
           </div>
 
-          {/* Right Column: Colorful, Warm Visual Composition */}
+          {/* Right Column: Colorful, High-Energy Visual Composition */}
           <div className="hero-visual-column" ref={visualRef}>
             <div className="hero-card-composite">
-              {/* Colorful Multi-Layered Backdrops */}
-              <div className="composite-backdrop-lime" />
-              <div className="composite-backdrop-azure" />
+              {/* Playful Layered Under-Badges */}
+              <div className="composite-layer-lime" />
+              <div className="composite-layer-green" />
 
-              {/* Main Visual Emblem Header */}
+              {/* Top Emblem Bar */}
               <div className="composite-header-card">
                 <div className="composite-logo-wrap">
                   <img
@@ -142,14 +150,14 @@ export default function Hero() {
                     alt="ZION Official Emblem"
                     className="composite-logo-img"
                   />
-                  <div className="composite-logo-pulse" />
+                  <div className="composite-logo-ring" />
                 </div>
                 <div className="composite-header-text">
-                  <span className="composite-brand-title">ZION ECOSYSTEM</span>
-                  <p className="composite-brand-tagline font-accent">
+                  <span className="composite-brand-title font-accent">ZION SOCIETY</span>
+                  <p className="composite-brand-tagline">
                     Every Child Deserves to Be Heard
                   </p>
-                  <span className="composite-location-tag">Registered Society • Ajabpur, Dehradun</span>
+                  <span className="composite-location-tag">Ajabpur, Dehradun</span>
                 </div>
               </div>
 
@@ -163,11 +171,11 @@ export default function Hero() {
 
                 <div className="center-plate-content">
                   <div className="plate-mountain-badge">
-                    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
                     </svg>
                   </div>
-                  <h4 className="plate-title">Where Every Milestone Matters</h4>
+                  <h3 className="plate-title">Where Every Milestone Matters</h3>
                   <p className="plate-sub">
                     Multidisciplinary Therapy &amp; Inclusive Early Learning
                   </p>
@@ -181,10 +189,10 @@ export default function Hero() {
 
                 {/* Floating Highlight Card */}
                 <div className="floating-highlight-card">
-                  <div className="highlight-pill">Established April 2026</div>
+                  <div className="highlight-pill">Active Ecosystem</div>
                   <div className="highlight-body">
                     <strong>ZION Academy</strong>
-                    <span>Inclusive Early Learning &amp; Preschool</span>
+                    <span className="font-accent">Inclusive Early Learning &amp; Preschool</span>
                   </div>
                 </div>
               </div>

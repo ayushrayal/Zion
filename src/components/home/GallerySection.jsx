@@ -50,17 +50,18 @@ export default function GallerySection() {
       label: 'Family Partnership & Workshops',
       sublabel: 'Parents and professionals working collaboratively',
       badge: 'Parent Training',
-      theme: 'azure',
+      theme: 'green',
       className: 'col-span-2'
     }
   ];
 
   return (
-    <SectionWrapper id="gallery" background="azure" padding="default">
+    <SectionWrapper id="gallery" background="white" padding="default">
       {/* Decorative Organic Accents */}
-      <BrandShape type="blob-lime" size="lg" style={{ top: -60, right: -60, opacity: 0.35 }} className="animate-float" />
-      <BrandShape type="blob-green" size="md" style={{ bottom: -40, left: -40, opacity: 0.3 }} className="animate-float-delayed" />
-      <BrandShape type="dots" style={{ top: 40, left: '5%', opacity: 0.45 }} />
+      <BrandShape type="blob-lime" size="lg" style={{ top: -60, right: -60, opacity: 0.4 }} className="animate-float" />
+      <BrandShape type="blob-azure" size="md" style={{ bottom: -40, left: -40, opacity: 0.3 }} className="animate-float-delayed" />
+      <BrandShape type="star" color="var(--color-yellow-green)" style={{ top: 30, left: '8%' }} className="animate-spin-slow" />
+      <BrandShape type="dots" color="var(--color-lemon-lime)" style={{ bottom: 30, right: '6%', opacity: 0.7 }} />
 
       <Container>
         <SectionHeading

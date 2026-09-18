@@ -10,7 +10,7 @@ export default function TestimonialsSection() {
     {
       id: 'story-1',
       domain: 'Speech & Language Journey',
-      theme: 'theme-card-blue',
+      theme: 'theme-card-white',
       badgeColor: 'azure',
       note: 'Reserved for Authentic Parent Story',
       description: 'Documenting real experiences of children discovering functional communication, speech clarity, and confidence through individualised therapy.'
@@ -18,7 +18,7 @@ export default function TestimonialsSection() {
     {
       id: 'story-2',
       domain: 'Early Intervention & Inclusive Learning',
-      theme: 'theme-card-green',
+      theme: 'theme-card-white',
       badgeColor: 'green',
       note: 'Reserved for Authentic Parent Story',
       description: 'Documenting milestones in sensory regulation, social engagement, and smooth transition into inclusive preschool settings.'
@@ -26,7 +26,7 @@ export default function TestimonialsSection() {
     {
       id: 'story-3',
       domain: 'Occupational Therapy & Family Support',
-      theme: 'theme-card-lime',
+      theme: 'theme-card-white',
       badgeColor: 'lime',
       note: 'Reserved for Authentic Parent Story',
       description: 'Documenting practical independence, motor skills development, and collaborative parent guidance in everyday routines.'
@@ -34,11 +34,12 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <SectionWrapper id="testimonials" background="white" padding="default">
-      {/* Decorative Organic Shapes */}
-      <BrandShape type="blob-lime" size="md" style={{ top: 20, left: -50, opacity: 0.35 }} className="animate-float" />
-      <BrandShape type="blob-azure" size="lg" style={{ bottom: -60, right: -50, opacity: 0.3 }} className="animate-float-delayed" />
-      <BrandShape type="circle-ring" style={{ top: 40, right: '8%' }} />
+    <SectionWrapper id="testimonials" background="azure" padding="default">
+      {/* Decorative Organic Accents */}
+      <BrandShape type="blob-lime" size="xl" style={{ top: -100, right: -100, opacity: 0.3 }} className="animate-float" />
+      <BrandShape type="blob-green" size="lg" style={{ bottom: -80, left: -80, opacity: 0.35 }} className="animate-float-delayed" />
+      <BrandShape type="star" color="var(--color-lemon-lime)" style={{ top: 40, left: '10%' }} className="animate-spin-slow" />
+      <BrandShape type="sparkle" color="var(--color-white)" style={{ bottom: 50, right: '8%' }} />
 
       <Container>
         <SectionHeading
@@ -51,7 +52,7 @@ export default function TestimonialsSection() {
 
         <div className="testimonials-grid">
           {placeholderCards.map((card) => (
-            <div key={card.id} className={`testimonial-card ${card.theme} hover-lift`}>
+            <div key={card.id} className="testimonial-card hover-lift">
               <div className="testimonial-card-badge">
                 <span className="badge-dot" />
                 <span>{card.domain}</span>

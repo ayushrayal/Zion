@@ -8,11 +8,13 @@ import './EnvironmentSection.css';
 
 export default function EnvironmentSection() {
   return (
-    <SectionWrapper id="environment" background="white" padding="default">
-      {/* Decorative Organic Accents */}
-      <BrandShape type="blob-green" size="lg" style={{ top: -80, left: -60, opacity: 0.3 }} className="animate-float" />
-      <BrandShape type="blob-azure" size="md" style={{ bottom: -40, right: -40, opacity: 0.35 }} className="animate-float-delayed" />
-      <BrandShape type="arc" style={{ top: 30, right: '10%' }} />
+    <SectionWrapper id="environment" background="azure" padding="default">
+      {/* Playful Floating Shapes in White, Lime & Green */}
+      <BrandShape type="blob-lime" size="xl" style={{ top: -100, left: -100, opacity: 0.3 }} className="animate-float" />
+      <BrandShape type="blob-green" size="lg" style={{ bottom: -60, right: -60, opacity: 0.35 }} className="animate-float-delayed" />
+      <BrandShape type="star" color="var(--color-lemon-lime)" style={{ top: 50, right: '12%' }} className="animate-spin-slow" />
+      <BrandShape type="sparkle" color="var(--color-yellow-green)" style={{ bottom: 70, left: '8%' }} />
+      <BrandShape type="dots" color="rgba(255, 255, 255, 0.4)" style={{ top: 40, left: '5%' }} />
 
       <Container>
         <SectionHeading
@@ -24,14 +26,14 @@ export default function EnvironmentSection() {
         />
 
         <div className="environment-layout">
-          {/* Main Feature Visual Card with Blue Tint Block */}
+          {/* Main Feature Visual Card */}
           <div className="environment-feature-card hover-lift">
             <ImagePlaceholder
               aspectRatio="16/9"
               label="ZION Multidisciplinary Centre"
               sublabel="Dedicated Clinical &amp; Inclusive Spaces in Ajabpur, Dehradun"
               badge="Centre Facility"
-              theme="azure"
+              theme="lime"
             />
             <div className="feature-card-content">
               <div className="facility-pill-header">
@@ -45,7 +47,7 @@ export default function EnvironmentSection() {
             </div>
           </div>
 
-          {/* Two Supporting Feature Cards with Green & Lime Tints */}
+          {/* Two Supporting Feature Cards */}
           <div className="environment-secondary-grid">
             <div className="secondary-facility-card card-theme-green hover-lift">
               <ImagePlaceholder
@@ -73,7 +75,7 @@ export default function EnvironmentSection() {
                 label="Sensory &amp; Inclusive Learning Areas"
                 sublabel="Movement, Regulation &amp; Early Preschool"
                 badge="Active Play"
-                theme="lime"
+                theme="azure"
               />
               <div className="secondary-card-content">
                 <div className="facility-pill-header">

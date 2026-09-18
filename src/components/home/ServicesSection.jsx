@@ -92,11 +92,12 @@ export default function ServicesSection() {
   ];
 
   return (
-    <SectionWrapper id="services" background="lime" padding="default">
-      {/* Decorative Organic Accents */}
-      <BrandShape type="blob-azure" size="lg" style={{ top: -80, right: -40, opacity: 0.3 }} className="animate-float" />
-      <BrandShape type="blob-green" size="md" style={{ bottom: -30, left: -40, opacity: 0.35 }} className="animate-float-delayed" />
-      <BrandShape type="wave" style={{ top: 40, left: '8%', opacity: 0.5 }} />
+    <SectionWrapper id="services" background="green" padding="default">
+      {/* Decorative Brand Shapes */}
+      <BrandShape type="blob-lime" size="xl" style={{ top: -100, right: -100, opacity: 0.4 }} className="animate-float" />
+      <BrandShape type="blob-azure" size="lg" style={{ bottom: -60, left: -60, opacity: 0.25 }} className="animate-float-delayed" />
+      <BrandShape type="star" color="var(--color-white)" style={{ top: 40, left: '10%' }} className="animate-spin-slow" />
+      <BrandShape type="sparkle" color="var(--color-lemon-lime)" style={{ bottom: 60, right: '8%' }} />
 
       <Container>
         <SectionHeading

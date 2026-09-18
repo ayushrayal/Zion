@@ -71,16 +71,16 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about' },
-    { label: 'Founder', href: '#founder' },
-    { label: 'Services', href: '#services' },
-    { label: 'Environment', href: '#environment' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'School', href: '#school' },
-    { label: 'Therapy', href: '#therapy' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Home', href: '#hero', color: 'azure' },
+    { label: 'About', href: '#about', color: 'lime' },
+    { label: 'Founder', href: '#founder', color: 'green' },
+    { label: 'Services', href: '#services', color: 'azure' },
+    { label: 'Environment', href: '#environment', color: 'lime' },
+    { label: 'Gallery', href: '#gallery', color: 'green' },
+    { label: 'Testimonials', href: '#testimonials', color: 'azure' },
+    { label: 'School', href: '#school', color: 'lime' },
+    { label: 'Therapy', href: '#therapy', color: 'green' },
+    { label: 'Contact', href: '#contact', color: 'azure' }
   ];
 
   const handleLinkClick = () => {
@@ -89,27 +89,39 @@ export default function Navbar() {
 
   return (
     <header className={`zion-navbar-header ${isScrolled ? 'is-scrolled' : ''}`}>
+      {/* Playful Top Color Ribbon */}
+      <div className="navbar-top-ribbon" aria-hidden="true">
+        <span className="ribbon-seg seg-azure" />
+        <span className="ribbon-seg seg-green" />
+        <span className="ribbon-seg seg-lime" />
+        <span className="ribbon-seg seg-azure" />
+      </div>
+
       <Container className="navbar-container">
-        {/* Brand Logo with Yellow-Green Dot */}
+        {/* Brand Logo with Colorful Badge */}
         <a href="#hero" className="navbar-brand" aria-label="ZION Educational & Rehabilitation Society">
           <div className="navbar-logo-badge">
             <img src="/zionlogo.PNG" alt="ZION Logo" className="navbar-logo-img" />
             <span className="logo-active-dot" title="Active Society Ecosystem" />
           </div>
           <div className="brand-text-lockup">
-            <span className="brand-name">ZION</span>
+            <div className="brand-title-row">
+              <span className="brand-name">ZION</span>
+              <span className="brand-leaf-tag">CARE</span>
+            </div>
             <span className="brand-society">Educational &amp; Rehabilitation Society</span>
           </div>
         </a>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links with Colorful Pill Hover */}
         <nav className="desktop-nav" aria-label="Main Navigation">
           <ul className="desktop-nav-list">
             {navLinks.map((link) => (
               <li key={link.label} className="nav-item">
-                <a href={link.href} className="nav-link">
-                  {link.label}
-                  <span className="nav-indicator-dot" />
+                <a href={link.href} className={`nav-link hover-pill-${link.color}`}>
+                  <span className={`link-dot dot-${link.color}`} />
+                  <span className="link-text">{link.label}</span>
+                  {link.badge && <span className="nav-badge-pill">{link.badge}</span>}
                 </a>
               </li>
             ))}
@@ -118,7 +130,7 @@ export default function Navbar() {
 
         {/* Navbar Right Action CTA */}
         <div className="navbar-action">
-          <Button href="#contact" variant="primary" size="sm">
+          <Button href="#contact" variant="primary" size="sm" className="navbar-cta-btn">
             Book Consultation
           </Button>
 
@@ -175,11 +187,12 @@ export default function Navbar() {
                 <li key={link.label} className="mobile-nav-item">
                   <a
                     href={link.href}
-                    className="mobile-nav-link"
+                    className={`mobile-nav-link link-color-${link.color}`}
                     onClick={handleLinkClick}
                   >
-                    <span className="mobile-nav-bullet" />
+                    <span className={`mobile-nav-bullet bullet-${link.color}`} />
                     <span>{link.label}</span>
+                    {link.badge && <span className="mobile-badge-chip">{link.badge}</span>}
                   </a>
                 </li>
               ))}

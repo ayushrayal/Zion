@@ -9,9 +9,11 @@ export default function Footer() {
 
   return (
     <footer className="zion-footer" role="contentinfo">
-      {/* Decorative Organic Shapes */}
-      <BrandShape type="blob-lime" size="lg" style={{ top: -40, right: -40, opacity: 0.25 }} />
-      <BrandShape type="blob-azure" size="lg" style={{ bottom: -60, left: -40, opacity: 0.2 }} />
+      {/* Decorative Organic Shapes in Brand Palette */}
+      <BrandShape type="blob-lime" size="lg" style={{ top: -60, right: -40, opacity: 0.2 }} />
+      <BrandShape type="blob-azure" size="lg" style={{ bottom: -60, left: -40, opacity: 0.25 }} />
+      <BrandShape type="star" color="var(--color-yellow-green)" style={{ top: 30, right: '15%' }} className="animate-spin-slow" />
+      <BrandShape type="dots" color="rgba(213, 225, 81, 0.3)" style={{ bottom: 40, right: '6%' }} />
 
       <Container className="footer-container">
         <div className="footer-top-grid">

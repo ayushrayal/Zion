@@ -19,20 +19,20 @@
 }
 
 .about-quote-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(213, 225, 81, 0.16) 100%);
-  border-left: 5px solid var(--color-yellow-green);
+  background-color: var(--color-white);
+  border-left: 6px solid var(--color-yellow-green);
   padding: var(--space-20, 20px);
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--color-border-subtle);
-  border-left-width: 5px;
-  box-shadow: var(--shadow-card-green);
+  border: 2px solid var(--color-border-subtle);
+  border-left-width: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: flex-start;
   gap: 14px;
 }
 
 .quote-heart-icon {
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1;
 }
 
@@ -45,8 +45,8 @@
 
 .about-quote-author {
   font-size: var(--font-size-meta);
-  font-weight: 800;
-  color: #274b09;
+  font-weight: 900;
+  color: #1a4f21;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -61,8 +61,8 @@
   background-color: var(--color-white);
   padding: var(--space-24);
   border-radius: var(--radius-lg);
-  border: 1.5px solid var(--color-border-subtle);
-  box-shadow: var(--shadow-subtle);
+  border: 2px solid var(--color-border-subtle);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .about-lead-text {
@@ -78,13 +78,13 @@
 
 .principle-card {
   background-color: var(--color-white);
-  border: 1.5px solid var(--color-border-subtle);
+  border: 2px solid var(--color-border-subtle);
   padding: var(--space-20, 20px);
   border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
 .principle-card-top {
@@ -94,58 +94,58 @@
 }
 
 .principle-num {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 900;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-pill);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.principle-dot {
-  width: 6px;
-  height: 6px;
+.principle-pill-dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
 }
 
 /* Color Accents for Principles */
 .card-accent-azure {
-  border-color: rgba(13, 92, 238, 0.2);
+  border-color: rgba(13, 92, 238, 0.25);
 }
 .card-accent-azure .principle-num {
   background-color: var(--color-azure-tint);
   color: var(--color-royal-azure);
 }
-.card-accent-azure .principle-dot {
+.card-accent-azure .principle-pill-dot {
   background-color: var(--color-royal-azure);
 }
 
 .card-accent-green {
-  border-color: rgba(137, 203, 50, 0.3);
+  border-color: rgba(137, 203, 50, 0.4);
 }
 .card-accent-green .principle-num {
   background-color: var(--color-yellow-green-tint);
-  color: #274b09;
+  color: #1a4f21;
 }
-.card-accent-green .principle-dot {
+.card-accent-green .principle-pill-dot {
   background-color: var(--color-yellow-green);
 }
 
 .card-accent-lime {
-  border-color: rgba(213, 225, 81, 0.45);
+  border-color: rgba(213, 225, 81, 0.6);
 }
 .card-accent-lime .principle-num {
-  background-color: var(--color-lemon-lime-tint);
-  color: #4b5405;
-}
-.card-accent-lime .principle-dot {
   background-color: var(--color-lemon-lime);
+  color: var(--color-black);
+}
+.card-accent-lime .principle-pill-dot {
+  background-color: #8c9e0a;
 }
 
 .principle-title {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--color-black);
 }

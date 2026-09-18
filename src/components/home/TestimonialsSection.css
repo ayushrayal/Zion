@@ -7,30 +7,15 @@
 }
 
 .testimonial-card {
+  background-color: var(--color-white);
   border-radius: var(--radius-xl);
   padding: var(--space-32);
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: var(--shadow-subtle);
-  border: 2px solid transparent;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  border: 3px solid rgba(255, 255, 255, 0.5);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-/* Card Themes */
-.theme-card-blue {
-  background: linear-gradient(145deg, #FFFFFF 50%, rgba(13, 92, 238, 0.08) 100%);
-  border-color: rgba(13, 92, 238, 0.22);
-}
-
-.theme-card-green {
-  background: linear-gradient(145deg, #FFFFFF 50%, rgba(137, 203, 50, 0.12) 100%);
-  border-color: rgba(137, 203, 50, 0.35);
-}
-
-.theme-card-lime {
-  background: linear-gradient(145deg, #FFFFFF 50%, rgba(213, 225, 81, 0.2) 100%);
-  border-color: rgba(213, 225, 81, 0.5);
 }
 
 .testimonial-card-badge {
@@ -41,13 +26,12 @@
   font-weight: 800;
   text-transform: uppercase;
   color: var(--color-royal-azure);
-  background-color: var(--color-white);
+  background-color: var(--color-azure-tint);
   padding: 6px 14px;
   border-radius: var(--radius-pill);
   width: fit-content;
   margin-bottom: var(--space-16);
-  border: 1px solid var(--color-border-subtle);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-border-azure);
 }
 
 .badge-dot {
@@ -58,12 +42,13 @@
 }
 
 .testimonial-quote-icon {
-  font-size: 42px;
+  font-size: 48px;
   line-height: 1;
-  color: var(--color-yellow-green);
+  color: var(--color-lemon-lime);
   font-family: Georgia, serif;
   margin-bottom: 6px;
-  opacity: 0.7;
+  opacity: 0.9;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .testimonial-placeholder-desc {
@@ -78,21 +63,21 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  border-top: 1.5px dashed var(--color-border-subtle);
+  border-top: 2px dashed var(--color-border-subtle);
   padding-top: var(--space-16);
   margin-top: auto;
 }
 
 .avatar-placeholder {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: var(--radius-pill);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1.5px solid var(--color-white);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid var(--color-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .avatar-azure {
@@ -106,8 +91,8 @@
 }
 
 .avatar-lime {
-  background-color: #9cb115;
-  color: var(--color-white);
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
 }
 
 .meta-identity {
@@ -118,11 +103,13 @@
 .identity-title {
   font-size: 14px;
   color: var(--color-black);
+  font-weight: 800;
 }
 
 .identity-sub {
-  font-size: 13px;
-  color: #274b09;
+  font-size: 13.5px;
+  color: #1a4f21;
+  font-weight: 700;
 }
 
 @media (max-width: 992px) {

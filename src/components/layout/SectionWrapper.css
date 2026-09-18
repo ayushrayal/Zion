@@ -22,30 +22,110 @@
 /* Background Color Rhythm Variants */
 .section-wrapper.bg-white {
   background-color: var(--color-white);
+  color: var(--color-text-primary);
 }
 
 .section-wrapper.bg-azure {
-  background-color: var(--bg-section-azure);
-}
-
-.section-wrapper.bg-lime {
-  background-color: var(--bg-section-lime);
+  background-color: var(--color-royal-azure);
+  color: var(--color-white);
 }
 
 .section-wrapper.bg-green {
-  background-color: var(--bg-section-green);
+  background-color: var(--color-yellow-green);
+  color: var(--color-black);
 }
 
-.section-wrapper.bg-warm {
-  background: var(--bg-section-warm);
+.section-wrapper.bg-lime {
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
 }
 
-.section-wrapper.bg-cool {
-  background: var(--bg-section-cool);
+.section-wrapper.bg-black {
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 .section-wrapper.bg-subtle {
   background-color: var(--color-surface-subtle);
+  color: var(--color-text-primary);
+}
+
+/* Contrast Overrides for Dark / Saturated Backgrounds */
+.section-wrapper.bg-azure h1,
+.section-wrapper.bg-azure h2,
+.section-wrapper.bg-azure h3,
+.section-wrapper.bg-azure .heading-title {
+  color: var(--color-white);
+}
+
+.section-wrapper.bg-azure p,
+.section-wrapper.bg-azure .heading-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section-wrapper.bg-azure .heading-tagline {
+  color: var(--color-lemon-lime);
+}
+
+.section-wrapper.bg-azure .heading-tagline.font-accent {
+  color: var(--color-lemon-lime);
+}
+
+.section-wrapper.bg-azure .heading-eyebrow-wrapper {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--color-white);
+}
+
+.section-wrapper.bg-azure .heading-eyebrow {
+  color: var(--color-white);
+}
+
+.section-wrapper.bg-azure .eyebrow-dot {
+  background-color: var(--color-lemon-lime);
+}
+
+/* On Green Background */
+.section-wrapper.bg-green .heading-eyebrow-wrapper {
+  background-color: var(--color-white);
+  border-color: var(--color-black);
+}
+.section-wrapper.bg-green .heading-tagline {
+  color: #124304;
+}
+
+/* On Lime Background */
+.section-wrapper.bg-lime .heading-eyebrow-wrapper {
+  background-color: var(--color-white);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.section-wrapper.bg-lime .heading-tagline {
+  color: #2b5608;
+}
+
+/* Wave Dividers */
+.section-wave-divider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.section-wave-divider svg {
+  width: 100%;
+  height: 100%;
+}
+
+.wave-top {
+  top: 0;
+  transform: translateY(-98%);
+}
+
+.wave-bottom {
+  bottom: 0;
+  transform: translateY(98%);
 }
 
 @media (max-width: 768px) {

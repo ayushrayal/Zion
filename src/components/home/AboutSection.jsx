@@ -36,11 +36,12 @@ export default function AboutSection() {
   ];
 
   return (
-    <SectionWrapper id="about" background="warm" padding="default">
-      {/* Organic Decorative Shapes */}
-      <BrandShape type="blob-lime" size="lg" style={{ top: -60, right: -80 }} className="animate-float" />
-      <BrandShape type="blob-green" size="md" style={{ bottom: -40, left: -60 }} className="animate-float-delayed" />
-      <BrandShape type="dots" style={{ bottom: 30, right: 40, opacity: 0.5 }} />
+    <SectionWrapper id="about" background="lime" padding="default">
+      {/* Playful Floating Shapes */}
+      <BrandShape type="blob-green" size="lg" style={{ top: -60, right: -60, opacity: 0.4 }} className="animate-float" />
+      <BrandShape type="blob-azure" size="md" style={{ bottom: -40, left: -40, opacity: 0.2 }} className="animate-float-delayed" />
+      <BrandShape type="star" color="var(--color-royal-azure)" style={{ top: 40, right: '12%' }} className="animate-spin-slow" />
+      <BrandShape type="dots" color="var(--color-yellow-green)" style={{ bottom: 30, right: 30, opacity: 0.6 }} />
 
       <Container>
         <SectionHeading
@@ -51,7 +52,7 @@ export default function AboutSection() {
         />
 
         <div className="about-grid">
-          {/* Visual Column with Rich Theme Card */}
+          {/* Visual Column */}
           <div className="about-visual-column">
             <div className="about-visual-card">
               <ImagePlaceholder
@@ -61,8 +62,8 @@ export default function AboutSection() {
                 badge="Established Oct 2021"
                 theme="green"
               />
-              <div className="about-quote-card">
-                <div className="quote-heart-icon">💚</div>
+              <div className="about-quote-card hover-lift">
+                <div className="quote-heart-icon">💛</div>
                 <div>
                   <p className="about-quote-text font-accent">
                     “We Look Beyond the Diagnosis. Every milestone matters!”
@@ -73,7 +74,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* 4 Pillars Column with Multi-Tone Cards */}
+          {/* 4 Pillars Column with Crisp White Cards on Lemon-Lime Section */}
           <div className="about-content-column">
             <div className="about-intro-box">
               <p className="about-lead-text lead">
@@ -86,7 +87,7 @@ export default function AboutSection() {
                 <div key={item.number} className={`principle-card card-accent-${item.color} hover-lift`}>
                   <div className="principle-card-top">
                     <span className="principle-num">{item.number}</span>
-                    <span className="principle-dot" />
+                    <span className="principle-pill-dot" />
                   </div>
                   <h4 className="principle-title">{item.title}</h4>
                   <p className="principle-desc">{item.description}</p>

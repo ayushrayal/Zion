@@ -32,8 +32,9 @@ export default function ContactSection() {
     <SectionWrapper id="contact" background="white" padding="default">
       {/* Decorative Organic Accents */}
       <BrandShape type="blob-lime" size="lg" style={{ top: -50, left: -60, opacity: 0.35 }} className="animate-float" />
-      <BrandShape type="blob-azure" size="md" style={{ bottom: -40, right: -40, opacity: 0.3 }} className="animate-float-delayed" />
-      <BrandShape type="circle-ring" style={{ top: 60, right: '6%' }} />
+      <BrandShape type="blob-azure" size="md" style={{ bottom: -40, right: -40, opacity: 0.25 }} className="animate-float-delayed" />
+      <BrandShape type="star" color="var(--color-yellow-green)" style={{ top: 50, right: '8%' }} className="animate-spin-slow" />
+      <BrandShape type="circle-ring" style={{ top: 70, left: '5%' }} />
 
       <Container>
         <SectionHeading
@@ -44,9 +45,9 @@ export default function ContactSection() {
         />
 
         <div className="contact-grid">
-          {/* Contact Details Card: Soft Blue Background with Green Accent Icons */}
+          {/* Contact Details Card: Vibrant Brand Card */}
           <div className="contact-info-col">
-            <div className="contact-details-box">
+            <div className="contact-details-box hover-lift">
               <div className="contact-card-header">
                 <span className="contact-header-badge font-accent">We are here to help</span>
                 <h3 className="contact-box-title">Get in Touch</h3>
@@ -107,7 +108,7 @@ export default function ContactSection() {
               </div>
 
               <div className="contact-social-prompt">
-                <span className="social-prompt-text font-accent">Connect directly via:</span>
+                <span className="social-prompt-text font-accent">Quick channels:</span>
                 <SocialLinks />
               </div>
             </div>
@@ -115,7 +116,7 @@ export default function ContactSection() {
 
           {/* Form Column */}
           <div className="contact-form-col">
-            <div className="form-wrapper-card">
+            <div className="form-wrapper-card hover-lift">
               {isSubmitted ? (
                 <div className="form-success-message" role="alert">
                   <div className="success-icon-check">✓</div>

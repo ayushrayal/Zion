@@ -21,7 +21,7 @@ export default function JourneySection() {
       subtitle: 'Occupational Therapy Introduced',
       description: 'Extending support to sensory integration, fine & gross motor development, functional daily living skills, and self-care.',
       nodeColor: 'green',
-      cardTheme: 'theme-card-lime-tint'
+      cardTheme: 'theme-card-azure-tint'
     },
     {
       year: '2025',
@@ -29,14 +29,14 @@ export default function JourneySection() {
       subtitle: 'Multidisciplinary Holistic Care',
       description: 'Bringing broader multidisciplinary services together under one roof, coordinating speech, movement, learning, and behaviour.',
       nodeColor: 'azure',
-      cardTheme: 'theme-card-green-tint'
+      cardTheme: 'theme-card-white'
     },
     {
       year: '2026',
       title: 'ZION Academy',
       subtitle: 'Inclusive Early Learning & Preschool',
       description: 'An inclusive preschool community where children with diverse abilities learn, play, build relationships, and belong alongside peers.',
-      nodeColor: 'lime',
+      nodeColor: 'green',
       cardTheme: 'theme-card-highlight',
       isHighlight: true
     },
@@ -45,17 +45,19 @@ export default function JourneySection() {
       title: 'A Growing Ecosystem',
       subtitle: 'Therapy • Education • Community',
       description: 'Extending beyond centre walls with parent training, teacher workshops, and school initiatives creating accepting communities.',
-      nodeColor: 'green',
-      cardTheme: 'theme-card-azure-tint'
+      nodeColor: 'azure',
+      cardTheme: 'theme-card-white'
     }
   ];
 
   return (
-    <SectionWrapper id="journey" background="cool" padding="default">
+    <SectionWrapper id="journey" background="lime" padding="default">
       {/* Decorative Brand Shapes */}
-      <BrandShape type="blob-lime" size="xl" style={{ top: -100, right: -100, opacity: 0.35 }} className="animate-float" />
-      <BrandShape type="blob-green" size="lg" style={{ bottom: -60, left: -60, opacity: 0.3 }} className="animate-float-delayed" />
-      <BrandShape type="wave" style={{ top: 50, right: '12%', opacity: 0.5 }} />
+      <BrandShape type="blob-green" size="xl" style={{ top: -100, right: -100, opacity: 0.4 }} className="animate-float" />
+      <BrandShape type="blob-azure" size="lg" style={{ bottom: -60, left: -60, opacity: 0.25 }} className="animate-float-delayed" />
+      <BrandShape type="star" color="var(--color-royal-azure)" style={{ top: 40, right: '14%' }} className="animate-spin-slow" />
+      <BrandShape type="sparkle" color="var(--color-black)" style={{ bottom: 60, right: '6%' }} />
+      <BrandShape type="dots" color="var(--color-yellow-green)" style={{ top: 40, left: '6%', opacity: 0.7 }} />
 
       <Container>
         <SectionHeading
@@ -92,7 +94,7 @@ export default function JourneySection() {
           </div>
         </div>
 
-        {/* Closing Ecosystem Callout with Colorful Gradients */}
+        {/* Closing Ecosystem Callout */}
         <div className="ecosystem-callout-box hover-lift">
           <div className="callout-pill font-accent">The ZION Promise</div>
           <p className="callout-text">
