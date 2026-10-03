@@ -2,7 +2,7 @@ import React from 'react';
 import SectionWrapper from '../layout/SectionWrapper';
 import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
-import ImagePlaceholder from '../ui/ImagePlaceholder';
+import anjaliImg from '../../assets/Team/Anjali.png';
 import BrandShape from '../ui/BrandShape';
 import './FounderSection.css';
 
@@ -41,7 +41,7 @@ export default function FounderSection() {
             <div className="founder-name-badge">
               <div className="founder-title-tag">
                 <span className="founder-dot" />
-                <span>Founder &amp; Director | ZION</span>
+                <span>Founder &amp; Director, ZION</span>
               </div>
               <h3 className="founder-name">Anjali Subramanium</h3>
             </div>
@@ -87,13 +87,18 @@ export default function FounderSection() {
               <div className="frame-organic-azure" />
 
               <div className="founder-portrait-frame">
-                <ImagePlaceholder
-                  aspectRatio="4/5"
-                  label="Anjali Subramanium"
-                  sublabel="Founder / Director, ZION"
-                  badge="Clinical Director"
-                  theme="warm"
-                />
+                <div className="founder-photo-wrap">
+                  <img
+                    src={anjaliImg}
+                    alt="Anjali Subramanium - Founder & Director, ZION"
+                    className="founder-photo-img"
+                    loading="lazy"
+                  />
+                  <div className="founder-photo-badge">
+                    <span className="founder-photo-badge-dot" />
+                    <span>Founder &amp; Director, ZION</span>
+                  </div>
+                </div>
 
                 {/* Soft Yellow-Green/Lime Founder Vision Card */}
                 <div className="founder-quote-banner">

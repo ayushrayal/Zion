@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Hero from '../components/home/Hero';
 import AboutSection from '../components/home/AboutSection';
 import FounderSection from '../components/home/FounderSection';
+import CoFounderSection from '../components/home/CoFounderSection';
 import ServicesSection from '../components/home/ServicesSection';
 import EnvironmentSection from '../components/home/EnvironmentSection';
 import GallerySection from '../components/home/GallerySection';
@@ -51,6 +52,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <FounderSection />
+      <CoFounderSection />
       {/* Anchor targets for School & Therapy nav items */}
       <div id="school" style={{ scrollMarginTop: '90px' }} />
       <div id="therapy" style={{ scrollMarginTop: '90px' }} />

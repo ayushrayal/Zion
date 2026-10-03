@@ -197,6 +197,58 @@
   box-shadow: var(--shadow-card);
 }
 
+.founder-photo-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 4.8;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(180deg, #F0F5FF 0%, #E8F0FE 100%);
+  border: 1.5px solid var(--color-border-azure);
+}
+
+.founder-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.founder-photo-wrap:hover .founder-photo-img {
+  transform: scale(1.02);
+}
+
+.founder-photo-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.76);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: fit-content;
+}
+
+.founder-photo-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-yellow-green);
+  flex-shrink: 0;
+}
+
 .founder-quote-banner {
   margin-top: var(--space-16);
   padding: var(--space-16);
