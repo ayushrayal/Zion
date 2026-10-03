@@ -26,3 +26,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# Testing
+team-page-mobile.png
+team-page-verified.png
+team-page-final.png
+verify-page.js
+mobile-375.png
+mobile-320.png
+mobile-before-menu.png
+mobile-menu-open.png
+test-mobile-menu.js
+test-mobile-comprehensive.js

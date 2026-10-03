@@ -5,10 +5,15 @@
   font-family: var(--font-primary);
   font-weight: 700;
   border-radius: var(--radius-pill);
-  line-height: 1;
-  white-space: nowrap;
+  line-height: 1.25;
   user-select: none;
+  max-width: 100%;
+  box-sizing: border-box;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.zion-tag .tag-icon {
+  flex-shrink: 0;
 }
 
 .zion-tag:hover {

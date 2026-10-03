@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
-import gsap from 'gsap';
 import Container from './Container';
 import Button from '../ui/Button';
 import BrandShape from '../ui/BrandShape';
@@ -30,43 +30,18 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (!drawerRef.current || !backdropRef.current) return;
-
-    const ctx = gsap.context(() => {
-      menuTimelineRef.current = gsap.timeline({ paused: true })
-        .to(backdropRef.current, {
-          opacity: 1,
-          visibility: 'visible',
-          duration: 0.3,
-          ease: 'power2.out'
-        })
-        .fromTo(
-          drawerRef.current,
-          { x: '100%' },
-          { x: '0%', duration: 0.4, ease: 'power3.out' },
-          '-=0.2'
-        )
-        .fromTo(
-          '.mobile-nav-link',
-          { opacity: 0, x: 20 },
-          { opacity: 1, x: 0, stagger: 0.05, duration: 0.3, ease: 'power2.out' },
-          '-=0.2'
-        );
-    });
-
-    return () => ctx.revert();
-  }, []);
-
-  useEffect(() => {
-    if (!menuTimelineRef.current) return;
-
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
-      menuTimelineRef.current.play();
+      document.documentElement.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
-      menuTimelineRef.current.reverse();
+      document.documentElement.style.overflow = '';
     }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
   }, [isMobileMenuOpen]);
 
   useEffect(() => {
@@ -248,81 +223,92 @@ export default function Navbar() {
         </div>
       </Container>
 
-      {/* Mobile Drawer Backdrop */}
-      <div
-        ref={backdropRef}
-        className="mobile-backdrop"
-        onClick={() => setIsMobileMenuOpen(false)}
-        aria-hidden="true"
-      />
-
-      {/* Mobile Navigation Drawer with Brand Colors & Organic Shape */}
-      <div ref={drawerRef} className="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
-        <BrandShape type="blob-lime" size="md" style={{ top: -50, right: -50, opacity: 0.5 }} />
-        <BrandShape type="blob-azure" size="sm" style={{ bottom: 20, left: -40, opacity: 0.3 }} />
-
-        <div className="mobile-drawer-header">
-          <div className="drawer-brand">
-            <img src="/zionlogo.PNG" alt="ZION" className="drawer-logo-img" />
-            <div>
-              <span className="drawer-brand-text">ZION</span>
-              <span className="drawer-sub font-accent">Where Every Milestone Matters</span>
-            </div>
-          </div>
-          <button
-            type="button"
-            className="drawer-close-btn"
+      {/* Mobile Drawer Backdrop & Drawer Portalled Directly to Body */}
+      {typeof document !== 'undefined' && createPortal(
+        <>
+          <div
+            ref={backdropRef}
+            className={`mobile-backdrop ${isMobileMenuOpen ? 'is-open' : ''}`}
             onClick={() => setIsMobileMenuOpen(false)}
-            aria-label="Close menu"
+            aria-hidden={!isMobileMenuOpen}
+          />
+
+          <div
+            ref={drawerRef}
+            className={`mobile-drawer ${isMobileMenuOpen ? 'is-open' : ''}`}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile Navigation Menu"
+            aria-hidden={!isMobileMenuOpen}
           >
-            &times;
-          </button>
-        </div>
+            <BrandShape type="blob-lime" size="sm" style={{ top: -30, right: -30, opacity: 0.25 }} />
+            <BrandShape type="blob-azure" size="sm" style={{ bottom: 20, left: -30, opacity: 0.2 }} />
 
-        <div className="mobile-drawer-body">
-          <nav aria-label="Mobile Navigation">
-            <ul className="mobile-nav-list">
-              {navLinks.map((link) => {
-                const active = isLinkActive(link);
-                return (
-                  <li key={link.label} className="mobile-nav-item">
-                    <a
-                      href={link.path}
-                      className={`mobile-nav-link link-color-${link.color} ${active ? `is-active-mobile active-${link.color}` : ''}`}
-                      onClick={(e) => handleNavClick(e, link)}
-                      aria-current={active ? 'page' : undefined}
-                    >
-                      <span className={`mobile-nav-bullet bullet-${link.color}`} />
-                      <span>{link.label}</span>
-                      {link.badge && <span className={`mobile-badge-chip badge-${link.color}`}>{link.badge}</span>}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+            <div className="mobile-drawer-header">
+              <div className="drawer-brand">
+                <img src="/zionlogo.PNG" alt="ZION Logo" className="drawer-logo-img" />
+                <div>
+                  <span className="drawer-brand-text">ZION</span>
+                  <span className="drawer-sub font-accent">Where Every Milestone Matters</span>
+                </div>
+              </div>
+              <button
+                type="button"
+                className="drawer-close-btn"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                &times;
+              </button>
+            </div>
 
-          <div className="mobile-drawer-footer">
-            <Button
-              href={getCtaLink()}
-              variant="primary"
-              size="md"
-              style={{ width: '100%' }}
-              onClick={handleCtaClick}
-            >
-              {getCtaText()}
-            </Button>
-            <div className="mobile-contact-meta">
-              <a href="tel:+919286068945" className="mobile-phone-link">
-                📞 +91 92860 68945
-              </a>
-              <span className="mobile-location-meta">
-                📍 47, Ekta Colony, Ajabpur, Dehradun
-              </span>
+            <div className="mobile-drawer-body">
+              <nav aria-label="Mobile Navigation">
+                <ul className="mobile-nav-list">
+                  {navLinks.map((link) => {
+                    const active = isLinkActive(link);
+                    return (
+                      <li key={link.label} className="mobile-nav-item">
+                        <a
+                          href={link.path}
+                          className={`mobile-nav-link link-color-${link.color} ${active ? `is-active-mobile active-${link.color}` : ''}`}
+                          onClick={(e) => handleNavClick(e, link)}
+                          aria-current={active ? 'page' : undefined}
+                        >
+                          <span className={`mobile-nav-bullet bullet-${link.color}`} />
+                          <span>{link.label}</span>
+                          {link.badge && <span className={`mobile-badge-chip badge-${link.color}`}>{link.badge}</span>}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+
+              <div className="mobile-drawer-footer">
+                <Button
+                  href={getCtaLink()}
+                  variant="primary"
+                  size="md"
+                  style={{ width: '100%' }}
+                  onClick={handleCtaClick}
+                >
+                  {getCtaText()}
+                </Button>
+                <div className="mobile-contact-meta">
+                  <a href="tel:+919286068945" className="mobile-phone-link">
+                    📞 +91 92860 68945
+                  </a>
+                  <span className="mobile-location-meta">
+                    📍 47, Ekta Colony, Ajabpur, Dehradun
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </>,
+        document.body
+      )}
     </header>
   );
 }
