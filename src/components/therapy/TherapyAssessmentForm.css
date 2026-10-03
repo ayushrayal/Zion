@@ -1,0 +1,322 @@
+/* ==========================================================================
+   TherapyAssessmentForm.css - Therapy Assessment Form Section
+   Strict 5-Color Palette: #89CB32, #D5E151, #0D5CEE, #FFFFFF, #000000
+   ========================================================================== */
+
+.assessment-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(28px, 3.5vw, 48px);
+  align-items: start;
+  margin-top: clamp(24px, 3vw, 40px);
+}
+
+/* Left Column: Assessment Guide */
+.assessment-guide-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 3vw, 36px);
+  border: 2px solid rgba(13, 92, 238, 0.16);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.guide-badge {
+  font-size: 0.85rem;
+  color: var(--color-royal-azure);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.guide-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 20px 0;
+}
+
+.pathway-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.pathway-step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.step-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.step-azure {
+  background-color: var(--color-royal-azure);
+  color: #FFFFFF;
+}
+
+.step-green {
+  background-color: var(--color-yellow-green);
+  color: var(--color-black);
+}
+
+.step-lime {
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
+}
+
+.step-heading {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 4px 0;
+}
+
+.step-desc {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.72);
+  margin: 0;
+}
+
+.assessment-quick-contact {
+  background-color: rgba(13, 92, 238, 0.06);
+  border: 1px solid rgba(13, 92, 238, 0.16);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+}
+
+.quick-label {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--color-royal-azure);
+  margin-bottom: 6px;
+}
+
+.quick-numbers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.quick-phone {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-royal-azure);
+  text-decoration: none;
+}
+
+.quick-phone:hover {
+  text-decoration: underline;
+}
+
+.quick-sep {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.quick-hours {
+  font-size: 0.78rem;
+  color: rgba(0, 0, 0, 0.65);
+  margin: 0;
+}
+
+/* Right Column: Form Card */
+.form-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 3vw, 36px);
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+.form-top-lockup {
+  margin-bottom: 20px;
+}
+
+.form-chip {
+  display: inline-block;
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.form-main-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 6px 0;
+}
+
+.form-main-sub {
+  font-size: 0.88rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+.therapy-enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+.req {
+  color: var(--color-royal-azure);
+}
+
+.field-input,
+.field-select,
+.field-textarea {
+  width: 100%;
+  font-family: var(--font-primary);
+  font-size: 0.92rem;
+  color: var(--color-black);
+  background-color: #FFFFFF;
+  border: 1.5px solid rgba(0, 0, 0, 0.16);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  box-sizing: border-box;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.field-input:focus,
+.field-select:focus,
+.field-textarea:focus {
+  outline: none;
+  border-color: var(--color-royal-azure);
+  box-shadow: 0 0 0 3px rgba(13, 92, 238, 0.18);
+}
+
+.field-input.has-error {
+  border-color: var(--color-royal-azure);
+  background-color: rgba(13, 92, 238, 0.04);
+}
+
+.error-text {
+  font-size: 0.75rem;
+  color: var(--color-royal-azure);
+  font-weight: 700;
+}
+
+.field-textarea {
+  resize: vertical;
+}
+
+.form-disclaimer {
+  font-size: 0.78rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin: 8px 0 0 0;
+}
+
+/* Feedback Success State */
+.form-feedback-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 10px;
+  gap: 14px;
+}
+
+.feedback-check-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-yellow-green);
+  color: var(--color-black);
+  font-size: 1.8rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(137, 203, 50, 0.35);
+}
+
+.feedback-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.feedback-lead {
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.feedback-notice-box {
+  background-color: rgba(13, 92, 238, 0.07);
+  border: 1px solid rgba(13, 92, 238, 0.2);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--color-black);
+}
+
+.notice-pin {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.feedback-notice-box a {
+  color: var(--color-royal-azure);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.feedback-notice-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .assessment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}

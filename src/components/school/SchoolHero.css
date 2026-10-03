@@ -1,0 +1,325 @@
+/* ==========================================================================
+   SchoolHero.css - Dedicated School Page Hero
+   Strict 5-Color Palette: #89CB32, #D5E151, #0D5CEE, #FFFFFF, #000000
+   ========================================================================== */
+
+.school-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(40px, 6vw, 80px);
+  padding-bottom: clamp(60px, 8vw, 100px);
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(213, 225, 81, 0.12) 40%, rgba(137, 203, 50, 0.05) 100%);
+}
+
+.s-shape-blob-lime {
+  top: -80px;
+  left: -80px;
+  opacity: 0.35;
+}
+
+.s-shape-blob-green {
+  bottom: -60px;
+  right: -80px;
+  opacity: 0.25;
+}
+
+.school-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
+}
+
+/* Left Column */
+.school-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  z-index: 2;
+}
+
+.school-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(213, 225, 81, 0.35);
+  border: 1.5px solid var(--color-lemon-lime);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+.school-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-yellow-green);
+}
+
+.school-eyebrow-label {
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: 0.02em;
+}
+
+.school-badge-year {
+  background-color: var(--color-royal-azure);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 1px 7px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.school-headline {
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 900;
+  line-height: 1.12;
+  color: var(--color-black);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.headline-school-accent {
+  position: relative;
+  display: inline-block;
+  color: var(--color-royal-azure);
+}
+
+.school-underline-svg {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  pointer-events: none;
+}
+
+.school-tagline-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.s-star {
+  color: var(--color-royal-azure);
+  font-size: 1rem;
+}
+
+.school-tagline {
+  font-size: clamp(17px, 1.8vw, 22px);
+  color: var(--color-black);
+  margin: 0;
+  font-weight: 700;
+}
+
+.school-lead {
+  color: rgba(0, 0, 0, 0.78);
+  margin: 0;
+  max-width: 620px;
+  line-height: 1.65;
+}
+
+.school-tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.school-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.school-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: rgba(137, 203, 50, 0.16);
+  border: 1px solid var(--color-yellow-green);
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-top: 4px;
+}
+
+.trust-leaf {
+  font-size: 1rem;
+}
+
+.school-trust-text {
+  font-size: 0.84rem;
+  color: var(--color-black);
+}
+
+/* Right Column: Visual Area */
+.school-hero-visual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.school-visual-card-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.school-bg-shape-azure {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13, 92, 238, 0.15);
+  border-radius: var(--radius-xl);
+  z-index: 0;
+  transform: rotate(-3deg);
+}
+
+.school-bg-shape-lime {
+  position: absolute;
+  bottom: -14px;
+  right: -14px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-lemon-lime);
+  border-radius: var(--radius-xl);
+  opacity: 0.6;
+  z-index: 0;
+  transform: rotate(2deg);
+}
+
+.school-main-visual {
+  position: relative;
+  z-index: 1;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.06);
+}
+
+.school-visual-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 12px 14px;
+  background-color: rgba(213, 225, 81, 0.22);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(213, 225, 81, 0.6);
+}
+
+.school-stat-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-highlight {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+.stat-sub {
+  font-size: 0.74rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.school-badge-heart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: #FFFFFF;
+  color: var(--color-black);
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 800;
+  border: 1.5px solid var(--color-yellow-green);
+}
+
+/* Cheerful Floating Callout */
+.school-floating-callout {
+  position: absolute;
+  bottom: -24px;
+  left: -12px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #FFFFFF;
+  border: 2px solid var(--color-lemon-lime);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.callout-sun-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.callout-strong {
+  display: block;
+  font-size: 0.84rem;
+  color: var(--color-black);
+  line-height: 1.2;
+}
+
+.callout-text {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--color-royal-azure);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .school-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .school-visual-card-wrap {
+    max-width: 540px;
+  }
+
+  .school-floating-callout {
+    bottom: -16px;
+    left: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .school-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .school-actions .zion-btn {
+    width: 100%;
+  }
+
+  .school-floating-callout {
+    position: static;
+    margin-top: 14px;
+    width: 100%;
+  }
+}

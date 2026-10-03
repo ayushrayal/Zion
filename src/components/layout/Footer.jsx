@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Container from './Container';
 import SocialLinks from '../ui/SocialLinks';
 import BrandShape from '../ui/BrandShape';
@@ -6,6 +7,21 @@ import './Footer.css';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleHashLink = (e, hash) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      const targetId = hash.replace('#', '');
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/' + hash);
+    }
+  };
 
   return (
     <footer className="zion-footer" role="contentinfo">
@@ -19,13 +35,13 @@ export default function Footer() {
         <div className="footer-top-grid">
           {/* Brand Column */}
           <div className="footer-brand-col">
-            <div className="footer-logo-lockup">
+            <Link to="/" className="footer-logo-lockup" aria-label="ZION Homepage">
               <img src="/zionlogo.PNG" alt="ZION Logo" className="footer-logo-img" />
               <div>
                 <span className="footer-brand-title">ZION</span>
                 <span className="footer-brand-subtitle">Educational &amp; Rehabilitation Society</span>
               </div>
-            </div>
+            </Link>
             <p className="footer-tagline-text font-accent">
               “Where Every Milestone Matters”
             </p>
@@ -44,14 +60,16 @@ export default function Footer() {
               <h4 className="footer-heading">Navigation</h4>
             </div>
             <ul className="footer-list">
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#about">About ZION</a></li>
-              <li><a href="#founder">Meet the Founder</a></li>
-              <li><a href="#services">Our Services</a></li>
-              <li><a href="#environment">Our Environment</a></li>
-              <li><a href="#gallery">Photo Gallery</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#journey">The ZION Journey</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><a href="#about" onClick={(e) => handleHashLink(e, '#about')}>About ZION</a></li>
+              <li><a href="#founder" onClick={(e) => handleHashLink(e, '#founder')}>Meet the Founder</a></li>
+              <li><Link to="/team">Meet Our Team</Link></li>
+              <li><Link to="/therapy">Therapy Programs</Link></li>
+              <li><Link to="/school">ZION Academy (School)</Link></li>
+              <li><a href="#environment" onClick={(e) => handleHashLink(e, '#environment')}>Our Environment</a></li>
+              <li><a href="#gallery" onClick={(e) => handleHashLink(e, '#gallery')}>Photo Gallery</a></li>
+              <li><a href="#testimonials" onClick={(e) => handleHashLink(e, '#testimonials')}>Testimonials</a></li>
+              <li><a href="#journey" onClick={(e) => handleHashLink(e, '#journey')}>The ZION Journey</a></li>
             </ul>
           </div>
 
@@ -59,15 +77,17 @@ export default function Footer() {
           <div className="footer-links-col">
             <div className="footer-col-header">
               <span className="col-header-dot dot-green" />
-              <h4 className="footer-heading">Programs</h4>
+              <h4 className="footer-heading">Programs &amp; Services</h4>
             </div>
             <ul className="footer-list">
-              <li><a href="#services">Speech &amp; Hearing Clinic</a></li>
-              <li><a href="#services">Early Intervention Centre</a></li>
-              <li><a href="#school">Inclusive Early Learning &amp; Preschool</a></li>
-              <li><a href="#therapy">Occupational Therapy</a></li>
-              <li><a href="#therapy">Behaviour Support &amp; Special Education</a></li>
-              <li><a href="#services">Family Guidance &amp; Training</a></li>
+              <li><Link to="/therapy">Speech &amp; Language Therapy</Link></li>
+              <li><Link to="/therapy">Audiology &amp; Hearing Rehabilitation</Link></li>
+              <li><Link to="/therapy">Occupational &amp; Sensory Integration</Link></li>
+              <li><Link to="/therapy">Positive Behaviour Support</Link></li>
+              <li><Link to="/therapy">Early Intervention Centre</Link></li>
+              <li><Link to="/school">ZION Academy Inclusive Preschool</Link></li>
+              <li><Link to="/school">School Readiness &amp; Transition</Link></li>
+              <li><a href="#contact" onClick={(e) => handleHashLink(e, '#contact')}>Consultation &amp; Assessment</a></li>
             </ul>
           </div>
 

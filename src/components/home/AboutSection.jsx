@@ -99,6 +99,9 @@ export default function AboutSection() {
               <Button href="#founder" variant="primary" size="md">
                 Meet the Founder
               </Button>
+              <Button href="/team" variant="outline-black" size="md">
+                Meet Our Team
+              </Button>
               <Button href="#services" variant="secondary" size="md">
                 View Our Services
               </Button>

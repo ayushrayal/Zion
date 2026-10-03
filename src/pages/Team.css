@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Team.css - Dedicated Team Page Styles
+   Strict 5-Color Brand Palette: #0D5CEE, #89CB32, #D5E151, #FFFFFF, #000000
+   ========================================================================== */
+
+.team-page {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+}
+
+/* Bottom CTA Banner */
+.team-cta-section {
+  position: relative;
+  background-color: #FFFFFF;
+  padding: clamp(50px, 7vw, 90px) 0 clamp(60px, 8vw, 100px);
+  overflow: hidden;
+}
+
+.team-cta-container {
+  position: relative;
+  z-index: 2;
+}
+
+.team-cta-card {
+  background: linear-gradient(135deg, rgba(13, 92, 238, 0.04) 0%, rgba(213, 225, 81, 0.12) 100%);
+  border: 2px solid var(--color-border-azure);
+  border-radius: var(--radius-xl);
+  padding: clamp(36px, 6vw, 64px) clamp(24px, 5vw, 56px);
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+}
+
+.team-cta-label-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-azure);
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-royal-azure);
+  margin-bottom: 20px;
+}
+
+.cta-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-royal-azure);
+}
+
+.team-cta-title {
+  font-family: var(--font-primary);
+  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+  font-weight: 800;
+  color: var(--color-black);
+  line-height: 1.2;
+  margin: 0 0 16px;
+  letter-spacing: -0.015em;
+}
+
+.team-cta-lead {
+  font-family: var(--font-primary);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 760px;
+  margin: 0 auto 32px;
+}
+
+.team-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 26px;
+  border-radius: 9999px;
+  font-family: var(--font-primary);
+  font-size: 0.94rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.cta-btn-primary {
+  background-color: var(--color-royal-azure);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(13, 92, 238, 0.28);
+}
+
+.cta-btn-primary:hover {
+  background-color: var(--color-azure-hover);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+  box-shadow: 0 10px 24px rgba(13, 92, 238, 0.35);
+}
+
+.cta-btn-secondary {
+  background-color: var(--color-yellow-green);
+  color: #000000;
+  box-shadow: 0 6px 18px rgba(137, 203, 50, 0.25);
+}
+
+.cta-btn-secondary:hover {
+  background-color: var(--color-yellow-green-hover);
+  transform: translateY(-2px);
+  color: #000000;
+}
+
+.cta-btn-outline {
+  background-color: #FFFFFF;
+  color: var(--color-black);
+  border: 1.5px solid var(--color-border-medium);
+}
+
+.cta-btn-outline:hover {
+  border-color: var(--color-royal-azure);
+  color: var(--color-royal-azure);
+  transform: translateY(-2px);
+  background-color: var(--color-azure-wash);
+}
+
+.team-cta-meta-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 20px;
+}
+
+@media (max-width: 640px) {
+  .team-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+
+  .team-cta-meta-info {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+}

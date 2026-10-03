@@ -64,9 +64,9 @@
   justify-content: space-between;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: clamp(12px, 1.6vw, 28px);
-  padding-right: clamp(12px, 1.6vw, 28px);
-  gap: clamp(8px, 1.2vw, 20px);
+  padding-left: clamp(14px, 1.8vw, 28px);
+  padding-right: clamp(14px, 1.8vw, 28px);
+  gap: 0;
 }
 
 /* ==========================================================================
@@ -85,8 +85,8 @@
 
 .navbar-logo-badge {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 12px;
   background-color: #ffffff;
   border: 2px solid var(--color-lemon-lime);
@@ -104,8 +104,8 @@
 }
 
 .navbar-logo-img {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
 }
 
@@ -134,7 +134,7 @@
 .brand-name {
   font-family: var(--font-primary);
   font-weight: 900;
-  font-size: 1.28rem;
+  font-size: 1.24rem;
   letter-spacing: 0.04em;
   color: var(--color-royal-azure);
   line-height: 1.05;
@@ -152,7 +152,7 @@
 }
 
 .brand-society {
-  font-size: 0.66rem;
+  font-size: 0.64rem;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.6);
   letter-spacing: 0.01em;
@@ -174,6 +174,8 @@
     min-width: 0;
     justify-content: center;
     align-items: center;
+    margin-left: clamp(10px, 1.2vw, 24px);
+    margin-right: clamp(16px, 2vw, 32px);
   }
 }
 
@@ -184,8 +186,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 100%;
-  gap: clamp(2px, 0.45vw, 8px);
+  gap: clamp(2px, 0.4vw, 6px);
+  flex-wrap: nowrap;
 }
 
 .nav-item {
@@ -195,10 +197,10 @@
 .nav-link {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 6px 9px;
+  gap: 4px;
+  padding: 5px 8px;
   border-radius: 20px;
-  font-size: 0.86rem;
+  font-size: 0.83rem;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.76);
   text-decoration: none;
@@ -220,7 +222,7 @@
 }
 
 .dot-lime {
-  background-color: #8da40e;
+  background-color: var(--color-lemon-lime);
 }
 
 .dot-green {
@@ -240,7 +242,7 @@
 
 .hover-pill-lime:hover {
   background-color: rgba(213, 225, 81, 0.32);
-  color: #4a5405;
+  color: var(--color-black);
 }
 
 .hover-pill-lime:hover .dot-lime {
@@ -250,12 +252,71 @@
 
 .hover-pill-green:hover {
   background-color: rgba(137, 203, 50, 0.16);
-  color: #4b7812;
+  color: var(--color-black);
 }
 
 .hover-pill-green:hover .dot-green {
   transform: scale(1.4);
   opacity: 1;
+}
+
+/* Active Nav Link Styles */
+.nav-link.is-active.active-azure {
+  background-color: rgba(13, 92, 238, 0.12);
+  color: var(--color-royal-azure);
+  box-shadow: inset 0 0 0 1.5px rgba(13, 92, 238, 0.35);
+}
+
+.nav-link.is-active.active-azure .dot-azure {
+  transform: scale(1.4);
+  opacity: 1;
+}
+
+.nav-link.is-active.active-lime {
+  background-color: rgba(213, 225, 81, 0.35);
+  color: var(--color-black);
+  box-shadow: inset 0 0 0 1.5px var(--color-lemon-lime);
+}
+
+.nav-link.is-active.active-lime .dot-lime {
+  transform: scale(1.4);
+  opacity: 1;
+}
+
+.nav-link.is-active.active-green {
+  background-color: rgba(137, 203, 50, 0.22);
+  color: var(--color-black);
+  box-shadow: inset 0 0 0 1.5px var(--color-yellow-green);
+}
+
+.nav-link.is-active.active-green .dot-green {
+  transform: scale(1.4);
+  opacity: 1;
+}
+
+.nav-badge-pill {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 1px 5px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  margin-left: 2px;
+}
+
+.badge-azure {
+  background-color: var(--color-royal-azure);
+  color: var(--color-white);
+}
+
+.badge-lime {
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
+}
+
+.badge-green {
+  background-color: var(--color-yellow-green);
+  color: var(--color-black);
 }
 
 /* ==========================================================================
@@ -267,6 +328,7 @@
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .navbar-cta-btn {
@@ -338,63 +400,71 @@
   .zion-navbar-header .navbar-container {
     padding-top: 12px;
     padding-bottom: 12px;
-    padding-left: 28px;
-    padding-right: 28px;
-    gap: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .desktop-nav {
+    margin-left: 20px;
+    margin-right: 32px;
   }
 
   .desktop-nav-list {
-    gap: clamp(4px, 0.7vw, 10px);
+    gap: clamp(3px, 0.4vw, 5px);
   }
 
   .nav-link {
-    font-size: 0.88rem;
-    padding: 6px 11px;
-    gap: 6px;
+    font-size: 0.83rem;
+    padding: 5px 8px;
+    gap: 4px;
   }
 
   .navbar-cta-btn {
-    padding: 9px 20px;
-    font-size: 0.88rem;
+    padding: 8px 16px;
+    font-size: 0.83rem;
   }
 }
 
-/* Desktop (1200px - 1439px) */
-@media (min-width: 1200px) and (max-width: 1439px) {
+/* Medium desktop (1280px - 1439px) - covers 1280px, 1366px */
+@media (min-width: 1280px) and (max-width: 1439px) {
   .zion-navbar-header .navbar-container {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 18px;
     padding-right: 18px;
-    gap: 12px;
   }
 
   .navbar-logo-badge {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
 
   .navbar-logo-img {
-    width: 27px;
-    height: 27px;
+    width: 25px;
+    height: 25px;
   }
 
   .brand-name {
-    font-size: 1.2rem;
+    font-size: 1.16rem;
   }
 
   .brand-society {
-    font-size: 0.62rem;
+    font-size: 0.58rem;
+  }
+
+  .desktop-nav {
+    margin-left: 14px;
+    margin-right: 26px;
   }
 
   .desktop-nav-list {
-    gap: 4px;
+    gap: 3px;
   }
 
   .nav-link {
-    font-size: 0.82rem;
-    padding: 5px 8px;
-    gap: 4px;
+    font-size: 0.77rem;
+    padding: 4.5px 6.5px;
+    gap: 3.5px;
   }
 
   .link-dot {
@@ -402,44 +472,53 @@
     height: 4px;
   }
 
+  .nav-badge-pill {
+    font-size: 0.52rem;
+    padding: 1px 3.5px;
+  }
+
   .navbar-cta-btn {
-    padding: 8px 14px;
-    font-size: 0.82rem;
+    padding: 7px 14px;
+    font-size: 0.79rem;
   }
 }
 
-/* Small desktop / laptop (1024px - 1199px) */
-@media (min-width: 1024px) and (max-width: 1199px) {
+/* Standard desktop / laptop (1100px - 1279px) - covers 1200px */
+@media (min-width: 1100px) and (max-width: 1279px) {
   .zion-navbar-header .navbar-container {
     padding-top: 8px;
     padding-bottom: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
-    gap: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   .navbar-logo-badge {
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
+    width: 33px;
+    height: 33px;
+    border-radius: 9px;
   }
 
   .navbar-logo-img {
-    width: 24px;
-    height: 24px;
+    width: 23px;
+    height: 23px;
   }
 
   .brand-name {
-    font-size: 1.1rem;
+    font-size: 1.08rem;
   }
 
   .brand-leaf-tag {
-    font-size: 0.58rem;
-    padding: 1px 4px;
+    font-size: 0.55rem;
+    padding: 1px 3px;
   }
 
   .brand-society {
-    font-size: 0.56rem;
+    font-size: 0.54rem;
+  }
+
+  .desktop-nav {
+    margin-left: 10px;
+    margin-right: 22px;
   }
 
   .desktop-nav-list {
@@ -447,8 +526,8 @@
   }
 
   .nav-link {
-    font-size: 0.77rem;
-    padding: 5px 6px;
+    font-size: 0.74rem;
+    padding: 4px 5px;
     gap: 3px;
   }
 
@@ -457,9 +536,78 @@
     height: 3.5px;
   }
 
+  .nav-badge-pill {
+    font-size: 0.50rem;
+    padding: 1px 3px;
+  }
+
   .navbar-cta-btn {
-    padding: 7px 11px;
-    font-size: 0.78rem;
+    padding: 6px 12px;
+    font-size: 0.76rem;
+  }
+}
+
+/* Small desktop / laptop (1024px - 1099px) */
+@media (min-width: 1024px) and (max-width: 1099px) {
+  .zion-navbar-header .navbar-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .navbar-logo-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+  }
+
+  .navbar-logo-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .brand-name {
+    font-size: 1.02rem;
+  }
+
+  .brand-leaf-tag {
+    font-size: 0.52rem;
+    padding: 1px 3px;
+  }
+
+  .brand-society {
+    font-size: 0.50rem;
+  }
+
+  .desktop-nav {
+    margin-left: 8px;
+    margin-right: 16px;
+  }
+
+  .desktop-nav-list {
+    gap: 1.5px;
+  }
+
+  .nav-link {
+    font-size: 0.70rem;
+    padding: 4px 4px;
+    gap: 2px;
+  }
+
+  .link-dot {
+    width: 3px;
+    height: 3px;
+  }
+
+  .nav-badge-pill {
+    font-size: 0.46rem;
+    padding: 0 3px;
+  }
+
+  .navbar-cta-btn {
+    padding: 5px 10px;
+    font-size: 0.72rem;
   }
 }
 
@@ -527,7 +675,7 @@
 .drawer-sub {
   display: block;
   font-size: 0.72rem;
-  color: #4b7812;
+  color: var(--color-royal-azure);
   margin-top: 2px;
 }
 
@@ -589,7 +737,7 @@
 }
 
 .bullet-lime {
-  background-color: #8da40e;
+  background-color: var(--color-lemon-lime);
 }
 
 .bullet-green {
@@ -597,23 +745,26 @@
 }
 
 .link-color-azure:hover,
-.link-color-azure:active {
-  background-color: rgba(13, 92, 238, 0.08);
+.link-color-azure:active,
+.mobile-nav-link.is-active-mobile.active-azure {
+  background-color: rgba(13, 92, 238, 0.1);
   color: var(--color-royal-azure);
   transform: translateX(4px);
 }
 
 .link-color-lime:hover,
-.link-color-lime:active {
+.link-color-lime:active,
+.mobile-nav-link.is-active-mobile.active-lime {
   background-color: rgba(213, 225, 81, 0.25);
-  color: #4a5405;
+  color: var(--color-black);
   transform: translateX(4px);
 }
 
 .link-color-green:hover,
-.link-color-green:active {
-  background-color: rgba(137, 203, 50, 0.12);
-  color: #4b7812;
+.link-color-green:active,
+.mobile-nav-link.is-active-mobile.active-green {
+  background-color: rgba(137, 203, 50, 0.15);
+  color: var(--color-black);
   transform: translateX(4px);
 }
 
@@ -622,7 +773,7 @@
   font-size: 0.65rem;
   font-weight: 800;
   background-color: var(--color-lemon-lime);
-  color: #2b3303;
+  color: var(--color-black);
   padding: 2px 8px;
   border-radius: 10px;
   text-transform: uppercase;

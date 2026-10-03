@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SectionWrapper from '../layout/SectionWrapper';
 import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
@@ -131,10 +132,22 @@ export default function ServicesSection() {
               </ul>
 
               <div className="service-card-footer">
-                <a href="#contact" className="service-cta-link">
-                  <span>Enquire for Assessment</span>
-                  <span className="cta-arrow">→</span>
-                </a>
+                {svc.id === 'therapy' ? (
+                  <Link to="/therapy" className="service-cta-link">
+                    <span>Explore Therapy Programs</span>
+                    <span className="cta-arrow">→</span>
+                  </Link>
+                ) : svc.id === 'education' ? (
+                  <Link to="/school" className="service-cta-link">
+                    <span>Explore ZION Academy</span>
+                    <span className="cta-arrow">→</span>
+                  </Link>
+                ) : (
+                  <a href="#contact" className="service-cta-link">
+                    <span>Enquire for Assessment</span>
+                    <span className="cta-arrow">→</span>
+                  </a>
+                )}
               </div>
             </div>
           ))}

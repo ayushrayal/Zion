@@ -1,0 +1,332 @@
+/* ==========================================================================
+   TherapyHero.css - Dedicated Therapy Page Hero
+   Strict 5-Color Palette: #89CB32, #D5E151, #0D5CEE, #FFFFFF, #000000
+   ========================================================================== */
+
+.therapy-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(40px, 6vw, 80px);
+  padding-bottom: clamp(60px, 8vw, 100px);
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(13, 92, 238, 0.04) 50%, #FFFFFF 100%);
+}
+
+.t-shape-blob-azure {
+  top: -80px;
+  right: -80px;
+  opacity: 0.18;
+}
+
+.t-shape-blob-lime {
+  bottom: -60px;
+  left: -80px;
+  opacity: 0.28;
+}
+
+.therapy-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
+}
+
+/* Left Column */
+.therapy-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  z-index: 2;
+}
+
+.therapy-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(13, 92, 238, 0.08);
+  border: 1.5px solid rgba(13, 92, 238, 0.2);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+.eyebrow-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-royal-azure);
+}
+
+.eyebrow-label {
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  color: var(--color-royal-azure);
+  letter-spacing: 0.02em;
+}
+
+.eyebrow-tag {
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 1px 7px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.therapy-headline {
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 900;
+  line-height: 1.12;
+  color: var(--color-black);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.headline-therapy-accent {
+  position: relative;
+  display: inline-block;
+  color: var(--color-royal-azure);
+  white-space: nowrap;
+}
+
+.therapy-underline-svg {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  pointer-events: none;
+}
+
+.therapy-tagline-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.t-star {
+  color: var(--color-yellow-green);
+  font-size: 1rem;
+}
+
+.therapy-tagline {
+  font-size: clamp(17px, 1.8vw, 22px);
+  color: var(--color-black);
+  margin: 0;
+  font-weight: 700;
+}
+
+.therapy-lead {
+  color: rgba(0, 0, 0, 0.78);
+  margin: 0;
+  max-width: 620px;
+  line-height: 1.65;
+}
+
+.therapy-tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.therapy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.therapy-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: rgba(213, 225, 81, 0.22);
+  border: 1px solid rgba(213, 225, 81, 0.6);
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-top: 4px;
+}
+
+.trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-yellow-green);
+}
+
+.trust-text {
+  font-size: 0.84rem;
+  color: var(--color-black);
+}
+
+/* Right Column: Visual Composition */
+.therapy-hero-visual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.therapy-visual-frame {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.visual-organic-lime {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-lemon-lime);
+  border-radius: var(--radius-xl);
+  opacity: 0.6;
+  z-index: 0;
+  transform: rotate(2deg);
+}
+
+.visual-organic-green {
+  position: absolute;
+  bottom: -14px;
+  left: -14px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-yellow-green);
+  border-radius: var(--radius-xl);
+  opacity: 0.35;
+  z-index: 0;
+  transform: rotate(-2deg);
+}
+
+.therapy-visual-card {
+  position: relative;
+  z-index: 1;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.06);
+}
+
+.therapy-visual-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 12px 14px;
+  background-color: rgba(13, 92, 238, 0.05);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(13, 92, 238, 0.12);
+}
+
+.visual-stat-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.visual-stat-pill strong {
+  font-size: 0.88rem;
+  color: var(--color-royal-azure);
+}
+
+.visual-stat-pill span {
+  font-size: 0.74rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.visual-badge-leaf {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+/* Floating Badge */
+.therapy-floating-badge {
+  position: absolute;
+  bottom: -24px;
+  right: -12px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #FFFFFF;
+  border: 2px solid var(--color-royal-azure);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(13, 92, 238, 0.2);
+}
+
+.badge-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(13, 92, 238, 0.12);
+  color: var(--color-royal-azure);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badge-title {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--color-black);
+  line-height: 1.2;
+}
+
+.badge-subtitle {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .therapy-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .therapy-visual-frame {
+    max-width: 540px;
+  }
+
+  .therapy-floating-badge {
+    bottom: -16px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .headline-therapy-accent {
+    white-space: normal;
+  }
+
+  .therapy-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .therapy-actions .zion-btn {
+    width: 100%;
+  }
+
+  .therapy-floating-badge {
+    position: static;
+    margin-top: 14px;
+    width: 100%;
+  }
+}

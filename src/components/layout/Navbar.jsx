@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import Container from './Container';
 import Button from '../ui/Button';
@@ -11,6 +12,14 @@ export default function Navbar() {
   const drawerRef = useRef(null);
   const backdropRef = useRef(null);
   const menuTimelineRef = useRef(null);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const isTherapyPage = location.pathname === '/therapy';
+  const isSchoolPage = location.pathname === '/school';
+  const isTeamPage = location.pathname === '/team';
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,25 +80,96 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { label: 'Home', href: '#hero', color: 'azure' },
-    { label: 'About', href: '#about', color: 'lime' },
-    { label: 'Founder', href: '#founder', color: 'green' },
-    { label: 'Services', href: '#services', color: 'azure' },
-    { label: 'Environment', href: '#environment', color: 'lime' },
-    { label: 'Gallery', href: '#gallery', color: 'green' },
-    { label: 'Testimonials', href: '#testimonials', color: 'azure' },
-    { label: 'School', href: '#school', color: 'lime' },
-    { label: 'Therapy', href: '#therapy', color: 'green' },
-    { label: 'Contact', href: '#contact', color: 'azure' }
+    { label: 'Home', path: '/', color: 'azure', isRoute: true },
+    { label: 'About', path: '/#about', color: 'lime', isHash: true },
+    { label: 'Founder', path: '/#founder', color: 'green', isHash: true },
+    { label: 'Services', path: '/#services', color: 'azure', isHash: true },
+    { label: 'Environment', path: '/#environment', color: 'lime', isHash: true },
+    { label: 'Gallery', path: '/#gallery', color: 'green', isHash: true },
+    { label: 'Testimonials', path: '/#testimonials', color: 'azure', isHash: true },
+    { label: 'School', path: '/school', color: 'lime', isRoute: true, badge: 'Academy' },
+    { label: 'Therapy', path: '/therapy', color: 'green', isRoute: true, badge: 'Clinical' },
+    { label: 'Team', path: '/team', color: 'azure', isRoute: true },
+    { label: 'Contact', path: '/#contact', color: 'azure', isHash: true }
   ];
 
-  const handleLinkClick = () => {
+  const handleNavClick = (e, item) => {
+    e.preventDefault();
     setIsMobileMenuOpen(false);
+
+    if (item.isRoute) {
+      if (item.path === '/' && isHomePage) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        navigate(item.path);
+      }
+      return;
+    }
+
+    // For hash items:
+    const hash = item.path.replace('/', '');
+    const targetId = hash.replace('#', '');
+
+    if (isHomePage) {
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.hash = hash;
+      }
+    } else {
+      // Navigate to homepage with hash
+      navigate(item.path);
+    }
+  };
+
+  const getCtaLink = () => {
+    if (isTherapyPage) return '#assessment-form';
+    if (isSchoolPage) return '#admission-form';
+    if (isTeamPage) return '#team-directory';
+    return '/#contact';
+  };
+
+  const handleCtaClick = (e) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    if (isTherapyPage) {
+      const el = document.getElementById('assessment-form');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else if (isSchoolPage) {
+      const el = document.getElementById('admission-form');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else if (isTeamPage) {
+      const el = document.getElementById('team-directory');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      if (isHomePage) {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/#contact');
+      }
+    }
+  };
+
+  const getCtaText = () => {
+    if (isTherapyPage) return 'Book Assessment';
+    if (isSchoolPage) return 'Enquire Admission';
+    if (isTeamPage) return 'Consult Specialists';
+    return 'Book Consultation';
+  };
+
+  const isLinkActive = (item) => {
+    if (item.label === 'Team' && isTeamPage) return true;
+    if (item.label === 'Therapy' && isTherapyPage) return true;
+    if (item.label === 'School' && isSchoolPage) return true;
+    if (item.label === 'Home' && isHomePage && !location.hash) return true;
+    return false;
   };
 
   return (
     <header className={`zion-navbar-header ${isScrolled ? 'is-scrolled' : ''}`}>
-      {/* Playful Top Color Ribbon */}
+      {/* Playful Top Color Ribbon strictly in Brand Palette */}
       <div className="navbar-top-ribbon" aria-hidden="true">
         <span className="ribbon-seg seg-azure" />
         <span className="ribbon-seg seg-green" />
@@ -99,7 +179,12 @@ export default function Navbar() {
 
       <Container className="navbar-container">
         {/* Brand Logo with Colorful Badge */}
-        <a href="#hero" className="navbar-brand" aria-label="ZION Educational & Rehabilitation Society">
+        <a
+          href="/"
+          className="navbar-brand"
+          onClick={(e) => handleNavClick(e, { label: 'Home', path: '/', isRoute: true })}
+          aria-label="ZION Educational & Rehabilitation Society"
+        >
           <div className="navbar-logo-badge">
             <img src="/zionlogo.PNG" alt="ZION Logo" className="navbar-logo-img" />
             <span className="logo-active-dot" title="Active Society Ecosystem" />
@@ -113,25 +198,39 @@ export default function Navbar() {
           </div>
         </a>
 
-        {/* Desktop Navigation Links with Colorful Pill Hover */}
+        {/* Desktop Navigation Links with Colorful Pill Hover & Active States */}
         <nav className="desktop-nav" aria-label="Main Navigation">
           <ul className="desktop-nav-list">
-            {navLinks.map((link) => (
-              <li key={link.label} className="nav-item">
-                <a href={link.href} className={`nav-link hover-pill-${link.color}`}>
-                  <span className={`link-dot dot-${link.color}`} />
-                  <span className="link-text">{link.label}</span>
-                  {link.badge && <span className="nav-badge-pill">{link.badge}</span>}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const active = isLinkActive(link);
+              return (
+                <li key={link.label} className="nav-item">
+                  <a
+                    href={link.path}
+                    className={`nav-link hover-pill-${link.color} ${active ? `is-active active-${link.color}` : ''}`}
+                    onClick={(e) => handleNavClick(e, link)}
+                    aria-current={active ? 'page' : undefined}
+                  >
+                    <span className={`link-dot dot-${link.color}`} />
+                    <span className="link-text">{link.label}</span>
+                    {link.badge && <span className={`nav-badge-pill badge-${link.color}`}>{link.badge}</span>}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
         {/* Navbar Right Action CTA */}
         <div className="navbar-action">
-          <Button href="#contact" variant="primary" size="sm" className="navbar-cta-btn">
-            Book Consultation
+          <Button
+            href={getCtaLink()}
+            onClick={handleCtaClick}
+            variant="primary"
+            size="sm"
+            className="navbar-cta-btn"
+          >
+            {getCtaText()}
           </Button>
 
           {/* Hamburger Toggle */}
@@ -183,31 +282,35 @@ export default function Navbar() {
         <div className="mobile-drawer-body">
           <nav aria-label="Mobile Navigation">
             <ul className="mobile-nav-list">
-              {navLinks.map((link) => (
-                <li key={link.label} className="mobile-nav-item">
-                  <a
-                    href={link.href}
-                    className={`mobile-nav-link link-color-${link.color}`}
-                    onClick={handleLinkClick}
-                  >
-                    <span className={`mobile-nav-bullet bullet-${link.color}`} />
-                    <span>{link.label}</span>
-                    {link.badge && <span className="mobile-badge-chip">{link.badge}</span>}
-                  </a>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const active = isLinkActive(link);
+                return (
+                  <li key={link.label} className="mobile-nav-item">
+                    <a
+                      href={link.path}
+                      className={`mobile-nav-link link-color-${link.color} ${active ? `is-active-mobile active-${link.color}` : ''}`}
+                      onClick={(e) => handleNavClick(e, link)}
+                      aria-current={active ? 'page' : undefined}
+                    >
+                      <span className={`mobile-nav-bullet bullet-${link.color}`} />
+                      <span>{link.label}</span>
+                      {link.badge && <span className={`mobile-badge-chip badge-${link.color}`}>{link.badge}</span>}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
           <div className="mobile-drawer-footer">
             <Button
-              href="#contact"
+              href={getCtaLink()}
               variant="primary"
               size="md"
               style={{ width: '100%' }}
-              onClick={handleLinkClick}
+              onClick={handleCtaClick}
             >
-              Book Consultation
+              {getCtaText()}
             </Button>
             <div className="mobile-contact-meta">
               <a href="tel:+919286068945" className="mobile-phone-link">

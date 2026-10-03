@@ -1,0 +1,323 @@
+/* ==========================================================================
+   SchoolAdmissionForm.css - School Admission Form Section
+   Strict 5-Color Palette: #89CB32, #D5E151, #0D5CEE, #FFFFFF, #000000
+   ========================================================================== */
+
+.school-admission-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(28px, 3.5vw, 48px);
+  align-items: start;
+  margin-top: clamp(24px, 3vw, 40px);
+}
+
+/* Left Column: Admission Guide */
+.admission-guide-box {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 3vw, 36px);
+  border: 2px solid rgba(213, 225, 81, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.admission-guide-pill {
+  font-size: 0.85rem;
+  color: var(--color-royal-azure);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.admission-guide-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 20px 0;
+}
+
+.enrolment-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.enrol-step-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.enrol-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.num-lime {
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
+}
+
+.num-green {
+  background-color: var(--color-yellow-green);
+  color: var(--color-black);
+}
+
+.num-azure {
+  background-color: var(--color-royal-azure);
+  color: #FFFFFF;
+}
+
+.enrol-step-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 4px 0;
+}
+
+.enrol-step-text {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.72);
+  margin: 0;
+}
+
+.admission-contact-card {
+  background-color: rgba(213, 225, 81, 0.22);
+  border: 1px solid rgba(213, 225, 81, 0.6);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+}
+
+.contact-card-sub {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--color-black);
+  margin-bottom: 6px;
+}
+
+.admissions-phone-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.admission-phone {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-royal-azure);
+  text-decoration: none;
+}
+
+.admission-phone:hover {
+  text-decoration: underline;
+}
+
+.phone-sep {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.admission-location {
+  font-size: 0.78rem;
+  color: rgba(0, 0, 0, 0.65);
+  margin: 0;
+}
+
+/* Right Column: Admission Form Card */
+.admission-form-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 3vw, 36px);
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+.form-heading-lockup {
+  margin-bottom: 20px;
+}
+
+.form-chip-lime {
+  display: inline-block;
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.form-title-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 6px 0;
+}
+
+.form-subtitle-text {
+  font-size: 0.88rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+.school-enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-fields-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field-label {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+.req-asterisk {
+  color: var(--color-royal-azure);
+}
+
+.form-field-input,
+.form-field-select,
+.form-field-textarea {
+  width: 100%;
+  font-family: var(--font-primary);
+  font-size: 0.92rem;
+  color: var(--color-black);
+  background-color: #FFFFFF;
+  border: 1.5px solid rgba(0, 0, 0, 0.16);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  box-sizing: border-box;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-field-input:focus,
+.form-field-select:focus,
+.form-field-textarea:focus {
+  outline: none;
+  border-color: var(--color-royal-azure);
+  box-shadow: 0 0 0 3px rgba(13, 92, 238, 0.18);
+}
+
+.form-field-input.has-error {
+  border-color: var(--color-royal-azure);
+  background-color: rgba(13, 92, 238, 0.04);
+}
+
+.field-error-msg {
+  font-size: 0.75rem;
+  color: var(--color-royal-azure);
+  font-weight: 700;
+}
+
+.form-field-textarea {
+  resize: vertical;
+}
+
+.form-terms-note {
+  font-size: 0.78rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin: 8px 0 0 0;
+}
+
+/* Feedback State */
+.admission-feedback-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 10px;
+  gap: 14px;
+}
+
+.admission-check-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-lemon-lime);
+  color: var(--color-black);
+  font-size: 1.8rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(213, 225, 81, 0.4);
+}
+
+.feedback-heading {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.feedback-summary {
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.admission-notice-box {
+  background-color: rgba(213, 225, 81, 0.2);
+  border: 1px solid rgba(213, 225, 81, 0.6);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--color-black);
+}
+
+.notice-star {
+  font-size: 1.2rem;
+  color: var(--color-royal-azure);
+  flex-shrink: 0;
+}
+
+.admission-notice-box a {
+  color: var(--color-royal-azure);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.admission-notice-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .school-admission-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-fields-row {
+    grid-template-columns: 1fr;
+  }
+}
