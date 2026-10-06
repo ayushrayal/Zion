@@ -5,6 +5,7 @@ import Button from '../ui/Button';
 import Tag from '../ui/Tag';
 import BrandShape from '../ui/BrandShape';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
+import { websiteImages } from '../../data/websiteImages';
 import './TherapyHero.css';
 
 export default function TherapyHero() {
@@ -160,6 +161,9 @@ export default function TherapyHero() {
 
               <div className="therapy-visual-card hover-lift">
                 <ImagePlaceholder
+                  src={websiteImages.therapy?.[0]?.src}
+                  alt={websiteImages.therapy?.[0]?.alt}
+                  objectPosition={websiteImages.therapy?.[0]?.objectPosition}
                   aspectRatio="4/3"
                   label="Multidisciplinary Therapy Clinic"
                   sublabel="Speech, Sensory &amp; Motor Clinical Suites in Dehradun"

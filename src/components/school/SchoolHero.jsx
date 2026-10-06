@@ -5,6 +5,7 @@ import Button from '../ui/Button';
 import Tag from '../ui/Tag';
 import BrandShape from '../ui/BrandShape';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
+import { websiteImages } from '../../data/websiteImages';
 import './SchoolHero.css';
 
 export default function SchoolHero() {
@@ -160,6 +161,9 @@ export default function SchoolHero() {
 
               <div className="school-main-visual hover-lift">
                 <ImagePlaceholder
+                  src={websiteImages.school?.[0]?.src}
+                  alt={websiteImages.school?.[0]?.alt}
+                  objectPosition={websiteImages.school?.[0]?.objectPosition}
                   aspectRatio="4/3"
                   label="ZION Academy Inclusive Classroom"
                   sublabel="Early Learning &amp; Preschool Community in Dehradun"

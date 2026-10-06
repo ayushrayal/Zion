@@ -4,51 +4,11 @@ import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
 import BrandShape from '../ui/BrandShape';
+import { websiteImages } from '../../data/websiteImages';
 import './SchoolGallery.css';
 
 export default function SchoolGallery() {
-  const schoolGalleryItems = [
-    {
-      id: 'feature-classroom',
-      aspectRatio: '16/10',
-      label: 'Inclusive Circle Time & Storytelling Hub',
-      sublabel: 'Interactive morning routines encouraging spoken expression and shared focus',
-      badge: 'Featured Classroom',
-      theme: 'lime'
-    },
-    {
-      id: 'support-art',
-      aspectRatio: '4/3',
-      label: 'Creative Art & Sensory Texture Play',
-      sublabel: 'Hands-on tactile activities building fine motor control and imagination',
-      badge: 'Creative Discovery',
-      theme: 'green'
-    },
-    {
-      id: 'support-motor',
-      aspectRatio: '4/3',
-      label: 'Indoor Gross Motor & Cooperative Play',
-      sublabel: 'Active movement challenges fostering balance, coordination, and peer fun',
-      badge: 'Movement & Play',
-      theme: 'azure'
-    },
-    {
-      id: 'support-literacy',
-      aspectRatio: '4/3',
-      label: 'Early Pre-Reading & Visual Schedules',
-      sublabel: 'Phonics flashcards, communication charts, and structured learning games',
-      badge: 'Early Literacy',
-      theme: 'warm'
-    },
-    {
-      id: 'support-friendship',
-      aspectRatio: '4/3',
-      label: 'Friendship & Milestone Celebrations',
-      sublabel: 'Celebrating everyday achievements and fostering natural peer empathy',
-      badge: 'Community & Joy',
-      theme: 'lime'
-    }
-  ];
+  const schoolGalleryItems = websiteImages.preschoolGallery || [];
 
   return (
     <SectionWrapper id="school-gallery" background="white" padding="default">
@@ -67,35 +27,45 @@ export default function SchoolGallery() {
           align="center"
         />
 
-        <div className="school-gallery-asymmetric-grid">
+        <div className="gallery-grid school-gallery-grid">
           {/* Large Featured Card on Left */}
-          <div className="school-gallery-featured hover-lift">
-            <div className="featured-inner-frame">
-              <ImagePlaceholder
-                aspectRatio="16/10"
-                label={schoolGalleryItems[0].label}
-                sublabel={schoolGalleryItems[0].sublabel}
-                badge={schoolGalleryItems[0].badge}
-                theme={schoolGalleryItems[0].theme}
-                className="school-feature-img"
-              />
-              <div className="school-feature-overlay-tag">
-                <span className="overlay-star font-accent">★</span>
-                <span>ZION Academy Inclusive Early Learning Classrooms</span>
+          {schoolGalleryItems[0] && (
+            <div className="featured-card school-gallery-featured hover-lift">
+              <div className="featured-inner-frame">
+                <ImagePlaceholder
+                  src={schoolGalleryItems[0].src}
+                  alt={schoolGalleryItems[0].alt}
+                  objectPosition={schoolGalleryItems[0].objectPosition}
+                  aspectRatio="16/10"
+                  label={schoolGalleryItems[0].label}
+                  sublabel={schoolGalleryItems[0].sublabel}
+                  badge={schoolGalleryItems[0].badge}
+                  theme={schoolGalleryItems[0].theme}
+                  className="school-feature-img"
+                  showCaption={false}
+                />
+                <div className="school-feature-overlay-tag">
+                  <span className="overlay-star font-accent">★</span>
+                  <span>ZION Academy Inclusive Early Learning Classrooms</span>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
-          {/* 4 Smaller Supporting Cards in 2x2 Grid */}
-          <div className="school-supporting-cards-grid">
+          {/* 4 Smaller Supporting Cards in Independent Side Grid */}
+          <div className="gallery-side-grid">
             {schoolGalleryItems.slice(1).map((item) => (
-              <div key={item.id} className="school-gallery-card hover-lift">
+              <div key={item.id} className="small-card school-gallery-card hover-lift">
                 <ImagePlaceholder
-                  aspectRatio="4/3"
+                  src={item.src}
+                  alt={item.alt}
+                  objectPosition={item.objectPosition}
+                  aspectRatio="1.3/1"
                   label={item.label}
                   sublabel={item.sublabel}
                   badge={item.badge}
                   theme={item.theme}
+                  showCaption={true}
                 />
               </div>
             ))}

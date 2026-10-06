@@ -5,6 +5,7 @@ import SectionHeading from '../ui/SectionHeading';
 import Button from '../ui/Button';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
 import BrandShape from '../ui/BrandShape';
+import { websiteImages } from '../../data/websiteImages';
 import './AboutSection.css';
 
 export default function AboutSection() {
@@ -56,10 +57,13 @@ export default function AboutSection() {
           <div className="about-visual-column">
             <div className="about-visual-card">
               <ImagePlaceholder
+                src={websiteImages.about.src}
+                alt={websiteImages.about.alt}
+                objectPosition={websiteImages.about.objectPosition}
                 aspectRatio="4/3"
-                label="ZION Care &amp; Learning Space"
-                sublabel="Multidisciplinary Intervention in Ajabpur, Dehradun"
-                badge="Established Oct 2021"
+                label={websiteImages.about.title}
+                sublabel={websiteImages.about.sublabel}
+                badge={websiteImages.about.badge}
                 theme="green"
               />
               <div className="about-quote-card hover-lift">

@@ -4,56 +4,11 @@ import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
 import BrandShape from '../ui/BrandShape';
+import { websiteImages } from '../../data/websiteImages';
 import './GallerySection.css';
 
 export default function GallerySection() {
-  const galleryItems = [
-    {
-      id: 'item-1',
-      aspectRatio: '16/9',
-      label: 'Early Intervention Activities',
-      sublabel: 'Play-based communication and sensory exploration',
-      badge: 'Therapy & Play',
-      theme: 'azure',
-      className: 'col-span-2'
-    },
-    {
-      id: 'item-2',
-      aspectRatio: '3/4',
-      label: 'Individualised Support',
-      sublabel: 'One-on-one speech and audiology guidance',
-      badge: 'Individual Care',
-      theme: 'green',
-      className: 'row-span-2'
-    },
-    {
-      id: 'item-3',
-      aspectRatio: '4/3',
-      label: 'Inclusive Preschool Learning',
-      sublabel: 'ZION Academy collaborative classroom environment',
-      badge: 'Early Learning',
-      theme: 'lime',
-      className: ''
-    },
-    {
-      id: 'item-4',
-      aspectRatio: '1/1',
-      label: 'Sensory Motor Development',
-      sublabel: 'Fine and gross motor coordination exercises',
-      badge: 'Motor Skills',
-      theme: 'warm',
-      className: ''
-    },
-    {
-      id: 'item-5',
-      aspectRatio: '16/9',
-      label: 'Family Partnership & Workshops',
-      sublabel: 'Parents and professionals working collaboratively',
-      badge: 'Parent Training',
-      theme: 'green',
-      className: 'col-span-2'
-    }
-  ];
+  const galleryItems = websiteImages.gallery;
 
   return (
     <SectionWrapper id="gallery" background="white" padding="default">
@@ -76,11 +31,15 @@ export default function GallerySection() {
           {galleryItems.map((item) => (
             <div key={item.id} className={`gallery-item-wrapper hover-lift ${item.className}`}>
               <ImagePlaceholder
+                src={item.src}
+                alt={item.alt}
+                objectPosition={item.objectPosition}
                 aspectRatio={item.aspectRatio}
                 label={item.label}
                 sublabel={item.sublabel}
                 badge={item.badge}
                 theme={item.theme}
+                showCaption={true}
               />
             </div>
           ))}

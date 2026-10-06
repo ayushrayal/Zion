@@ -4,6 +4,7 @@ import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
 import BrandShape from '../ui/BrandShape';
+import { websiteImages } from '../../data/websiteImages';
 import './EnvironmentSection.css';
 
 export default function EnvironmentSection() {
@@ -29,10 +30,11 @@ export default function EnvironmentSection() {
           {/* Main Feature Visual Card */}
           <div className="environment-feature-card hover-lift">
             <ImagePlaceholder
+              src={websiteImages.environment[0].src}
+              alt={websiteImages.environment[0].alt}
+              objectPosition={websiteImages.environment[0].objectPosition}
               aspectRatio="16/9"
-              label="ZION Multidisciplinary Centre"
-              sublabel="Dedicated Clinical &amp; Inclusive Spaces in Ajabpur, Dehradun"
-              badge="Centre Facility"
+              badge={websiteImages.environment[0].badge}
               theme="lime"
             />
             <div className="feature-card-content">
@@ -51,10 +53,11 @@ export default function EnvironmentSection() {
           <div className="environment-secondary-grid">
             <div className="secondary-facility-card card-theme-green hover-lift">
               <ImagePlaceholder
+                src={websiteImages.environment[1].src}
+                alt={websiteImages.environment[1].alt}
+                objectPosition={websiteImages.environment[1].objectPosition}
                 aspectRatio="4/3"
-                label="Therapy &amp; Assessment Rooms"
-                sublabel="Individualised One-on-One Support"
-                badge="Focused Care"
+                badge={websiteImages.environment[1].badge}
                 theme="green"
               />
               <div className="secondary-card-content">
@@ -71,10 +74,11 @@ export default function EnvironmentSection() {
 
             <div className="secondary-facility-card card-theme-lime hover-lift">
               <ImagePlaceholder
+                src={websiteImages.environment[2].src}
+                alt={websiteImages.environment[2].alt}
+                objectPosition={websiteImages.environment[2].objectPosition}
                 aspectRatio="4/3"
-                label="Sensory &amp; Inclusive Learning Areas"
-                sublabel="Movement, Regulation &amp; Early Preschool"
-                badge="Active Play"
+                badge={websiteImages.environment[2].badge}
                 theme="azure"
               />
               <div className="secondary-card-content">

@@ -86,6 +86,13 @@
 /* ==========================================================================
    Responsive Adaptations
    ========================================================================== */
+@media (min-width: 961px) {
+  .gallery-featured-card .featured-placeholder.zion-image-card {
+    height: 100%;
+    aspect-ratio: unset !important;
+  }
+}
+
 @media (max-width: 960px) {
   .therapy-gallery-wireframe-grid {
     grid-template-columns: 1fr;

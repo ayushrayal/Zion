@@ -4,6 +4,7 @@ import Container from '../layout/Container';
 import Button from '../ui/Button';
 import Tag from '../ui/Tag';
 import BrandShape from '../ui/BrandShape';
+import { websiteImages } from '../../data/websiteImages';
 import './Hero.css';
 
 export default function Hero() {
@@ -161,31 +162,15 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Colorful Visual Center Showcase */}
+              {/* Colorful Visual Center Showcase with Real Photograph */}
               <div className="hero-visual-center-plate">
-                <div className="center-plate-mesh">
-                  <div className="mesh-circle-green" />
-                  <div className="mesh-circle-lime" />
-                  <div className="mesh-circle-blue" />
-                </div>
-
-                <div className="center-plate-content">
-                  <div className="plate-mountain-badge">
-                    <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-                    </svg>
-                  </div>
-                  <h3 className="plate-title">Where Every Milestone Matters</h3>
-                  <p className="plate-sub">
-                    Multidisciplinary Therapy &amp; Inclusive Early Learning
-                  </p>
-
-                  <div className="plate-pillars-mini">
-                    <span className="pillar-chip chip-green">Intervention</span>
-                    <span className="pillar-chip chip-lime">Preschool</span>
-                    <span className="pillar-chip chip-blue">Rehabilitation</span>
-                  </div>
-                </div>
+                <img
+                  src={websiteImages.hero.src}
+                  alt={websiteImages.hero.alt}
+                  className="hero-center-img"
+                  style={{ objectPosition: websiteImages.hero.objectPosition }}
+                />
+                <div className="hero-center-overlay" />
 
                 {/* Floating Highlight Card */}
                 <div className="floating-highlight-card">

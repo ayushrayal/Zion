@@ -4,6 +4,7 @@ import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
 import BrandShape from '../ui/BrandShape';
+import { websiteImages } from '../../data/websiteImages';
 import './TherapyTeam.css';
 
 export default function TherapyTeam() {
@@ -73,10 +74,12 @@ export default function TherapyTeam() {
             <div className="leader-visual-row">
               <div className="leader-avatar-wrapper">
                 <ImagePlaceholder
+                  src={websiteImages.multidisciplinaryTeam?.[0]?.src}
+                  alt={websiteImages.multidisciplinaryTeam?.[0]?.alt || verifiedFounder.name}
+                  objectPosition={websiteImages.multidisciplinaryTeam?.[0]?.objectPosition || 'center 18%'}
                   aspectRatio="1/1"
-                  label="Anjali Subramanium"
+                  label={verifiedFounder.name}
                   sublabel="Clinical Director"
-                  badge="Director"
                   theme="azure"
                 />
               </div>

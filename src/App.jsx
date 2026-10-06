@@ -12,6 +12,7 @@ import Team from './pages/Team';
 import './styles/design-system.css';
 import './styles/global.css';
 import './styles/animations.css';
+import './styles/gallery-grid.css';
 
 export default function App() {
   return (

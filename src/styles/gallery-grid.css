@@ -1,0 +1,238 @@
+/* ==========================================================================
+   Gallery Grid Architecture (Preferred Architecture)
+   Eliminates all empty vertical space between cards and enforces clean
+   decoupled sizing between the featured image and side grid.
+   Strict 5-Color Palette: #89CB32, #D5E151, #0D5CEE, #FFFFFF, #000000
+   ========================================================================== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
+  gap: 22px;
+  align-items: start;
+  margin-top: clamp(24px, 3vw, 40px);
+  width: min(100%, 1240px);
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Featured Card: Large and dominant, controls only its own height */
+.gallery-grid > .featured-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.gallery-grid > .featured-card .featured-inner-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.gallery-grid > .featured-card .zion-image-card,
+.gallery-grid > .featured-card .zion-image-placeholder,
+.gallery-grid > .featured-card .featured-placeholder,
+.gallery-grid > .featured-card .school-feature-img {
+  width: 100% !important;
+  aspect-ratio: 16 / 11.5 !important;
+  height: auto !important;
+  min-height: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.gallery-grid > .featured-card .zion-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Side Grid: 2 columns, larger and taller cards */
+.gallery-side-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-content: start;
+  align-items: start;
+  width: 100%;
+}
+
+.gallery-side-grid > .small-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 190px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.gallery-side-grid > .small-card .zion-image-card,
+.gallery-side-grid > .small-card .zion-image-placeholder {
+  width: 100% !important;
+  aspect-ratio: 1.25 / 1 !important;
+  min-height: 190px !important;
+  height: 100% !important;
+  display: block;
+  overflow: hidden;
+}
+
+.gallery-side-grid > .small-card .zion-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Compact text overlay on small cards so image content is prominently visible */
+.gallery-side-grid > .small-card .zion-card-overlay {
+  padding: 8px 12px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.72) 100%);
+}
+
+.gallery-side-grid > .small-card .zion-card-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.gallery-side-grid > .small-card .zion-card-sublabel {
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 2px;
+  opacity: 0.88;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.gallery-side-grid > .small-card .zion-card-badge {
+  top: 8px;
+  right: 8px;
+  padding: 2px 7px;
+  font-size: 9px;
+}
+
+/* ==========================================================================
+   Tablet Adaptations (768px – 1199px)
+   Maintains 2-column structure naturally without horizontal overflow
+   ========================================================================== */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.15fr);
+    gap: 18px;
+  }
+
+  .gallery-side-grid {
+    gap: 16px;
+  }
+
+  .gallery-grid > .featured-card .zion-image-card,
+  .gallery-grid > .featured-card .zion-image-placeholder,
+  .gallery-grid > .featured-card .featured-placeholder,
+  .gallery-grid > .featured-card .school-feature-img {
+    aspect-ratio: 16 / 11 !important;
+  }
+
+  .gallery-side-grid > .small-card {
+    min-height: 140px;
+  }
+
+  .gallery-side-grid > .small-card .zion-image-card,
+  .gallery-side-grid > .small-card .zion-image-placeholder {
+    aspect-ratio: 1.25 / 1 !important;
+    min-height: 140px !important;
+  }
+
+  .gallery-side-grid > .small-card .zion-card-label {
+    font-size: 12px;
+    line-height: 1.15;
+  }
+
+  .gallery-side-grid > .small-card .zion-card-sublabel {
+    font-size: 10px;
+    line-height: 1.15;
+  }
+
+  .gallery-side-grid > .small-card .zion-card-badge {
+    padding: 2px 6px;
+    font-size: 8.5px;
+    top: 6px;
+    right: 6px;
+  }
+}
+
+/* ==========================================================================
+   Mobile Adaptations (767px and below)
+   Single column, featured card first, then 4 cards naturally stacked
+   Controlled 16/10 aspect ratio on all cards, readable and scroll-friendly
+   ========================================================================== */
+@media (max-width: 767px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .gallery-grid > .featured-card .zion-image-card,
+  .gallery-grid > .featured-card .zion-image-placeholder,
+  .gallery-grid > .featured-card .featured-placeholder,
+  .gallery-grid > .featured-card .school-feature-img {
+    aspect-ratio: 16 / 10 !important;
+    min-height: 0;
+  }
+
+  .gallery-side-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .gallery-side-grid > .small-card {
+    min-height: 0;
+  }
+
+  .gallery-side-grid > .small-card .zion-image-card,
+  .gallery-side-grid > .small-card .zion-image-placeholder {
+    aspect-ratio: 16 / 10 !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .gallery-side-grid > .small-card .zion-card-overlay {
+    padding: 10px 14px;
+  }
+
+  .gallery-side-grid > .small-card .zion-card-label {
+    font-size: 13.5px;
+  }
+
+  .gallery-side-grid > .small-card .zion-card-sublabel {
+    font-size: 11px;
+  }
+
+  .gallery-side-grid > .small-card .zion-card-badge {
+    padding: 3px 9px;
+    font-size: 9.5px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Compact Mobile tweaks (480px and below) */
+@media (max-width: 480px) {
+  .gallery-grid,
+  .gallery-side-grid {
+    gap: 14px;
+  }
+}

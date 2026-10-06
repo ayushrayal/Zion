@@ -4,6 +4,7 @@ import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
 import BrandShape from '../ui/BrandShape';
+import { websiteImages } from '../../data/websiteImages';
 import './SchoolEnvironment.css';
 
 export default function SchoolEnvironment() {
@@ -61,6 +62,9 @@ export default function SchoolEnvironment() {
             <div className="env-visual-wrapper hover-lift">
               <div className="env-organic-border" />
               <ImagePlaceholder
+                src={websiteImages.learningEnvironment.src}
+                alt={websiteImages.learningEnvironment.alt}
+                objectPosition={websiteImages.learningEnvironment.objectPosition}
                 aspectRatio="16/11"
                 label="Inclusive Preschool Classroom"
                 sublabel="Storytelling, Sensory Exploration & Circle Time in Dehradun"
