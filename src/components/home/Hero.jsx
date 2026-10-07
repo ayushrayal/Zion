@@ -171,15 +171,6 @@ export default function Hero() {
                   style={{ objectPosition: websiteImages.hero.objectPosition }}
                 />
                 <div className="hero-center-overlay" />
-
-                {/* Floating Highlight Card */}
-                <div className="floating-highlight-card">
-                  <div className="highlight-pill">Active Ecosystem</div>
-                  <div className="highlight-body">
-                    <strong>ZION Academy</strong>
-                    <span className="font-accent">Inclusive Early Learning &amp; Preschool</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

@@ -60,7 +60,6 @@
 .hero-eyebrow-chip {
   display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 10px;
   background-color: var(--color-white);
   color: var(--color-royal-azure);
@@ -68,6 +67,8 @@
   border-radius: var(--radius-pill);
   font-size: var(--font-size-small);
   font-weight: 800;
+  width: fit-content;
+  align-self: flex-start;
   max-width: 100%;
   box-sizing: border-box;
   border: 2px solid var(--color-royal-azure);
@@ -617,11 +618,11 @@
 
 @media (max-width: 480px) {
   .hero-eyebrow-chip {
-    padding: 6px 10px;
-    border-radius: 12px;
-    gap: 6px;
-    width: 100%;
-    justify-content: space-between;
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    gap: 8px;
+    width: fit-content;
+    align-self: flex-start;
   }
 
   .eyebrow-text {
