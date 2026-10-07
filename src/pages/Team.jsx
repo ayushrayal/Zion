@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Team() {
   useEffect(() => {
-    document.title = 'Meet Our Team: Specialists, Therapists & Educators | ZION Society';
+    document.title = 'Meet Our Team: Specialists, Therapists & Educators | ZION CARE';
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
@@ -54,7 +54,7 @@ export default function Team() {
       {/* 3. Department Units Showcase (All Group Photos) */}
       <TeamGroupsShowcase />
 
-      {/* 4. Consultation & Society Connect Banner */}
+      {/* 4. Consultation & Care Connect Banner */}
       <section className="team-cta-section section-wrapper" aria-labelledby="team-cta-heading">
         <BrandShape type="blob-azure" size="lg" style={{ top: -50, right: -40, opacity: 0.15 }} />
         <BrandShape type="blob-lime" size="md" style={{ bottom: -30, left: -30, opacity: 0.2 }} />
@@ -84,7 +84,8 @@ export default function Team() {
               </Link>
             </div>
             <div className="team-cta-meta-info">
-              <span>📍 47, Ekta Colony, Ajabpur, Dehradun</span>
+              <span>📍 Main Branch: Khasra 678, Lane No. 4, Malviya Nagar, Dehrakhas, Dehradun</span>
+              <span>🏢 Reg. Office: 47, Ekta Colony, Ajabpur, Dehradun</span>
               <span>📞 +91 92860 68945 / +91 78957 76366</span>
             </div>
           </div>

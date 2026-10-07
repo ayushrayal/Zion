@@ -1,5 +1,5 @@
 // Centralized Website Images Configuration
-// Section-wise image mapping for ZION Educational & Rehabilitation Society
+// Section-wise image mapping for ZION CARE
 // Strictly imports local verified photography from src/assets/websiteImages/
 
 // 1. Main Hero Section

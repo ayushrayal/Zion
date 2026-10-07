@@ -156,9 +156,10 @@ export default function SchoolAdmissionForm({ selectedProgram = '' }) {
                   <span className="phone-sep">•</span>
                   <a href="tel:+918057403683" className="admission-phone">+91 80574 03683</a>
                 </div>
-                <p className="admission-location">
-                  📍 47, Ekta Colony, Ajabpur, Dehradun 248001
-                </p>
+                <div className="admission-location">
+                  <p>📍 Main Branch: Khasra 678, Lane No. 4, Malviya Nagar, Dehrakhas, Dehradun</p>
+                  <p style={{ fontSize: '0.82rem', opacity: 0.88, marginTop: '3px' }}>🏢 Registered Office: 47, Ekta Colony, Ajabpur, Dehradun 248001</p>
+                </div>
               </div>
             </div>
           </div>
@@ -176,7 +177,7 @@ export default function SchoolAdmissionForm({ selectedProgram = '' }) {
                   <div className="admission-notice-box">
                     <span className="notice-star">★</span>
                     <p>
-                      <strong>Integration Note:</strong> This form is configured for the ZION frontend. To confirm your immediate classroom visit at <strong>47, Ekta Colony, Ajabpur, Dehradun</strong>, our admissions desk is directly reachable at <a href="tel:+919286068945">+91 92860 68945</a>.
+                      <strong>Integration Note:</strong> This form is configured for the ZION frontend. To confirm your immediate classroom visit at our <strong>Main Branch (Khasra 678, Lane No. 4, Malviya Nagar, Dehrakhas, Dehradun)</strong> or Registered Office, our admissions desk is directly reachable at <a href="tel:+919286068945">+91 92860 68945</a>.
                     </p>
                   </div>
                   <Button variant="secondary" size="md" onClick={handleReset}>

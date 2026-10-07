@@ -66,6 +66,22 @@ export default function ContactSection() {
                     </svg>
                   </div>
                   <div>
+                    <h5 className="method-label">Main Branch</h5>
+                    <p className="method-val">
+                      Khasra 678, Lane No. 4<br />
+                      Malviya Nagar, Dehrakhas<br />
+                      Dehradun
+                    </p>
+                  </div>
+                </div>
+
+                <div className="contact-method-card method-office">
+                  <div className="method-icon-wrap icon-azure">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <path d="M3 21h18M5 21V7l8-4 6 4v14M9 9v.01M9 13v.01M9 17v.01M15 9v.01M15 13v.01M15 17v.01"/>
+                    </svg>
+                  </div>
+                  <div>
                     <h5 className="method-label">Registered Office</h5>
                     <p className="method-val">
                       47, Ekta Colony, Ajabpur<br />

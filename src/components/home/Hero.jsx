@@ -81,7 +81,7 @@ export default function Hero() {
           <div className="hero-content">
             <div className="hero-eyebrow-chip">
               <span className="eyebrow-indicator" />
-              <span className="eyebrow-text">ZION Educational &amp; Rehabilitation Society</span>
+              <span className="eyebrow-text">ZION CARE</span>
               <span className="eyebrow-badge-pill">Dehradun</span>
             </div>
 
@@ -154,11 +154,11 @@ export default function Hero() {
                   <div className="composite-logo-ring" />
                 </div>
                 <div className="composite-header-text">
-                  <span className="composite-brand-title font-accent">ZION SOCIETY</span>
+                  <span className="composite-brand-title font-accent">ZION CARE</span>
                   <p className="composite-brand-tagline">
                     Every Child Deserves to Be Heard
                   </p>
-                  <span className="composite-location-tag">Ajabpur, Dehradun</span>
+                  <span className="composite-location-tag">Main Branch • Dehradun</span>
                 </div>
               </div>
 

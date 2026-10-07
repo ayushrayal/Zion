@@ -2,7 +2,7 @@ import React from 'react';
 import SectionWrapper from '../layout/SectionWrapper';
 import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
-import anjaliImg from '../../assets/Team/Anjali.png';
+import anjaliImg from '../../assets/Team/Anjali.jpg';
 import BrandShape from '../ui/BrandShape';
 import './FounderSection.css';
 

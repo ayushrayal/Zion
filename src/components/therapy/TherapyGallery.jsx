@@ -23,7 +23,7 @@ export default function TherapyGallery() {
           eyebrow="Inside Our Centre"
           title="OUR THERAPY ENVIRONMENT & GALLERY"
           tagline="Purposefully Designed Spaces for Confidence & Growth"
-          description="A glimpse into the dedicated clinical rooms, sensory activity gyms, and family consultation spaces at ZION in Ajabpur, Dehradun."
+          description="A glimpse into the dedicated clinical rooms, sensory activity gyms, and family consultation spaces at ZION in Dehradun."
           align="center"
         />
 
@@ -45,7 +45,7 @@ export default function TherapyGallery() {
               />
               <div className="featured-card-overlay-badge">
                 <span className="dot-pulse" />
-                <span>Dedicated Child Observation Suite • Ajabpur, Dehradun</span>
+                <span>Dedicated Child Observation Suite • Dehradun</span>
               </div>
             </div>
           )}
@@ -74,7 +74,7 @@ export default function TherapyGallery() {
         <div className="gallery-authenticity-banner">
           <span className="banner-icon">📍</span>
           <p className="banner-text">
-            <strong>Authentic Centre Environment:</strong> Located at 47, Ekta Colony, Ajabpur, Dehradun. Every therapy space is sanitised, child-proofed, and maintained with individualised equipment for safety and focus.
+            <strong>Authentic Centre Environment:</strong> Main Branch: Khasra 678, Lane No. 4, Malviya Nagar, Dehrakhas, Dehradun (Registered Office: 47, Ekta Colony, Ajabpur). Every therapy space is sanitised, child-proofed, and maintained with individualised equipment for safety and focus.
           </p>
         </div>
       </Container>

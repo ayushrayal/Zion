@@ -43,7 +43,7 @@ export default function TeamHero() {
 
           {/* Compassionate Multidisciplinary Intro */}
           <p className="team-hero-lead">
-            At ZION Educational &amp; Rehabilitation Society, our multidisciplinary team of licensed
+            At ZION CARE, our multidisciplinary team of licensed
             speech-language pathologists, audiologists, pediatric neurodevelopmental therapists,
             physiotherapists, special educators, and caring administrators works in unified synergy.
             Every clinical intervention, individualized curriculum, and daily breakthrough is delivered

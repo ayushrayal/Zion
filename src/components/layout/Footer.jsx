@@ -39,7 +39,6 @@ export default function Footer() {
               <img src="/zionlogo.PNG" alt="ZION Logo" className="footer-logo-img" />
               <div>
                 <span className="footer-brand-title">ZION</span>
-                <span className="footer-brand-subtitle">Educational &amp; Rehabilitation Society</span>
               </div>
             </Link>
             <p className="footer-tagline-text font-accent">
@@ -100,6 +99,16 @@ export default function Footer() {
             <div className="footer-contact-item">
               <span className="contact-icon">📍</span>
               <address className="contact-address">
+                <strong style={{ display: 'block', color: 'var(--color-lemon-lime)', fontSize: '0.85rem', marginBottom: '2px', letterSpacing: '0.04em' }}>MAIN BRANCH</strong>
+                Khasra 678, Lane No. 4<br />
+                Malviya Nagar, Dehrakhas<br />
+                Dehradun
+              </address>
+            </div>
+            <div className="footer-contact-item">
+              <span className="contact-icon">🏢</span>
+              <address className="contact-address">
+                <strong style={{ display: 'block', color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.85rem', marginBottom: '2px', letterSpacing: '0.04em' }}>REGISTERED OFFICE</strong>
                 47, Ekta Colony, Ajabpur<br />
                 Dehradun 248001, Uttarakhand
               </address>
@@ -124,10 +133,10 @@ export default function Footer() {
         {/* Footer Bottom Bar */}
         <div className="footer-bottom-bar">
           <p className="copyright-text">
-            &copy; {currentYear} ZION Educational &amp; Rehabilitation Society. All rights reserved.
+            &copy; {currentYear} ZION CARE. All rights reserved.
           </p>
           <div className="footer-bottom-meta">
-            <span className="meta-society-pill font-accent">Registered Non-Profit Society • Dehradun</span>
+            <span className="meta-society-pill font-accent">Non-Profit Care &amp; Learning • Dehradun</span>
           </div>
         </div>
       </Container>

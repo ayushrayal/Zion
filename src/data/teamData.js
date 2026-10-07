@@ -210,7 +210,7 @@ export const teamMembers = [
     image: msPriyankaS,
     color: 'azure',
     experience: 'Executive',
-    focus: 'Society Documentation, Operational Records & Administrative Coordination'
+    focus: 'Centre Documentation, Operational Records & Administrative Coordination'
   },
   {
     id: 'sonia',

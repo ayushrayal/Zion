@@ -31,8 +31,8 @@ export default function SocialLinks({ className = '' }) {
       <a
         href="#contact"
         className="social-item"
-        aria-label="Location in Ajabpur, Dehradun"
-        title="Registered Office: Ajabpur, Dehradun"
+        aria-label="Locations in Dehradun"
+        title="Main Branch & Office: Dehradun"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>

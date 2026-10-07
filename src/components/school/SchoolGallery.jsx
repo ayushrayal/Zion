@@ -23,7 +23,7 @@ export default function SchoolGallery() {
           eyebrow="Moments at ZION Academy"
           title="OUR PRESCHOOL GALLERY"
           tagline="Joyful Learning, Spontaneous Play & Authentic Belonging"
-          description="Take a visual tour inside ZION Academy's inclusive classrooms, creative discovery stations, and active movement spaces in Ajabpur, Dehradun."
+          description="Take a visual tour inside ZION Academy's inclusive classrooms, creative discovery stations, and active movement spaces in Dehradun."
           align="center"
         />
 

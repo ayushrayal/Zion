@@ -3,7 +3,7 @@ import SectionWrapper from '../layout/SectionWrapper';
 import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
 import BrandShape from '../ui/BrandShape';
-import anamikaImg from '../../assets/Team/ANAMIKA BHANDARI.png';
+import anamikaImg from '../../assets/Team/ANAMIKA BHANDARI.jpg';
 import './CoFounderSection.css';
 
 export default function CoFounderSection() {

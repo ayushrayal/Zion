@@ -139,7 +139,7 @@ export default function TherapyAssessmentForm({ selectedProgram = '' }) {
                 </div>
               </div>
 
-              {/* Direct Society Lines */}
+              {/* Direct Clinical Lines */}
               <div className="assessment-quick-contact">
                 <span className="quick-label font-accent">Direct Assessment Line:</span>
                 <div className="quick-numbers">
@@ -167,7 +167,7 @@ export default function TherapyAssessmentForm({ selectedProgram = '' }) {
                   <div className="feedback-notice-box">
                     <span className="notice-pin">📍</span>
                     <p>
-                      <strong>Integration Note:</strong> This form is configured for the ZION frontend. To confirm your immediate assessment slot at <strong>47, Ekta Colony, Ajabpur, Dehradun</strong>, our clinical coordinator is available at <a href="tel:+919286068945">+91 92860 68945</a>.
+                      <strong>Integration Note:</strong> This form is configured for the ZION frontend. To confirm your immediate assessment slot at our <strong>Main Branch (Khasra 678, Lane No. 4, Malviya Nagar, Dehrakhas, Dehradun)</strong> or Registered Office, our clinical coordinator is available at <a href="tel:+919286068945">+91 92860 68945</a>.
                     </p>
                   </div>
                   <Button variant="secondary" size="md" onClick={handleReset}>

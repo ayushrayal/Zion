@@ -158,18 +158,17 @@ export default function Navbar() {
           href="/"
           className="navbar-brand"
           onClick={(e) => handleNavClick(e, { label: 'Home', path: '/', isRoute: true })}
-          aria-label="ZION Educational & Rehabilitation Society"
+          aria-label="ZION CARE"
         >
           <div className="navbar-logo-badge">
             <img src="/zionlogo.PNG" alt="ZION Logo" className="navbar-logo-img" />
-            <span className="logo-active-dot" title="Active Society Ecosystem" />
+            <span className="logo-active-dot" title="Active Care Ecosystem" />
           </div>
           <div className="brand-text-lockup">
             <div className="brand-title-row">
               <span className="brand-name">ZION</span>
               <span className="brand-leaf-tag">CARE</span>
             </div>
-            <span className="brand-society">Educational &amp; Rehabilitation Society</span>
           </div>
         </a>
 
@@ -300,7 +299,7 @@ export default function Navbar() {
                     📞 +91 92860 68945
                   </a>
                   <span className="mobile-location-meta">
-                    📍 47, Ekta Colony, Ajabpur, Dehradun
+                    📍 Main Branch: Khasra 678, Lane No. 4, Malviya Nagar, Dehrakhas, Dehradun
                   </span>
                 </div>
               </div>
