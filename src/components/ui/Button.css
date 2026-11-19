@@ -14,6 +14,14 @@
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
 }
 
+.zion-btn .btn-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  white-space: nowrap;
+}
+
 /* Sizes with generous padding */
 .btn-sm {
   padding: 10px 22px;

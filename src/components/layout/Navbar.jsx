@@ -16,6 +16,8 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const isServicesPage = location.pathname === '/services';
+  const isGalleryPage = location.pathname === '/gallery';
   const isTherapyPage = location.pathname === '/therapy';
   const isSchoolPage = location.pathname === '/school';
   const isTeamPage = location.pathname === '/team';
@@ -58,9 +60,8 @@ export default function Navbar() {
     { label: 'Home', path: '/', color: 'azure', isRoute: true },
     { label: 'About', path: '/#about', color: 'lime', isHash: true },
     { label: 'Founder', path: '/#founder', color: 'green', isHash: true },
-    { label: 'Services', path: '/#services', color: 'azure', isHash: true },
-    { label: 'Environment', path: '/#environment', color: 'lime', isHash: true },
-    { label: 'Gallery', path: '/#gallery', color: 'green', isHash: true },
+    { label: 'Services', path: '/services', color: 'azure', isRoute: true },
+    { label: 'Gallery', path: '/gallery', color: 'green', isRoute: true },
     { label: 'Testimonials', path: '/#testimonials', color: 'azure', isHash: true },
     { label: 'School', path: '/school', color: 'lime', isRoute: true, badge: 'Academy' },
     { label: 'Therapy', path: '/therapy', color: 'green', isRoute: true, badge: 'Clinical' },
@@ -75,6 +76,9 @@ export default function Navbar() {
     if (item.isRoute) {
       if (item.path === '/' && isHomePage) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (location.hash) {
+          navigate('/', { replace: true });
+        }
       } else {
         navigate(item.path);
       }
@@ -89,6 +93,7 @@ export default function Navbar() {
       const elem = document.getElementById(targetId);
       if (elem) {
         elem.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', item.path);
       } else {
         window.location.hash = hash;
       }
@@ -135,6 +140,8 @@ export default function Navbar() {
   };
 
   const isLinkActive = (item) => {
+    if (item.label === 'Services' && isServicesPage) return true;
+    if (item.label === 'Gallery' && isGalleryPage) return true;
     if (item.label === 'Team' && isTeamPage) return true;
     if (item.label === 'Therapy' && isTherapyPage) return true;
     if (item.label === 'School' && isSchoolPage) return true;
@@ -158,17 +165,17 @@ export default function Navbar() {
           href="/"
           className="navbar-brand"
           onClick={(e) => handleNavClick(e, { label: 'Home', path: '/', isRoute: true })}
-          aria-label="ZION CARE"
+          aria-label="ZION - Where Every Milestone Matters"
         >
           <div className="navbar-logo-badge">
             <img src="/zionlogo.PNG" alt="ZION Logo" className="navbar-logo-img" />
-            <span className="logo-active-dot" title="Active Care Ecosystem" />
+            <span className="logo-active-dot" title="ZION Ecosystem" />
           </div>
           <div className="brand-text-lockup">
             <div className="brand-title-row">
               <span className="brand-name">ZION</span>
-              <span className="brand-leaf-tag">CARE</span>
             </div>
+            <span className="brand-navbar-tagline font-accent">Where Every Milestone Matters</span>
           </div>
         </a>
 

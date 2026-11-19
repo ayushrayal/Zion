@@ -62,11 +62,11 @@ export default function Footer() {
               <li><Link to="/">Home</Link></li>
               <li><a href="#about" onClick={(e) => handleHashLink(e, '#about')}>About ZION</a></li>
               <li><a href="#founder" onClick={(e) => handleHashLink(e, '#founder')}>Meet the Founder</a></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/gallery">Gallery</Link></li>
               <li><Link to="/team">Meet Our Team</Link></li>
               <li><Link to="/therapy">Therapy Programs</Link></li>
               <li><Link to="/school">ZION Academy (School)</Link></li>
-              <li><a href="#environment" onClick={(e) => handleHashLink(e, '#environment')}>Our Environment</a></li>
-              <li><a href="#gallery" onClick={(e) => handleHashLink(e, '#gallery')}>Photo Gallery</a></li>
               <li><a href="#testimonials" onClick={(e) => handleHashLink(e, '#testimonials')}>Testimonials</a></li>
               <li><a href="#journey" onClick={(e) => handleHashLink(e, '#journey')}>The ZION Journey</a></li>
             </ul>
@@ -133,7 +133,7 @@ export default function Footer() {
         {/* Footer Bottom Bar */}
         <div className="footer-bottom-bar">
           <p className="copyright-text">
-            &copy; {currentYear} ZION CARE. All rights reserved.
+            &copy; {currentYear} ZION. All rights reserved.
           </p>
           <div className="footer-bottom-meta">
             <span className="meta-society-pill font-accent">Non-Profit Care &amp; Learning • Dehradun</span>

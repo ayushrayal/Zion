@@ -14,7 +14,7 @@ export default function Therapy() {
   const [selectedProgram, setSelectedProgram] = useState('');
 
   useEffect(() => {
-    document.title = 'Therapy & Rehabilitation Services | ZION CARE';
+    document.title = 'Therapy & Rehabilitation Services | ZION';
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;

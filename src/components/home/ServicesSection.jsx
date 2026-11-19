@@ -143,7 +143,7 @@ export default function ServicesSection() {
                     <span className="cta-arrow">→</span>
                   </Link>
                 ) : (
-                  <a href="#contact" className="service-cta-link">
+                  <a href="/#contact" className="service-cta-link">
                     <span>Enquire for Assessment</span>
                     <span className="cta-arrow">→</span>
                   </a>

@@ -5,6 +5,8 @@ import Footer from './components/layout/Footer';
 import ScrollToTop from './components/common/ScrollToTop';
 
 import Home from './pages/Home';
+import Services from './pages/Services';
+import Gallery from './pages/Gallery';
 import Therapy from './pages/Therapy';
 import School from './pages/School';
 import Team from './pages/Team';
@@ -23,6 +25,8 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/therapy" element={<Therapy />} />
           <Route path="/school" element={<School />} />
           <Route path="/team" element={<Team />} />

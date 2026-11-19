@@ -59,7 +59,7 @@ export const websiteImages = {
   about: {
     src: aboutZionTeam,
     alt: 'Dedicated ZION Speech & Hearing Clinic multidisciplinary team celebrating together in Dehradun',
-    title: 'ZION Care & Learning Space',
+    title: 'ZION Learning Space',
     sublabel: 'Multidisciplinary Intervention in Ajabpur, Dehradun',
     badge: 'Established Oct 2021',
     objectPosition: 'center 25%'

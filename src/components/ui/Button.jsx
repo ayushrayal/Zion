@@ -23,7 +23,7 @@ export default function Button({
         onClick={onClick}
         {...rest}
       >
-        <span>{children}</span>
+        <span className="btn-content">{children}</span>
         {icon && <span className="btn-icon">{icon}</span>}
       </a>
     );
@@ -37,7 +37,7 @@ export default function Button({
       disabled={disabled}
       {...rest}
     >
-      <span>{children}</span>
+      <span className="btn-content">{children}</span>
       {icon && <span className="btn-icon">{icon}</span>}
     </button>
   );

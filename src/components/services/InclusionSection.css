@@ -1,0 +1,392 @@
+/* ==================================================
+   ZION CARE - Services Page
+   Section 01: Inclusion Beyond Our Walls
+   ================================================== */
+
+.inclusion-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.inclusion-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Narrative / Context Box (matches Homepage .about-intro-box) */
+.inclusion-intro-box {
+  background-color: var(--color-white);
+  padding: 44px 48px;
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--color-border-subtle);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  margin-top: 0; /* Heading margin-bottom provides uniform gap */
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.inclusion-intro-lead {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.55;
+  color: var(--color-royal-azure);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.inclusion-intro-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Quote / Highlight Card (matches Homepage .about-quote-card) */
+.inclusion-quote-card {
+  background-color: var(--color-surface-subtle);
+  border-left: 6px solid var(--color-yellow-green);
+  border-top: 1.5px solid var(--color-border-subtle);
+  border-right: 1.5px solid var(--color-border-subtle);
+  border-bottom: 1.5px solid var(--color-border-subtle);
+  padding: 24px 28px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-top: 28px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+.quote-heart-icon {
+  font-size: 26px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.quote-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.inclusion-quote-text {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--color-black);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.inclusion-quote-meta {
+  font-size: var(--font-size-meta);
+  font-weight: 900;
+  color: #1a4f21;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Objectives Block */
+.inclusion-objectives-block {
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 2;
+}
+
+.objectives-header {
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.objectives-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-black);
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.objectives-subtitle {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  max-width: 860px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.objectives-prompt {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-royal-azure);
+  margin: 0;
+}
+
+/* Objectives Grid (matches Homepage .principles-grid) */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.objective-card {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.objective-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.objective-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.objective-num {
+  font-size: 13.5px;
+  font-weight: 900;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.objective-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Accents matching Homepage principles */
+.card-accent-azure {
+  border-color: rgba(13, 92, 238, 0.2);
+}
+.card-accent-azure .objective-num {
+  background-color: var(--color-azure-tint);
+  color: var(--color-royal-azure);
+}
+.card-accent-azure .objective-pill-dot {
+  background-color: var(--color-royal-azure);
+}
+.card-accent-azure:hover {
+  border-color: var(--color-royal-azure);
+}
+
+.card-accent-green {
+  border-color: rgba(137, 203, 50, 0.35);
+}
+.card-accent-green .objective-num {
+  background-color: var(--color-yellow-green-tint);
+  color: #1a4f21;
+}
+.card-accent-green .objective-pill-dot {
+  background-color: var(--color-yellow-green);
+}
+.card-accent-green:hover {
+  border-color: var(--color-yellow-green);
+}
+
+.card-accent-lime {
+  border-color: rgba(213, 225, 81, 0.55);
+}
+.card-accent-lime .objective-num {
+  background-color: var(--color-lemon-lime-tint);
+  color: #3b5a0a;
+}
+.card-accent-lime .objective-pill-dot {
+  background-color: #8c9e0a;
+}
+.card-accent-lime:hover {
+  border-color: #89CB32;
+}
+
+.objective-text {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Our Larger Vision Card (matches Homepage hero / vision highlights) */
+.inclusion-vision-card {
+  background: linear-gradient(135deg, #0D5CEE 0%, #0947ba 100%);
+  color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 48px 52px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(13, 92, 238, 0.22);
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.inclusion-vision-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(213, 225, 81, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.vision-badge {
+  display: inline-block;
+  background: var(--color-yellow-green);
+  color: #123303;
+  font-size: 12.5px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 24px;
+}
+
+.vision-content {
+  position: relative;
+  z-index: 1;
+}
+
+.vision-line-primary {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--color-white);
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.vision-line-secondary {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 900px;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.vision-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+  margin-bottom: 24px;
+}
+
+.vision-highlight {
+  font-size: 17.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.vision-highlight-strong {
+  font-family: var(--font-accent);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-lemon-lime);
+  margin: 0;
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 991px) {
+  .objectives-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .inclusion-intro-box,
+  .inclusion-vision-card {
+    padding: 36px 36px;
+    margin-bottom: 44px;
+  }
+
+  .inclusion-objectives-block {
+    margin-bottom: 44px;
+  }
+
+  .vision-line-primary {
+    font-size: 20px;
+  }
+
+  .vision-highlight-strong {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 640px) {
+  .objectives-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .inclusion-intro-box,
+  .inclusion-vision-card {
+    padding: 24px 20px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 36px;
+  }
+
+  .inclusion-objectives-block {
+    margin-bottom: 36px;
+  }
+
+  .inclusion-intro-lead {
+    font-size: 18px;
+  }
+
+  .inclusion-quote-card {
+    padding: 18px 16px;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .objective-card {
+    padding: 20px 18px;
+    gap: 12px;
+  }
+
+  .objectives-title {
+    font-size: 21px;
+  }
+
+  .vision-line-primary {
+    font-size: 18px;
+  }
+
+  .vision-highlight-strong {
+    font-size: 21px;
+  }
+}

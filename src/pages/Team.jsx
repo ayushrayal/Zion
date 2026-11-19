@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Team() {
   useEffect(() => {
-    document.title = 'Meet Our Team: Specialists, Therapists & Educators | ZION CARE';
+    document.title = 'Meet Our Team: Specialists, Therapists & Educators | ZION';
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;

@@ -51,13 +51,13 @@ export default function JourneySection() {
   ];
 
   return (
-    <SectionWrapper id="journey" background="lime" padding="default">
+    <SectionWrapper id="journey" background="azure-subtle" padding="default">
       {/* Decorative Brand Shapes */}
-      <BrandShape type="blob-green" size="xl" style={{ top: -100, right: -100, opacity: 0.4 }} className="animate-float" />
-      <BrandShape type="blob-azure" size="lg" style={{ bottom: -60, left: -60, opacity: 0.25 }} className="animate-float-delayed" />
+      <BrandShape type="blob-green" size="xl" style={{ top: -100, right: -100, opacity: 0.25 }} className="animate-float" />
+      <BrandShape type="blob-azure" size="lg" style={{ bottom: -60, left: -60, opacity: 0.2 }} className="animate-float-delayed" />
       <BrandShape type="star" color="var(--color-royal-azure)" style={{ top: 40, right: '14%' }} className="animate-spin-slow" />
-      <BrandShape type="sparkle" color="var(--color-black)" style={{ bottom: 60, right: '6%' }} />
-      <BrandShape type="dots" color="var(--color-yellow-green)" style={{ top: 40, left: '6%', opacity: 0.7 }} />
+      <BrandShape type="sparkle" color="var(--color-yellow-green)" style={{ bottom: 60, right: '6%' }} />
+      <BrandShape type="dots" color="rgba(13, 92, 238, 0.2)" style={{ top: 40, left: '6%', opacity: 0.7 }} />
 
       <Container>
         <SectionHeading

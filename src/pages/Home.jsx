@@ -4,13 +4,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Hero from '../components/home/Hero';
 import AboutSection from '../components/home/AboutSection';
+import JourneySection from '../components/home/JourneySection';
 import FounderSection from '../components/home/FounderSection';
 import CoFounderSection from '../components/home/CoFounderSection';
-import ServicesSection from '../components/home/ServicesSection';
-import EnvironmentSection from '../components/home/EnvironmentSection';
-import GallerySection from '../components/home/GallerySection';
 import TestimonialsSection from '../components/home/TestimonialsSection';
-import JourneySection from '../components/home/JourneySection';
 import ContactSection from '../components/home/ContactSection';
 
 // Register GSAP ScrollTrigger
@@ -18,6 +15,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   useEffect(() => {
+    document.title = 'ZION | Where Every Milestone Matters';
+
     // Check if prefers-reduced-motion is active
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
@@ -51,16 +50,10 @@ export default function Home() {
     <main id="main-content" className="zion-landing-page">
       <Hero />
       <AboutSection />
+      <JourneySection />
       <FounderSection />
       <CoFounderSection />
-      {/* Anchor targets for School & Therapy nav items */}
-      <div id="school" style={{ scrollMarginTop: '90px' }} />
-      <div id="therapy" style={{ scrollMarginTop: '90px' }} />
-      <ServicesSection />
-      <EnvironmentSection />
-      <GallerySection />
       <TestimonialsSection />
-      <JourneySection />
       <ContactSection />
     </main>
   );

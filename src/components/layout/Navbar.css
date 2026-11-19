@@ -140,6 +140,14 @@
   line-height: 1.05;
 }
 
+.brand-navbar-tagline {
+  font-size: 0.72rem;
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
 .brand-leaf-tag {
   background-color: var(--color-yellow-green);
   color: #ffffff;

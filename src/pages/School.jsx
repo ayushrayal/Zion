@@ -14,7 +14,7 @@ export default function School() {
   const [selectedProgram, setSelectedProgram] = useState('');
 
   useEffect(() => {
-    document.title = 'ZION Academy: Inclusive Early Learning & Preschool | ZION CARE';
+    document.title = 'ZION Academy: Inclusive Early Learning & Preschool | ZION';
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
