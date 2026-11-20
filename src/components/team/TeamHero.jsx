@@ -1,14 +1,17 @@
 import React from 'react';
 import Container from '../layout/Container';
 import BrandShape from '../ui/BrandShape';
+import { useSmoothScroll } from '../../context/SmoothScrollContext';
 import './TeamHero.css';
 
 export default function TeamHero() {
+  const { scrollTo } = useSmoothScroll();
+
   const scrollToDirectory = (e) => {
     e.preventDefault();
     const directory = document.getElementById('team-directory');
     if (directory) {
-      directory.scrollIntoView({ behavior: 'smooth' });
+      scrollTo(directory, { offset: -80 });
     }
   };
 
@@ -16,7 +19,7 @@ export default function TeamHero() {
     e.preventDefault();
     const groups = document.getElementById('team-groups');
     if (groups) {
-      groups.scrollIntoView({ behavior: 'smooth' });
+      scrollTo(groups, { offset: -80 });
     }
   };
 

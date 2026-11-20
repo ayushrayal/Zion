@@ -14,6 +14,8 @@ export default function ServicesSection() {
       badge: 'Clinical Care',
       badgeColor: 'azure',
       title: 'Therapy Services',
+      targetUrl: '/therapy',
+      ctaText: 'Explore Therapy Programs',
       description: 'Individualised clinical therapy designed to nurture functional everyday communication, sensory processing, and motor skills.',
       items: [
         'Speech & Language Therapy (Assessment, Articulation, AAC)',
@@ -33,6 +35,8 @@ export default function ServicesSection() {
       badge: 'Inclusive Learning',
       badgeColor: 'lime',
       title: 'Education & School',
+      targetUrl: '/school',
+      ctaText: 'Explore ZION Academy',
       description: 'Developmental and inclusive learning programs supporting transition, school readiness, and peer socialisation.',
       items: [
         'ZION Academy — Inclusive Early Learning & Preschool',
@@ -54,6 +58,8 @@ export default function ServicesSection() {
       badge: 'Early Milestone',
       badgeColor: 'green',
       title: 'Development & Intervention',
+      targetUrl: '/therapy',
+      ctaText: 'Explore Early Intervention',
       description: 'Early identification and targeted multidisciplinary support during critical foundational developmental years.',
       items: [
         'Early Identification & Screening Assessments',
@@ -74,6 +80,8 @@ export default function ServicesSection() {
       badge: 'Collaborative Care',
       badgeColor: 'blue-green',
       title: 'Family Support & Partnership',
+      targetUrl: '/therapy',
+      ctaText: 'Explore Family Guidance',
       description: 'Empowering parents, caregivers, and educators with practical strategies that support children in natural environments.',
       items: [
         'Parent Guidance & Counselling',
@@ -132,22 +140,10 @@ export default function ServicesSection() {
               </ul>
 
               <div className="service-card-footer">
-                {svc.id === 'therapy' ? (
-                  <Link to="/therapy" className="service-cta-link">
-                    <span>Explore Therapy Programs</span>
-                    <span className="cta-arrow">→</span>
-                  </Link>
-                ) : svc.id === 'education' ? (
-                  <Link to="/school" className="service-cta-link">
-                    <span>Explore ZION Academy</span>
-                    <span className="cta-arrow">→</span>
-                  </Link>
-                ) : (
-                  <a href="/#contact" className="service-cta-link">
-                    <span>Enquire for Assessment</span>
-                    <span className="cta-arrow">→</span>
-                  </a>
-                )}
+                <Link to={svc.targetUrl} className="service-cta-link">
+                  <span>{svc.ctaText}</span>
+                  <span className="cta-arrow" aria-hidden="true">→</span>
+                </Link>
               </div>
             </div>
           ))}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useSmoothScroll } from '../../context/SmoothScrollContext';
 import Container from './Container';
 import SocialLinks from '../ui/SocialLinks';
 import BrandShape from '../ui/BrandShape';
@@ -9,6 +10,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
   const location = useLocation();
+  const { scrollTo } = useSmoothScroll();
 
   const handleHashLink = (e, hash) => {
     e.preventDefault();
@@ -16,7 +18,7 @@ export default function Footer() {
       const targetId = hash.replace('#', '');
       const el = document.getElementById(targetId);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
+        scrollTo(el, { offset: -80 });
       }
     } else {
       navigate('/' + hash);

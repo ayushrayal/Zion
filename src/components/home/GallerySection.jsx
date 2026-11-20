@@ -2,14 +2,12 @@ import React from 'react';
 import SectionWrapper from '../layout/SectionWrapper';
 import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
-import ImagePlaceholder from '../ui/ImagePlaceholder';
 import BrandShape from '../ui/BrandShape';
-import { websiteImages } from '../../data/websiteImages';
+import CollageSlideshow from '../ui/CollageSlideshow';
+import { gallerySlides } from '../../data/slideshowData';
 import './GallerySection.css';
 
 export default function GallerySection() {
-  const galleryItems = websiteImages.gallery;
-
   return (
     <SectionWrapper id="gallery" background="white" padding="default">
       {/* Decorative Organic Accents */}
@@ -27,23 +25,13 @@ export default function GallerySection() {
           align="center"
         />
 
-        <div className="gallery-masonry-grid">
-          {galleryItems.map((item) => (
-            <div key={item.id} className={`gallery-item-wrapper hover-lift ${item.className}`}>
-              <ImagePlaceholder
-                src={item.src}
-                alt={item.alt}
-                objectPosition={item.objectPosition}
-                aspectRatio={item.aspectRatio}
-                label={item.label}
-                sublabel={item.sublabel}
-                badge={item.badge}
-                theme={item.theme}
-                showCaption={true}
-              />
-            </div>
-          ))}
-        </div>
+        {/* Dynamic 5-Second Rotating Slideshow showcasing all 54 unique Gallery images */}
+        <CollageSlideshow
+          slides={gallerySlides}
+          variant="light"
+          idPrefix="gallery"
+          showSlideInfo={false}
+        />
       </Container>
     </SectionWrapper>
   );

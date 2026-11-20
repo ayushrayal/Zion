@@ -1,0 +1,388 @@
+/* ==========================================================================
+   LegalGovernanceSection.css - Statutory Disclosure & Institutional Governance
+   Strict 5-Color Brand Palette: #0D5CEE, #89CB32, #D5E151, #FFFFFF, #000000
+   ========================================================================== */
+
+.legal-governance-section {
+  position: relative;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+}
+
+.legal-governance-container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max-width, 1240px);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Header Section
+   ========================================================================== */
+
+.legal-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto clamp(36px, 5vw, 54px);
+}
+
+.legal-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  background-color: var(--color-azure-wash);
+  border: 1px solid var(--color-border-azure);
+  margin-bottom: 18px;
+}
+
+.legal-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-royal-azure);
+}
+
+.legal-badge-text {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-royal-azure);
+}
+
+.legal-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 4.2vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-black);
+  margin: 0 0 20px;
+  letter-spacing: -0.015em;
+}
+
+.legal-lead {
+  font-family: var(--font-primary);
+  font-size: clamp(1.04rem, 2vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.65;
+  color: var(--color-royal-azure);
+  margin: 0 auto 12px;
+  max-width: 800px;
+}
+
+.legal-sublead {
+  font-family: var(--font-primary);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+/* ==========================================================================
+   Registration Details Cards (3-Column Layout)
+   ========================================================================== */
+
+.legal-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.8vw, 30px);
+  margin-bottom: clamp(32px, 4.5vw, 48px);
+}
+
+.legal-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--color-border-subtle);
+  padding: clamp(24px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  position: relative;
+}
+
+.legal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.1);
+}
+
+.card-accent-azure {
+  border-top: 4px solid var(--color-royal-azure);
+}
+
+.card-accent-azure:hover {
+  border-color: rgba(13, 92, 238, 0.35);
+  border-top-color: var(--color-royal-azure);
+}
+
+.card-accent-green {
+  border-top: 4px solid var(--color-yellow-green);
+}
+
+.card-accent-green:hover {
+  border-color: rgba(137, 203, 50, 0.45);
+  border-top-color: var(--color-yellow-green);
+}
+
+.legal-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.legal-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.legal-icon-box svg {
+  width: 22px;
+  height: 22px;
+}
+
+.icon-azure {
+  background-color: var(--color-azure-wash);
+  color: var(--color-royal-azure);
+  border: 1px solid var(--color-border-azure);
+}
+
+.icon-green {
+  background-color: var(--color-yellow-green-wash);
+  color: var(--color-yellow-green);
+  border: 1px solid var(--color-border-green);
+}
+
+.legal-card-label-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.legal-card-label {
+  font-family: var(--font-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.legal-card-subtext {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.legal-card-body {
+  margin-top: auto;
+}
+
+.legal-card-value {
+  font-family: var(--font-primary);
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.legal-code-display {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.legal-code-value {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-royal-azure);
+  letter-spacing: 0.05em;
+  background-color: rgba(13, 92, 238, 0.06);
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--color-border-azure);
+  display: inline-block;
+  word-break: break-all;
+}
+
+.legal-verified-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background-color: var(--color-yellow-green-wash);
+  border: 1px solid var(--color-border-green);
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--color-black);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.verified-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-yellow-green);
+}
+
+/* ==========================================================================
+   Objective Banner Box
+   ========================================================================== */
+
+.legal-objective-card {
+  background-color: rgba(248, 249, 243, 0.85);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--color-border-subtle);
+  padding: clamp(22px, 3.5vw, 32px) clamp(22px, 4vw, 36px);
+  margin-bottom: clamp(28px, 4vw, 42px);
+  position: relative;
+}
+
+.legal-objective-ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-medium);
+  margin-bottom: 14px;
+}
+
+.objective-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-royal-azure);
+}
+
+.objective-ribbon-text {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.legal-objective-text {
+  font-family: var(--font-primary);
+  font-size: clamp(0.96rem, 1.8vw, 1.05rem);
+  line-height: 1.68;
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   Our Commitment Highlight Card
+   ========================================================================== */
+
+.legal-commitment-card {
+  background: linear-gradient(135deg, rgba(13, 92, 238, 0.04) 0%, rgba(213, 225, 81, 0.12) 100%);
+  border: 2px solid var(--color-border-azure);
+  border-radius: var(--radius-xl);
+  padding: clamp(30px, 4.5vw, 44px) clamp(24px, 4.5vw, 48px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.commitment-inner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.commitment-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-azure);
+  font-family: var(--font-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-royal-azure);
+  margin-bottom: 14px;
+}
+
+.commitment-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-royal-azure);
+}
+
+.commitment-title {
+  font-family: var(--font-primary);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+
+.commitment-text {
+  font-family: var(--font-primary);
+  font-size: clamp(1rem, 1.9vw, 1.12rem);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .legal-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .legal-card {
+    padding: 22px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .legal-header {
+    margin-bottom: 30px;
+  }
+
+  .legal-eyebrow-badge {
+    padding: 5px 14px;
+  }
+
+  .legal-badge-text {
+    font-size: 0.74rem;
+  }
+
+  .legal-code-value {
+    font-size: 1rem;
+  }
+
+  .legal-commitment-card {
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
+  }
+}

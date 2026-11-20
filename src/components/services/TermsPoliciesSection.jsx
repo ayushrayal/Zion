@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SectionWrapper from '../layout/SectionWrapper';
 import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
@@ -167,6 +168,14 @@ export default function TermsPoliciesSection() {
 
   // Store set of open indices; default to item 0 open
   const [openItems, setOpenItems] = useState([0]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+      window.__lenis?.resize();
+    }, 380);
+    return () => clearTimeout(timer);
+  }, [openItems]);
 
   const toggleItem = (idx) => {
     setOpenItems((prev) =>

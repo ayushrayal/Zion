@@ -5,10 +5,33 @@ import Container from '../layout/Container';
 import Button from '../ui/Button';
 import Tag from '../ui/Tag';
 import BrandShape from '../ui/BrandShape';
-import { websiteImages } from '../../data/websiteImages';
+import heroImg1 from '../../assets/websiteImages/Main Hero Section/Where Every Milestone Matters.jpg';
+import heroImg2 from '../../assets/convertedImages/hero/IMG_3244.jpg';
+import heroImg3 from '../../assets/convertedImages/hero/IMG_3468.jpg';
 import './Hero.css';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const heroSlides = [
+  {
+    id: 'hero-slide-1',
+    src: heroImg1,
+    alt: 'ZION therapist and child celebrating World Autism Day milestone with colorful infinity emblem',
+    objectPosition: 'center 28%'
+  },
+  {
+    id: 'hero-slide-2',
+    src: heroImg2,
+    alt: 'Dedicated therapist and child engaged in developmental intervention at ZION',
+    objectPosition: 'center 22%'
+  },
+  {
+    id: 'hero-slide-3',
+    src: heroImg3,
+    alt: 'Child learning and flourishing in ZION inclusive centre environment',
+    objectPosition: 'center 20%'
+  }
+];
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -22,6 +45,16 @@ export default function Hero() {
 
   const [count, setCount] = useState(0);
   const [isRevealed, setIsRevealed] = useState(false);
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+
+  // 5-second Silent Hero Slideshow Autoplay (no buttons or overlays on image)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeroSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -199,11 +232,11 @@ export default function Hero() {
 
             {/* Child-Friendly Multi-Tone Service Pills */}
             <div className="hero-tags-wrapper" ref={tagsRef}>
-              <Tag variant="azure" icon="💬">Speech &amp; Hearing</Tag>
-              <Tag variant="yellow-green" icon="🌱">Early Intervention</Tag>
-              <Tag variant="lemon-lime" icon="🎨">Inclusive Preschool</Tag>
-              <Tag variant="blue-green" icon="🧩">Occupational Therapy</Tag>
-              <Tag variant="lime-green" icon="🤝">Family Partnership</Tag>
+              <Tag variant="azure" icon="💬" to="/therapy">Speech &amp; Hearing</Tag>
+              <Tag variant="yellow-green" icon="🌱" to="/therapy">Early Intervention</Tag>
+              <Tag variant="lemon-lime" icon="🎨" to="/school">Inclusive Preschool</Tag>
+              <Tag variant="blue-green" icon="🧩" to="/therapy">Occupational Therapy</Tag>
+              <Tag variant="lime-green" icon="🤝" to="/therapy">Family Partnership</Tag>
             </div>
 
             {/* CTA Buttons */}
@@ -224,7 +257,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Colorful, High-Energy Visual Composition */}
+          {/* Right Column: Visual Showcase with Clean Hero Slideshow (Only Images) */}
           <div className="hero-visual-column" ref={visualRef}>
             <div className="hero-card-composite">
               {/* Playful Layered Under-Badges */}
@@ -250,15 +283,23 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Colorful Visual Center Showcase with Real Photograph (Clean Presentation) */}
-              <div className="hero-visual-center-plate">
-                <img
-                  src={websiteImages.hero.src}
-                  alt={websiteImages.hero.alt}
-                  className="hero-center-img"
-                  style={{ objectPosition: websiteImages.hero.objectPosition }}
-                />
-                <div className="hero-center-overlay" />
+              {/* Clean Visual Center Showcase: Image Only (Zero Buttons / Overlays) */}
+              <div className="hero-visual-center-plate" aria-label="ZION Hero Visual Showcase">
+                {heroSlides.map((slide, idx) => (
+                  <div
+                    key={slide.id}
+                    className={`hero-slide-frame ${idx === currentHeroSlide ? 'active' : ''}`}
+                    aria-hidden={idx !== currentHeroSlide}
+                  >
+                    <img
+                      src={slide.src}
+                      alt={slide.alt}
+                      className="hero-center-img"
+                      style={{ objectPosition: slide.objectPosition }}
+                      loading={idx === 0 ? 'eager' : 'lazy'}
+                    />
+                  </div>
+                ))}
               </div>
 
               {/* Animated Statistics Counter Positioned Immediately Below Photograph */}

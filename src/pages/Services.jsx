@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Services() {
   useEffect(() => {
-    document.title = 'Services, Inclusion & Policies | ZION Care';
+    document.title = 'Services, Inclusion & Policies | ZION';
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;

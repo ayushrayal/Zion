@@ -216,6 +216,73 @@
   word-break: break-word;
 }
 
+/* Service Card Footer with Navigation Links */
+.service-card-footer {
+  margin-top: auto;
+  padding-top: var(--space-20, 20px);
+  border-top: 1.5px dashed rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-primary, 'Nunito', sans-serif);
+  font-size: 0.94rem;
+  font-weight: 800;
+  text-decoration: none;
+  width: fit-content;
+  transition: transform 0.2s ease, gap 0.2s ease, opacity 0.2s ease;
+}
+
+.service-card-cta:hover {
+  transform: translateX(4px);
+}
+
+.service-card-cta .card-cta-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.service-card-cta:hover .card-cta-arrow {
+  transform: translateX(3px);
+}
+
+.cta-theme-azure {
+  color: var(--color-royal-azure, #0D5CEE);
+}
+
+.cta-theme-green {
+  color: #2e600a;
+}
+
+.cta-theme-lime {
+  color: #555f0b;
+}
+
+.service-card-cta-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-primary, 'Nunito', sans-serif);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--color-royal-azure, #0D5CEE);
+  text-decoration: none;
+  opacity: 0.9;
+  width: fit-content;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.service-card-cta-sub:hover {
+  opacity: 1;
+  transform: translateX(3px);
+  text-decoration: underline;
+}
+
 /* Card 7: Wide Span on Desktop to Eliminate Awkward Gaps */
 .service-card--wide {
   grid-column: 1 / -1;

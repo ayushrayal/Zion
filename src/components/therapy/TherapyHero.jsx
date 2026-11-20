@@ -6,10 +6,12 @@ import Tag from '../ui/Tag';
 import BrandShape from '../ui/BrandShape';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
 import { websiteImages } from '../../data/websiteImages';
+import { useSmoothScroll } from '../../context/SmoothScrollContext';
 import './TherapyHero.css';
 
 export default function TherapyHero() {
   const heroRef = useRef(null);
+  const { scrollTo } = useSmoothScroll();
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -60,13 +62,13 @@ export default function TherapyHero() {
   const scrollToAssessment = (e) => {
     e.preventDefault();
     const el = document.getElementById('assessment-form');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) scrollTo(el, { offset: -80 });
   };
 
   const scrollToPrograms = (e) => {
     e.preventDefault();
     const el = document.getElementById('therapy-programs');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) scrollTo(el, { offset: -80 });
   };
 
   return (

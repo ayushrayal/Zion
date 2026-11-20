@@ -481,6 +481,12 @@
     padding-bottom: 6px;
     width: 100%;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .department-filter-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .dept-filter-btn {

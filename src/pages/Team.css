@@ -6,7 +6,7 @@
 .team-page {
   position: relative;
   width: 100%;
-  overflow-x: hidden;
+  overflow: visible;
   background-color: #FFFFFF;
 }
 

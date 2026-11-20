@@ -9,9 +9,28 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fallback native smooth scroll only when Lenis is not active and user has not requested reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.lenis) {
+    scroll-behavior: smooth;
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
 body {

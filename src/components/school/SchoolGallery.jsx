@@ -65,7 +65,7 @@ export default function SchoolGallery() {
                   sublabel={item.sublabel}
                   badge={item.badge}
                   theme={item.theme}
-                  showCaption={true}
+                  showCaption={false}
                 />
               </div>
             ))}

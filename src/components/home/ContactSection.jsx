@@ -46,10 +46,28 @@ export default function ContactSection() {
 
     const userMessage = formData.message?.trim() ? formData.message.trim() : 'I would like to enquire about a consultation.';
 
-    const messageText = `Hello ZION Team,\n\nI would like to enquire about a consultation.\n\nParent / Guardian Name: ${formData.name.trim()}\nContact Number: ${formData.phone.trim()}\nService of Interest: ${formData.service || 'Speech & Language Therapy'}\n\nMessage:\n${userMessage}\n\nPlease contact me regarding the consultation.\n\nThank you.`;
+    // Route School vs Therapy WhatsApp according to user selection
+    const isSchoolService = formData.service === 'ZION Academy - Inclusive Preschool';
+    const targetNumber = isSchoolService ? '919286068945' : '918057403683';
+    const deptTitle = isSchoolService ? 'ZION Academy (School Admissions)' : 'ZION Clinical & Therapy Centre';
+
+    const messageText = `*Hello ${deptTitle},*
+
+I would like to enquire about a consultation.
+
+*Parent / Guardian Name:* ${formData.name.trim()}
+*Contact Phone:* ${formData.phone.trim()}
+*Service of Interest:* ${formData.service || 'Speech & Language Therapy'}
+
+*Message / Notes:*
+${userMessage}
+
+Please contact me regarding this enquiry.
+
+Thank you.`;
 
     const encodedMessage = encodeURIComponent(messageText);
-    const whatsappUrl = `https://wa.me/918057403683?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/${targetNumber}?text=${encodedMessage}`;
 
     setRedirectedUrl(whatsappUrl);
 
@@ -258,7 +276,7 @@ export default function ContactSection() {
 
                 {redirectedUrl && (
                   <div className="form-wa-redirect-notice" role="status">
-                    Connecting to WhatsApp chat (+91 80574 03683)...{' '}
+                    Connecting to WhatsApp ({formData.service === 'ZION Academy - Inclusive Preschool' ? 'School Desk: +91 92860 68945' : 'Therapy Desk: +91 80574 03683'})...{' '}
                     <a href={redirectedUrl} target="_blank" rel="noopener noreferrer">
                       Click here to open directly
                     </a>

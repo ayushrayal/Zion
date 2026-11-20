@@ -3,9 +3,11 @@ import SectionWrapper from '../layout/SectionWrapper';
 import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
 import BrandShape from '../ui/BrandShape';
+import { useSmoothScroll } from '../../context/SmoothScrollContext';
 import './SchoolPrograms.css';
 
 export default function SchoolPrograms({ onSelectProgram }) {
+  const { scrollTo } = useSmoothScroll();
   const schoolPrograms = [
     {
       id: 'inclusive-preschool',
@@ -102,7 +104,7 @@ export default function SchoolPrograms({ onSelectProgram }) {
     }
     const el = document.getElementById('admission-form');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      scrollTo(el, { offset: -80 });
     }
   };
 

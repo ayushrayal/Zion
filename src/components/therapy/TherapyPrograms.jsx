@@ -4,9 +4,11 @@ import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
 import BrandShape from '../ui/BrandShape';
 import Button from '../ui/Button';
+import { useSmoothScroll } from '../../context/SmoothScrollContext';
 import './TherapyPrograms.css';
 
 export default function TherapyPrograms({ onSelectProgram }) {
+  const { scrollTo } = useSmoothScroll();
   const programs = [
     {
       id: 'speech-language',
@@ -135,7 +137,7 @@ export default function TherapyPrograms({ onSelectProgram }) {
     }
     const el = document.getElementById('assessment-form');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      scrollTo(el, { offset: -80 });
     }
   };
 

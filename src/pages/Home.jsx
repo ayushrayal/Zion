@@ -8,6 +8,7 @@ import JourneySection from '../components/home/JourneySection';
 import FounderSection from '../components/home/FounderSection';
 import CoFounderSection from '../components/home/CoFounderSection';
 import TestimonialsSection from '../components/home/TestimonialsSection';
+import FaqSection from '../components/home/FaqSection';
 import ContactSection from '../components/home/ContactSection';
 
 // Register GSAP ScrollTrigger
@@ -54,6 +55,7 @@ export default function Home() {
       <FounderSection />
       <CoFounderSection />
       <TestimonialsSection />
+      <FaqSection />
       <ContactSection />
     </main>
   );

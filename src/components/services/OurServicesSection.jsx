@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SectionWrapper from '../layout/SectionWrapper';
 import Container from '../layout/Container';
 import SectionHeading from '../ui/SectionHeading';
@@ -12,6 +13,8 @@ export default function OurServicesSection() {
       number: '01',
       title: 'Speech & Language Services',
       theme: 'azure',
+      targetUrl: '/therapy',
+      ctaText: 'Explore Speech & Hearing Care',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -36,6 +39,8 @@ export default function OurServicesSection() {
       number: '02',
       title: 'Early Intervention & Developmental Support',
       theme: 'green',
+      targetUrl: '/therapy',
+      ctaText: 'Explore Early Intervention Programs',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10"/>
@@ -58,6 +63,8 @@ export default function OurServicesSection() {
       number: '03',
       title: 'Occupational Therapy',
       theme: 'lime',
+      targetUrl: '/therapy',
+      ctaText: 'Explore Occupational & Sensory Care',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
@@ -78,6 +85,10 @@ export default function OurServicesSection() {
       number: '04',
       title: 'Behaviour & Learning Support',
       theme: 'azure',
+      targetUrl: '/school',
+      ctaText: 'Explore ZION Academy & Learning Support',
+      secondaryUrl: '/therapy',
+      secondaryText: 'Clinical Behaviour Support',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
@@ -101,6 +112,8 @@ export default function OurServicesSection() {
       number: '05',
       title: 'Physiotherapy & Motor Development',
       theme: 'green',
+      targetUrl: '/therapy',
+      ctaText: 'Explore Physiotherapy Programs',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -120,6 +133,8 @@ export default function OurServicesSection() {
       number: '06',
       title: 'Hearing & Audiology Services',
       theme: 'lime',
+      targetUrl: '/therapy',
+      ctaText: 'Explore Audiology & Hearing Care',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M11 5L6 9H2v6h4l5 4V5z"/>
@@ -141,6 +156,8 @@ export default function OurServicesSection() {
       number: '07',
       title: 'Adult Communication & Rehabilitation',
       theme: 'azure',
+      targetUrl: '/therapy',
+      ctaText: 'Explore Adult Rehabilitation Care',
       isWide: true,
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -216,6 +233,19 @@ export default function OurServicesSection() {
                   </li>
                 ))}
               </ul>
+
+              <div className="service-card-footer">
+                <Link to={cat.targetUrl} className={`service-card-cta cta-theme-${cat.theme}`}>
+                  <span>{cat.ctaText}</span>
+                  <span className="card-cta-arrow" aria-hidden="true">→</span>
+                </Link>
+                {cat.secondaryUrl && (
+                  <Link to={cat.secondaryUrl} className="service-card-cta-sub">
+                    <span>{cat.secondaryText}</span>
+                    <span className="card-cta-arrow" aria-hidden="true">→</span>
+                  </Link>
+                )}
+              </div>
             </div>
           ))}
         </div>

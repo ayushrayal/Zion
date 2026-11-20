@@ -20,6 +20,16 @@
   transform: translateY(-2px);
 }
 
+.zion-tag.tag-interactive {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.zion-tag.tag-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 92, 238, 0.2);
+}
+
 .tag-sm {
   padding: 6px 14px;
   font-size: var(--font-size-meta);

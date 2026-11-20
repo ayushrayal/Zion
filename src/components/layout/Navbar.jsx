@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useSmoothScroll } from '../../context/SmoothScrollContext';
 import Container from './Container';
 import Button from '../ui/Button';
 import BrandShape from '../ui/BrandShape';
@@ -12,6 +13,8 @@ export default function Navbar() {
   const drawerRef = useRef(null);
   const backdropRef = useRef(null);
   const menuTimelineRef = useRef(null);
+
+  const { scrollTo, stop, start } = useSmoothScroll();
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -35,16 +38,19 @@ export default function Navbar() {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
       document.documentElement.style.overflow = 'hidden';
+      stop();
     } else {
       document.body.style.overflow = '';
       document.documentElement.style.overflow = '';
+      start();
     }
 
     return () => {
       document.body.style.overflow = '';
       document.documentElement.style.overflow = '';
+      start();
     };
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, stop, start]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -75,7 +81,7 @@ export default function Navbar() {
 
     if (item.isRoute) {
       if (item.path === '/' && isHomePage) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollTo(0, { duration: 1.0 });
         if (location.hash) {
           navigate('/', { replace: true });
         }
@@ -92,7 +98,7 @@ export default function Navbar() {
     if (isHomePage) {
       const elem = document.getElementById(targetId);
       if (elem) {
-        elem.scrollIntoView({ behavior: 'smooth' });
+        scrollTo(elem, { offset: -80 });
         window.history.pushState(null, '', item.path);
       } else {
         window.location.hash = hash;
@@ -115,17 +121,17 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
     if (isTherapyPage) {
       const el = document.getElementById('assessment-form');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) scrollTo(el, { offset: -80 });
     } else if (isSchoolPage) {
       const el = document.getElementById('admission-form');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) scrollTo(el, { offset: -80 });
     } else if (isTeamPage) {
       const el = document.getElementById('team-directory');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) scrollTo(el, { offset: -80 });
     } else {
       if (isHomePage) {
         const el = document.getElementById('contact');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        if (el) scrollTo(el, { offset: -80 });
       } else {
         navigate('/#contact');
       }
@@ -246,6 +252,7 @@ export default function Navbar() {
             aria-modal="true"
             aria-label="Mobile Navigation Menu"
             aria-hidden={!isMobileMenuOpen}
+            data-lenis-prevent="true"
           >
             <BrandShape type="blob-lime" size="sm" style={{ top: -30, right: -30, opacity: 0.25 }} />
             <BrandShape type="blob-azure" size="sm" style={{ bottom: 20, left: -30, opacity: 0.2 }} />

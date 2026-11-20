@@ -6,10 +6,12 @@ import Tag from '../ui/Tag';
 import BrandShape from '../ui/BrandShape';
 import ImagePlaceholder from '../ui/ImagePlaceholder';
 import { websiteImages } from '../../data/websiteImages';
+import { useSmoothScroll } from '../../context/SmoothScrollContext';
 import './SchoolHero.css';
 
 export default function SchoolHero() {
   const heroRef = useRef(null);
+  const { scrollTo } = useSmoothScroll();
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -60,13 +62,13 @@ export default function SchoolHero() {
   const scrollToAdmission = (e) => {
     e.preventDefault();
     const el = document.getElementById('admission-form');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) scrollTo(el, { offset: -80 });
   };
 
   const scrollToPrograms = (e) => {
     e.preventDefault();
     const el = document.getElementById('school-programs');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) scrollTo(el, { offset: -80 });
   };
 
   return (
