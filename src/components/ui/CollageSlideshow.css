@@ -502,3 +502,35 @@
     border-radius: 12px;
   }
 }
+
+@media (max-width: 360px) {
+  .slideshow-header-bar {
+    gap: 4px;
+    flex-wrap: nowrap;
+  }
+
+  .slideshow-pill-category {
+    font-size: 0.68rem;
+    padding: 3px 6px;
+    gap: 4px;
+  }
+
+  .slideshow-controls-group {
+    gap: 4px;
+  }
+
+  .slideshow-counter {
+    font-size: 0.74rem;
+    padding: 2px 6px;
+  }
+
+  .slideshow-arrow-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .slideshow-arrow-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}

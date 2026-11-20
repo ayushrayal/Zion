@@ -9,6 +9,20 @@
   gap: clamp(28px, 3.5vw, 48px);
   align-items: start;
   margin-top: clamp(24px, 3vw, 40px);
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.assessment-info-col,
+.assessment-form-col {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Left Column: Assessment Guide */
@@ -281,6 +295,8 @@
 }
 
 .therapy-submit-wa-btn {
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 52px;
   display: inline-flex;
   align-items: center;
@@ -288,6 +304,15 @@
   gap: 10px;
   font-weight: 800;
   font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.therapy-submit-wa-btn .btn-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
 }
 
 .form-wa-icon {
@@ -404,27 +429,85 @@
   .assessment-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .assessment-info-col,
+  .assessment-form-col {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media (max-width: 768px) {
+  .assessment-grid {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .field-row {
     grid-template-columns: 1fr;
     gap: 16px;
+    width: 100%;
   }
 
   .assessment-guide-card,
   .form-card {
-    padding: 26px 22px;
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 20px;
     border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .therapy-submit-wa-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 48px;
+    padding: 12px 14px !important;
+    font-size: 0.94rem;
+    white-space: normal !important;
+  }
+
+  .therapy-submit-wa-btn .btn-content {
+    white-space: normal !important;
+    text-align: center;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .therapy-wa-button-link {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 14px;
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
+  .assessment-grid {
+    gap: 24px;
+    width: 100%;
+  }
+
   .assessment-guide-card,
   .form-card {
     padding: 20px 16px;
     border-radius: 16px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .form-main-title {
@@ -445,7 +528,8 @@
 
   .therapy-submit-wa-btn {
     min-height: 48px;
-    font-size: 0.94rem;
+    font-size: 0.92rem;
+    padding: 10px 12px !important;
   }
 }
 
@@ -466,5 +550,9 @@
   .field-select {
     padding-right: 40px;
     background-position: right 12px center;
+  }
+
+  .therapy-submit-wa-btn {
+    font-size: 0.86rem;
   }
 }

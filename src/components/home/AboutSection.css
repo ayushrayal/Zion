@@ -107,52 +107,57 @@
 
 .about-intro-box {
   background-color: var(--color-white);
-  padding: 36px 40px;
+  padding: clamp(36px, 4vw, 44px) clamp(36px, 4.5vw, 48px);
   border-radius: var(--radius-xl);
   border: 2px solid var(--color-border-subtle);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
+  width: 100%;
+  margin-top: 8px;
 }
 
 .about-est-tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background-color: rgba(13, 92, 238, 0.06);
-  border: 1px solid rgba(13, 92, 238, 0.2);
+  gap: 9px;
+  background-color: rgba(13, 92, 238, 0.07);
+  border: 1.5px solid rgba(13, 92, 238, 0.22);
   border-radius: var(--radius-pill);
-  padding: 4px 14px;
-  font-size: 12.5px;
+  padding: 6px 16px;
+  font-size: 13px;
   font-weight: 800;
   color: var(--color-royal-azure);
-  margin-bottom: 18px;
+  margin-top: 6px;
+  margin-bottom: 24px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  box-shadow: 0 2px 8px rgba(13, 92, 238, 0.06);
 }
 
 .est-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: var(--color-yellow-green);
   flex-shrink: 0;
 }
 
 .about-lead-text {
-  font-size: 16.5px;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--color-black);
-  line-height: 1.65;
+  line-height: 1.8;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
 }
 
 .about-philosophy-text {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--color-text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.78);
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .about-team-callout {
@@ -162,7 +167,7 @@
   background-color: var(--color-surface-subtle);
   border-left: 4px solid var(--color-yellow-green);
   border-radius: var(--radius-sm);
-  padding: 14px 18px;
+  padding: 16px 20px;
   box-sizing: border-box;
 }
 
@@ -174,10 +179,10 @@
 }
 
 .team-callout-text {
-  font-size: 14.5px;
+  font-size: 0.94rem;
   font-weight: 700;
   color: #1a4f21;
-  line-height: 1.5;
+  line-height: 1.65;
   margin: 0;
 }
 
@@ -186,6 +191,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: clamp(36px, 4.5vw, 52px);
 }
 
 .approach-header {
@@ -316,39 +322,142 @@
 .about-actions {
   display: flex;
   align-items: center;
-  gap: var(--space-16);
-  margin-top: 4px;
+  gap: var(--space-16, 16px);
+  margin-top: clamp(28px, 3.5vw, 40px);
+  margin-bottom: clamp(8px, 1.5vw, 16px);
   flex-wrap: wrap;
+  width: 100%;
+}
+
+.about-actions .zion-btn {
+  min-height: 48px;
+  padding: 12px 26px;
+  font-size: 0.95rem;
+  border-radius: var(--radius-pill, 9999px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .about-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-36);
+    gap: var(--space-40, 40px);
   }
 
   .about-intro-box {
-    padding: 30px 28px;
+    margin-top: 18px;
+    padding: 34px 32px;
+  }
+
+  .about-est-tag {
+    margin-top: 4px;
+  }
+
+  .about-approach-section {
+    margin-top: 44px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .principles-grid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
 
   .about-intro-box {
-    padding: 24px 20px;
+    margin-top: 20px;
+    padding: 28px 22px;
+  }
+
+  .about-est-tag {
+    margin-top: 4px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    padding: 5px 14px;
   }
 
   .about-lead-text {
-    font-size: 15.5px;
+    font-size: 0.98rem;
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .about-philosophy-text {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .about-approach-section {
+    margin-top: 42px;
   }
 
   .about-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 14px;
+    margin-top: 28px;
+    margin-bottom: 12px;
+  }
+
+  .about-actions .zion-btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 20px;
+    font-size: 0.94rem;
+    justify-content: center;
+    text-align: center;
+    border-radius: var(--radius-pill, 9999px);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-intro-box {
+    margin-top: 18px;
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .about-est-tag {
+    margin-top: 2px;
+    margin-bottom: 18px;
+  }
+
+  .about-approach-section {
+    margin-top: 38px;
+  }
+
+  .about-lead-text {
+    font-size: 0.95rem;
+  }
+
+  .about-philosophy-text {
+    font-size: 0.9rem;
+  }
+
+  .about-team-callout {
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-intro-box {
+    margin-top: 16px;
+    padding: 20px 14px;
+    border-radius: 16px;
+  }
+
+  .about-approach-section {
+    margin-top: 32px;
+  }
+
+  .about-actions .zion-btn {
+    min-height: 46px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
   }
 }
