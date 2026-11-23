@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import LegalGovernanceSection from '../components/gallery/LegalGovernanceSection';
 import EnvironmentSection from '../components/home/EnvironmentSection';
 import GallerySection from '../components/home/GallerySection';
 
@@ -9,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Gallery() {
   useEffect(() => {
-    document.title = 'Institutional Governance & Gallery | ZION';
+    document.title = 'Our Environment & Gallery | ZION';
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
@@ -40,13 +39,10 @@ export default function Gallery() {
 
   return (
     <main id="main-content" className="gallery-page">
-      {/* 1. Legal Registration & Institutional Governance */}
-      <LegalGovernanceSection />
-
-      {/* 2. Existing Purpose-Built Facilities & Environment */}
+      {/* 1. Existing Purpose-Built Facilities & Environment */}
       <EnvironmentSection />
 
-      {/* 3. Existing Main Gallery Visual Showcase */}
+      {/* 2. Existing Main Gallery Visual Showcase */}
       <GallerySection />
     </main>
   );

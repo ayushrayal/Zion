@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SchoolHero from '../components/school/SchoolHero';
 import SchoolEnvironment from '../components/school/SchoolEnvironment';
 import SchoolPrograms from '../components/school/SchoolPrograms';
+import LegalGovernanceSection from '../components/gallery/LegalGovernanceSection';
 import SchoolGallery from '../components/school/SchoolGallery';
 import SchoolAdmissionForm from '../components/school/SchoolAdmissionForm';
 
@@ -51,13 +52,16 @@ export default function School() {
       {/* 2. Our Team / Learning Environment */}
       <SchoolEnvironment />
 
-      {/* 3. Our Programs */}
+      {/* 3. Our Programs / Learning Plan */}
       <SchoolPrograms onSelectProgram={(prog) => setSelectedProgram(prog)} />
 
-      {/* 4. Our Gallery */}
+      {/* 4. Statutory Disclosure & Society Governance */}
+      <LegalGovernanceSection />
+
+      {/* 5. Our Gallery */}
       <SchoolGallery />
 
-      {/* 5. Admission Enquiry */}
+      {/* 6. Admission Enquiry */}
       <SchoolAdmissionForm selectedProgram={selectedProgram} />
     </main>
   );
